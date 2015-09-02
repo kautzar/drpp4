@@ -1,0 +1,539 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Charity Admin\n"
+"POT-Creation-Date: 2015-06-18 14:49+0530\n"
+"PO-Revision-Date: 2015-06-18 14:50+0530\n"
+"Last-Translator: \n"
+"Language-Team: Theemon <support@theemon.com>\n"
+"Language: english\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: helper-functions.php:11
+msgid "READ MORE"
+msgstr ""
+
+#: helper-functions.php:27
+msgid "Posts navigation"
+msgstr ""
+
+#: helper-functions.php:31
+msgid "Older posts"
+msgstr ""
+
+#: helper-functions.php:35
+msgid "Newer posts"
+msgstr ""
+
+#: helper-functions.php:61
+msgid "Post navigation"
+msgstr ""
+
+#: post-format-hooks.php:39 post-format-hooks.php:51
+msgid "Posted In  : "
+msgstr ""
+
+#: post-format-hooks.php:103
+msgid "Your browser does not support the audio tag."
+msgstr ""
+
+#: comment-list-callback.php:24
+msgid "Pingback:"
+msgstr ""
+
+#: comment-list-callback.php:24
+msgid "(Edit)"
+msgstr ""
+
+#: comment-list-callback.php:49
+#, php-format
+msgid "%1$s - %2$s"
+msgstr ""
+
+#: comment-list-callback.php:53
+msgid "Reply"
+msgstr ""
+
+#: comment-list-callback.php:59
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comment-list-callback.php:62
+msgid "Edit"
+msgstr ""
+
+#: causes-helper.php:4
+msgid "Target"
+msgstr ""
+
+#: causes-helper.php:5
+msgid "Achivement"
+msgstr ""
+
+#: causes-helper.php:6
+msgid "Status"
+msgstr ""
+
+#: back-compat.php:27 back-compat.php:36
+#, php-format
+msgid ""
+"charity requires at least WordPress version 3.9 You are running version %s. "
+"Please upgrade and try again."
+msgstr ""
+
+#: theme-setup.php:43
+msgid "Header Menu"
+msgstr ""
+
+#: theme-setup.php:88
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: causes-hooks.php:173 causes-hooks.php:228
+msgid "Donation :"
+msgstr ""
+
+#: causes-hooks.php:201
+msgid "DONATE NOW"
+msgstr ""
+
+#: causes-hooks.php:334 causes-hooks.php:386
+msgid "Donated"
+msgstr ""
+
+#: causes-hooks.php:354
+msgid "Reached"
+msgstr ""
+
+#: causes-hooks.php:358
+msgid "Donors"
+msgstr ""
+
+#: widgets/contact-info-widget.php:5
+msgid "Charity Contact Info."
+msgstr ""
+
+#: widgets/contact-info-widget.php:7
+msgid "Charity Contact Info Widget"
+msgstr ""
+
+#: widgets/contact-info-widget.php:61 widgets/social-widget.php:107
+#: widgets/address-widget.php:68 widgets/archive-widget.php:66
+#: widgets/category-widget.php:78 widgets/latest-post-widget.php:150
+#: widgets/about-with-button.php:67
+msgid "Title:"
+msgstr ""
+
+#: widgets/contact-info-widget.php:64 widgets/address-widget.php:73
+msgid "Address:"
+msgstr ""
+
+#: widgets/contact-info-widget.php:67 widgets/address-widget.php:76
+msgid "Phone No:"
+msgstr ""
+
+#: widgets/contact-info-widget.php:70 widgets/address-widget.php:79
+msgid "Mail Id:"
+msgstr ""
+
+#: widgets/social-widget.php:5
+msgid "Social Media Widget."
+msgstr ""
+
+#: widgets/social-widget.php:7
+msgid "Charity Social Media Widget"
+msgstr ""
+
+#: widgets/social-widget.php:110
+msgid "Facebook:"
+msgstr ""
+
+#: widgets/social-widget.php:113 user/meta-ui.php:36
+msgid "Twitter"
+msgstr ""
+
+#: widgets/social-widget.php:116
+msgid "Dribble:"
+msgstr ""
+
+#: widgets/social-widget.php:119
+msgid "Pinterest:"
+msgstr ""
+
+#: widgets/social-widget.php:122
+msgid "GooglePlus:"
+msgstr ""
+
+#: widgets/social-widget.php:125
+msgid "Instagram:"
+msgstr ""
+
+#: widgets/twitter-widget.php:33
+msgid "Displays a Twitter Feed from an Screen Name"
+msgstr ""
+
+#: widgets/twitter-widget.php:36
+msgid "Charity Twitter Feed"
+msgstr ""
+
+#: widgets/twitter-widget.php:167
+msgid "Notice "
+msgstr ""
+
+#: widgets/twitter-widget.php:289 widgets/event-widget.php:115
+#: widgets/flickr-widget.php:145
+msgid "Title"
+msgstr ""
+
+#: widgets/twitter-widget.php:294
+msgid "The Twitter user name"
+msgstr ""
+
+#: widgets/twitter-widget.php:299
+msgid "Twitter App here, go to"
+msgstr ""
+
+#: widgets/twitter-widget.php:299
+msgid "Twiiter App"
+msgstr ""
+
+#: widgets/twitter-widget.php:302
+msgid "Key"
+msgstr ""
+
+#: widgets/twitter-widget.php:306
+msgid "Secret"
+msgstr ""
+
+#: widgets/twitter-widget.php:310
+msgid "Token"
+msgstr ""
+
+#: widgets/twitter-widget.php:314
+msgid "Token Secret"
+msgstr ""
+
+#: widgets/twitter-widget.php:318
+msgid "Number of feed shown from 1 to 10"
+msgstr ""
+
+#: widgets/address-widget.php:5
+msgid "Address Widget."
+msgstr ""
+
+#: widgets/address-widget.php:7
+msgid "Charity Address Widget"
+msgstr ""
+
+#: widgets/event-widget.php:15
+msgid "Charity Events"
+msgstr ""
+
+#: widgets/event-widget.php:24 widgets/event-widget.php:83
+msgid "all events"
+msgstr ""
+
+#: widgets/event-widget.php:25
+msgid "No events"
+msgstr ""
+
+#: widgets/event-widget.php:28
+msgid "start date, start time, event name"
+msgstr ""
+
+#: widgets/event-widget.php:29
+msgid "name, start date, start time"
+msgstr ""
+
+#: widgets/event-widget.php:30
+msgid "name, end date, end time"
+msgstr ""
+
+#: widgets/event-widget.php:31
+msgid "end date, end time, event name"
+msgstr ""
+
+#: widgets/event-widget.php:33
+msgid "Display a list of events on Events Manager."
+msgstr ""
+
+#: widgets/event-widget.php:119
+msgid "Number of events"
+msgstr ""
+
+#: widgets/event-widget.php:124
+msgid "Scope"
+msgstr ""
+
+#: widgets/event-widget.php:134
+msgid "Order By"
+msgstr ""
+
+#: widgets/event-widget.php:144
+msgid "Order"
+msgstr ""
+
+#: widgets/event-widget.php:148
+msgid "Ascending"
+msgstr ""
+
+#: widgets/event-widget.php:149
+msgid "Descending"
+msgstr ""
+
+#: widgets/event-widget.php:160
+msgid "Category IDs"
+msgstr ""
+
+#: widgets/event-widget.php:162
+msgid "1,2,3 or 2 (0 = all)"
+msgstr ""
+
+#: widgets/event-widget.php:165
+msgid "Show all events link at bottom?"
+msgstr ""
+
+#: widgets/event-widget.php:169
+msgid "All events link text?"
+msgstr ""
+
+#: widgets/event-widget.php:181
+#, php-format
+msgid ""
+"The list is wrapped in a %s tag, so if an %s tag is not wrapping the formats "
+"below it will be added automatically."
+msgstr ""
+
+#: widgets/event-widget.php:183
+msgid "List item format"
+msgstr ""
+
+#: widgets/event-widget.php:187
+msgid "No events message"
+msgstr ""
+
+#: widgets/archive-widget.php:24
+msgid "Charity Archive"
+msgstr ""
+
+#: widgets/archive-widget.php:25
+msgid "Charity Archive. "
+msgstr ""
+
+#: widgets/category-widget.php:24
+msgid "Charity Category"
+msgstr ""
+
+#: widgets/category-widget.php:25
+msgid "Charity Category. "
+msgstr ""
+
+#: widgets/flickr-widget.php:33
+msgid "Flickr photo stream from ID"
+msgstr ""
+
+#: widgets/flickr-widget.php:36
+msgid "Charity Flickr Badge"
+msgstr ""
+
+#: widgets/flickr-widget.php:78
+msgid "Please provide an Flickr ID"
+msgstr ""
+
+#: widgets/flickr-widget.php:151
+msgid "The type of images from user or group."
+msgstr ""
+
+#: widgets/flickr-widget.php:159
+msgid "Flickr ID"
+msgstr ""
+
+#: widgets/flickr-widget.php:161
+msgid "Put the flickr ID here, go to"
+msgstr ""
+
+#: widgets/flickr-widget.php:161
+msgid "Flickr NSID Lookup"
+msgstr ""
+
+#: widgets/flickr-widget.php:161
+msgid "if you don't know your ID. Example: 71865026@N00"
+msgstr ""
+
+#: widgets/flickr-widget.php:164
+msgid "Number of images shown from 1 to 10"
+msgstr ""
+
+#: widgets/flickr-widget.php:169
+msgid "Get the image from recent or use random function."
+msgstr ""
+
+#: widgets/flickr-widget.php:178
+msgid "Sizes"
+msgstr ""
+
+#: widgets/flickr-widget.php:179
+msgid "Represents the size of the image"
+msgstr ""
+
+#: widgets/latest-post-widget.php:11
+msgid "Charity Recent Posts."
+msgstr ""
+
+#: widgets/latest-post-widget.php:12
+msgid "Charity Recent Posts"
+msgstr ""
+
+#: widgets/latest-post-widget.php:41
+msgid "Recent"
+msgstr ""
+
+#: widgets/latest-post-widget.php:153
+msgid "Number of posts to show:"
+msgstr ""
+
+#: widgets/about-with-button.php:5
+msgid "Description with Buttons."
+msgstr ""
+
+#: widgets/about-with-button.php:7
+msgid "Charity Description With Button"
+msgstr ""
+
+#: widgets/about-with-button.php:72
+msgid "Button Text 1:"
+msgstr ""
+
+#: widgets/about-with-button.php:75
+msgid "Button Link 1:"
+msgstr ""
+
+#: widgets/about-with-button.php:78
+msgid "Button Text 2:"
+msgstr ""
+
+#: widgets/about-with-button.php:81
+msgid "Button Link 2:"
+msgstr ""
+
+#: widgets/register-sidebar.php:16
+msgid "Default Charity widget"
+msgstr ""
+
+#: widgets/register-sidebar.php:32
+msgid "Footer One Sidebar:One"
+msgstr ""
+
+#: widgets/register-sidebar.php:44
+msgid "Footer One Sidebar:Two"
+msgstr ""
+
+#: widgets/register-sidebar.php:56
+msgid "Footer One Sidebar:Three"
+msgstr ""
+
+#: widgets/register-sidebar.php:73
+msgid "Footer Two Sidebar:One"
+msgstr ""
+
+#: widgets/register-sidebar.php:85
+msgid "Footer Two Sidebar:Two"
+msgstr ""
+
+#: widgets/register-sidebar.php:97
+msgid "Footer Two Sidebar:Three"
+msgstr ""
+
+#: widgets/register-sidebar.php:109
+msgid "Footer Two Sidebar:Four"
+msgstr ""
+
+#: widgets/register-sidebar.php:125
+msgid "Footer Three Sidebar:One"
+msgstr ""
+
+#: widgets/register-sidebar.php:137
+msgid "Footer Three Sidebar:Two"
+msgstr ""
+
+#: widgets/register-sidebar.php:149
+msgid "Footer Three Sidebar:Three"
+msgstr ""
+
+#: widgets/register-sidebar.php:164
+msgid "Causes Widget Section"
+msgstr ""
+
+#: widgets/register-sidebar.php:178
+msgid "Charity shop"
+msgstr ""
+
+#: widgets/register-sidebar.php:191
+msgid "Event Widget Section"
+msgstr ""
+
+#: lib/breadcrumb.php:11
+msgid "Home"
+msgstr ""
+
+#: lib/breadcrumb.php:28
+msgid "Search results for \""
+msgstr ""
+
+#: lib/breadcrumb.php:87
+msgid "Posts tagged \""
+msgstr ""
+
+#: lib/breadcrumb.php:91
+msgid "Articles posted by "
+msgstr ""
+
+#: lib/breadcrumb.php:93
+msgid "Error 404"
+msgstr ""
+
+#: lib/pagination.php:112
+msgid "&laquo; Previous"
+msgstr ""
+
+#: lib/pagination.php:113
+msgid "Next &raquo;"
+msgstr ""
+
+#: lib/pagination.php:172
+msgid "&hellip;"
+msgstr ""
+
+#: user/meta-ui.php:10 user/meta-ui.php:13
+msgid "Profile Image"
+msgstr ""
+
+#: user/meta-ui.php:29
+msgid "Social Profile"
+msgstr ""
+
+#: user/meta-ui.php:32
+msgid "Facebook"
+msgstr ""
+
+#: user/meta-ui.php:40
+msgid "Dribbble"
+msgstr ""
+
+#: user/meta-ui.php:44
+msgid "Pinterest"
+msgstr ""
+
+#: user/meta-ui.php:48
+msgid "Instagram"
+msgstr ""
+
+#: user/meta-ui.php:52
+msgid "Google plus"
+msgstr ""

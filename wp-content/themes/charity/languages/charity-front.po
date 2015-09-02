@@ -1,0 +1,3737 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Charity\n"
+"POT-Creation-Date: 2015-07-28 14:01+0530\n"
+"PO-Revision-Date: 2015-07-28 14:01+0530\n"
+"Last-Translator: \n"
+"Language-Team: Theemon <support@theemon.com>\n"
+"Language: english\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;esc_html;esc_html_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: charity-payment-success.php:26
+msgid "for"
+msgstr ""
+
+#: comments.php:40
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:42
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:52
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:66
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:67 woocommerce/single-product-reviews.php:61
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:68
+msgid "Cancel Reply"
+msgstr ""
+
+#: comments.php:69
+msgid "SUBMIT"
+msgstr ""
+
+#: comments.php:74
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:78
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: search.php:13
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single-event.php:31
+msgid "Next"
+msgstr ""
+
+#: single-event.php:32
+msgid "Previous"
+msgstr ""
+
+#: 404.php:15
+msgid "404"
+msgstr ""
+
+#: 404.php:23
+msgid "BACK TO HOMEPAGE"
+msgstr ""
+
+#: content/events.php:39
+msgid "Date :"
+msgstr ""
+
+#: content/events.php:46
+msgid "Time :"
+msgstr ""
+
+#: content/events.php:58
+msgid "Read More"
+msgstr ""
+
+#: content/search.php:16
+msgid "Posted In  :"
+msgstr ""
+
+#: content/none.php:10
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content/none.php:13
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content/none.php:16
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content/blog-author.php:22
+msgid "View Profile"
+msgstr ""
+
+#: content/format/standard.php:22 content/format/standard.php:34
+#: content/format/chat.php:14 content/format/chat.php:24
+#: content/format/gallery.php:15 content/format/gallery.php:27
+#: content/format/link.php:23 content/format/audio.php:16
+#: content/format/audio.php:29 content/format/image.php:21
+#: content/format/image.php:32 content/format/video.php:16
+#: content/format/video.php:28 content/format/aside.php:14
+#: content/format/aside.php:24 content/format/status.php:13
+#: content/format/status.php:23
+msgid "READ MORE"
+msgstr ""
+
+#: content/home/home-five-causes.php:48
+#, php-format
+msgid "Raised - %s <span>/ %s </span>"
+msgstr ""
+
+#: content/home/home-five-causes.php:70
+msgid "Days Left"
+msgstr ""
+
+#: content/home/home-five-causes.php:70
+msgid "Day Left"
+msgstr ""
+
+#: content/home/home-five-causes.php:79
+msgid "DONATE NOW"
+msgstr ""
+
+#: content/home/home-four-causes.php:39
+msgid "Donated"
+msgstr ""
+
+#: content/home/home-four-causes.php:43
+msgid "Target"
+msgstr ""
+
+#: content/header/one.php:29 content/header/shop-header.php:35
+#: content/header/three.php:29 content/header/two.php:34
+msgid "Toggle navigation"
+msgstr ""
+
+#: content/header/shop-header.php:22 woocommerce/checkout/thankyou.php:30
+msgid "My Account"
+msgstr ""
+
+#: vendor/import/charity-tgm-settings.php:80
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:161
+msgid "Install Required Plugins"
+msgstr ""
+
+#: vendor/import/charity-tgm-settings.php:81
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:162
+msgid "Install Plugins"
+msgstr ""
+
+#: vendor/import/charity-tgm-settings.php:82
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:163
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: vendor/import/charity-tgm-settings.php:83
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: vendor/import/charity-tgm-settings.php:94
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:175
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: vendor/import/charity-tgm-settings.php:95
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:177
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1955
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: vendor/import/charity-tgm-settings.php:96
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:164
+msgid "Something went wrong."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:176
+msgid "Return to the dashboard"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:178
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:179
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:180
+msgid "Dismiss this notice"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:537
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2172
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1177
+msgid "Private Repository"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1180
+msgid "Pre-Packaged"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1185
+msgid "WordPress Repository"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1188
+msgid "Required"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1188
+msgid "Recommended"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1191
+msgid "Not Installed"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1193
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1298
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1406
+msgid "Install"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1320
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1407
+msgid "Activate"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1369
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1385
+msgid "Plugin"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1386
+msgid "Source"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1387
+msgid "Type"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1388
+#: woocommerce/myaccount/my-orders.php:34
+#: woocommerce/myaccount/my-orders.php:55
+msgid "Status"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1938
+msgid "Install package not available."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1939
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1940
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1941
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1942
+msgid "Plugin install failed."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1943
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:1954
+msgid "Plugin activation failed."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2068
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2069
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2069
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2078
+msgid "Show Details"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2069
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2078
+msgid "Hide Details"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2070
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2071
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2075
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2076
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2077
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2078
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2079
+msgid "All installations have been completed."
+msgstr ""
+
+#: vendor/import/TGM-Plugin-Activation/class-tgm-plugin-activation.php:2080
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:163
+#: vendor/import/oneclick/wordpress-importer.php:172
+#: vendor/import/oneclick/wordpress-importer.php:223
+#: vendor/import/oneclick/wordpress-importer.php:227
+#: vendor/import/oneclick/wordpress-importer.php:236
+msgid "Sorry, there has been an error."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:164
+msgid "The file does not exist, please try again."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:207
+msgid "All done."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:207
+msgid "Have fun!"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:208
+msgid "Remember to update the passwords and roles of imported users."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:228
+#, php-format
+msgid ""
+"The export file could not be found at <code>%s</code>. It is likely that "
+"this was caused by a permissions problem."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:244
+#, php-format
+msgid ""
+"This WXR file (version %s) may not be supported by this version of the "
+"importer. Please consider updating."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:269
+#, php-format
+msgid ""
+"Failed to import author %s. Their posts will be attributed to the current "
+"user."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:295
+msgid "Assign Authors"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:296
+msgid ""
+"To make it easier for you to edit and save the imported content, you may "
+"want to reassign the author of the imported item to an existing user of this "
+"site. For example, you may want to import all the entries as <code>admin</"
+"code>s entries."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:298
+#, php-format
+msgid ""
+"If a new user is created by WordPress, a new password will be randomly "
+"generated and the new user&#8217;s role will be set as %s. Manually changing "
+"the new user&#8217;s details will be necessary."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:308
+msgid "Import Attachments"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:311
+msgid "Download and import file attachments"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:328
+msgid "Import author:"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:340
+msgid "or create new user with login name:"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:343
+msgid "as a new user:"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:351
+msgid "assign posts to an existing user:"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:353
+msgid "or assign posts to an existing user:"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:354
+msgid "- Select -"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:404
+#, php-format
+msgid ""
+"Failed to create new user for %s. Their posts will be attributed to the "
+"current user."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:497
+#, php-format
+msgid "Failed to import category %s"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:538
+#, php-format
+msgid "Failed to import post tag %s"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:586
+#: vendor/import/oneclick/wordpress-importer.php:725
+#, php-format
+msgid "Failed to import %s %s"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:612
+#, php-format
+msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:633
+#, php-format
+msgid "%s &#8220;%s&#8221; already exists."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:692
+#, php-format
+msgid "Failed to import %s &#8220;%s&#8221;"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:856
+msgid "Menu item skipped due to missing menu slug"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:863
+#, php-format
+msgid "Menu item skipped due to invalid menu slug: %s"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:925
+msgid "Fetching attachments is not enabled"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:938
+msgid "Invalid file type"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:982
+msgid "Remote server did not respond"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:988
+#, php-format
+msgid "Remote server returned error response %1$d %2$s"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:995
+msgid "Remote file is incorrect size"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:1000
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:1006
+#, php-format
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:1110
+msgid "Import WordPress"
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:1117
+#, php-format
+msgid ""
+"A new version of this importer is available. Please update to version %s to "
+"ensure compatibility with newer export files."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:1132
+msgid ""
+"Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import "
+"the posts, pages, comments, custom fields, categories, and tags into this "
+"site."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:1133
+msgid "Choose a WXR (.xml) file to upload, then click Upload file and import."
+msgstr ""
+
+#: vendor/import/oneclick/wordpress-importer.php:1208
+msgid ""
+"Import <strong>posts, pages, comments, custom fields, categories, and tags</"
+"strong> from a WordPress export file."
+msgstr ""
+
+#: vendor/import/oneclick/parsers.php:42 vendor/import/oneclick/parsers.php:76
+#: vendor/import/oneclick/parsers.php:84
+msgid "There was an error when reading this WXR file"
+msgstr ""
+
+#: vendor/import/oneclick/parsers.php:43
+msgid ""
+"Details are shown above. The importer will now try again with a different "
+"parser..."
+msgstr ""
+
+#: vendor/import/oneclick/parsers.php:88 vendor/import/oneclick/parsers.php:93
+#: vendor/import/oneclick/parsers.php:287
+#: vendor/import/oneclick/parsers.php:476
+msgid ""
+"This does not appear to be a WXR file, missing/invalid WXR version number"
+msgstr ""
+
+#: vendor/vafpress/framework/bootstrap.php:88
+#: vendor/vafpress/framework/classes/option.php:364
+#: vendor/vafpress/framework/classes/option.php:389
+msgid "Successful"
+msgstr ""
+
+#: vendor/vafpress/framework/bootstrap.php:99
+msgid "Unauthorized function"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:13
+msgid "Value needs to be Alphabet"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:14
+msgid "Value needs to be Alphanumeric"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:15
+msgid "Value needs to be Numeric"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:16
+msgid "Value needs to be Valid Email"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:17
+msgid "Value needs to be Valid URL"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:18
+msgid "Length needs to be less than {0} characters"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:19
+msgid "Length needs to be more than {0} characters"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:20
+msgid "Select no more than {0} items"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:21
+msgid "Select at least {0} items"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:22
+msgid "This is required"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:29
+msgid "Import succeed, option page will be refreshed.."
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:30
+msgid "Import failed"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:31
+msgid "Export succeed, copy the JSON formatted options"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:32
+msgid "Export failed"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:33
+msgid "Restoration succeed, option page will be refreshed.."
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:34
+msgid "Options identical to default"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:35
+msgid "Restoration failed"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:43
+msgid "Select option(s)"
+msgstr ""
+
+#: vendor/vafpress/framework/config/messages.php:45
+msgid "Select an Icon"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:47
+#: vendor/vafpress/framework/classes/option.php:48
+msgid "Vafpress Options"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:61
+msgid "Option Key is required"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:63
+msgid "Template Array/File is required"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:65
+msgid "Page Slug is required"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:167
+msgid ""
+"Development Mode is Active, options' values won't be saved into database."
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:306
+msgid "Can not be empty"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:331
+msgid "Invalid data"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:394
+msgid "Unverified Access"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:461
+msgid "Invalid template supplied"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:474
+msgid "Utility"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:480
+msgid "Oneclick Installation"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option.php:482
+msgid ""
+"Here, You Can Import Charity Data Easily In Accordance With Requirement & "
+"Install Theme in Just One Click"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/metabox.php:35
+msgid "[Development Mode] "
+msgstr ""
+
+#: vendor/vafpress/framework/classes/metabox.php:569
+#: vendor/vafpress/framework/classes/metabox/alchemy.php:493
+msgid "Remove"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/metabox.php:591
+#: vendor/vafpress/framework/classes/metabox/alchemy.php:515
+msgid "Add More"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/shortcodegenerator.php:260
+msgid "Insert"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/shortcodegenerator.php:261
+#: woocommerce/myaccount/my-orders.php:75
+msgid "Cancel"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option/control/set.php:359
+msgid "Saving successful"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option/control/set.php:370
+msgid "Saving failed"
+msgstr ""
+
+#: vendor/vafpress/framework/classes/option/control/set.php:376
+msgid "No changes made"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:4
+msgid "Oneclick data"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:5
+msgid "Oneclick data successfull import."
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:6
+msgid "Please "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:6
+msgid "Click here"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:6
+msgid "for visit site."
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:9
+msgid "System Settings"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:19
+msgid "Plugin Status"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:31
+msgid "OneClick Installation"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:33
+msgid "Loading..."
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:35
+#: vendor/vafpress/framework/views/option/restore.php:57
+msgid "OneClick Installation Start"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:36
+msgid "Import Log"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:40
+msgid "Import Start"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:41
+msgid "Author Mapping"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:42
+msgid "Categories Process"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:43
+msgid "Media Process"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:44
+msgid "Posts Process"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:45
+msgid "Posts Mapping"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:46
+msgid "Attachment Mapping"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:47
+msgid "Featured Images Mapping"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:48
+msgid "Import Finished"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:53
+msgid "Alert! Plugin Installation"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:54
+msgid "Please install all recommended plugin ?"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:58
+msgid "Are you want to import demo content ?"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:60
+msgid "OneClick Installation Log"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:72
+msgid "PHP Version"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:75
+msgid "PHP version is "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:78
+msgid "Currently you are using PHP version is "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:78
+msgid ". You need to update at least PHP version >= 5. "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:84
+msgid "WordPress Version"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:86
+msgid "WordPress version is "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:89
+msgid "Currently you are using WordPress version is "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:89
+msgid ". You need to update at least WordPress version >= 3.6 "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:96
+msgid "PHP Memory Limit"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:97
+msgid "PHP memory limit is "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:101
+msgid "PHP Post Max Size"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:102
+msgid "PHP post max size is "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:107
+msgid "PHP Execution Time"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:108
+msgid "PHP max execution time is "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:112
+msgid "PHP Max Input Vars"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:113
+msgid "PHP max input vars is "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:119
+msgid "PHP cURL"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:122
+msgid "PHP cURL enable "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:125
+msgid ""
+"PHP cURL disable which communicate with other servers will not work. Contact "
+"your hosting provider"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:130
+msgid "PHP fsockopen"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:133
+msgid "PHP fsockopen enable "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:136
+msgid ""
+"PHP fsockopen disable which communicate with other servers will not work. "
+"Contact your hosting provider"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:141
+msgid "WordPress Memory Limit"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:144
+#, php-format
+msgid "%s - We recommend setting memory to at least 96MB."
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:147
+msgid "WordPress memory limit is "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:151
+msgid "WordPress Max Upload Size"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/restore.php:152
+msgid "WordPress max upload size is "
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/set.php:69
+#: vendor/vafpress/framework/views/option/set.php:84
+msgid "Save Changes"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/set.php:70
+#: vendor/vafpress/framework/views/option/set.php:85
+msgid "Saving Now"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/impexp.php:4
+#: vendor/vafpress/framework/views/option/impexp.php:14
+msgid "Import"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/impexp.php:7
+msgid "Import Options"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/impexp.php:27
+#: vendor/vafpress/framework/views/option/impexp.php:37
+msgid "Export"
+msgstr ""
+
+#: vendor/vafpress/framework/views/option/impexp.php:30
+msgid "Export Options"
+msgstr ""
+
+#: vendor/vafpress/framework/views/control/upload.php:5
+msgid "Choose File"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:7
+msgid " "
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:11
+msgid "General"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:16
+msgid "Logos"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:22
+msgid "Typography"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:28
+msgid "Other option"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:36
+msgid "Layout"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:41
+msgid "Header"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:47
+msgid "Footer"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:53
+msgid "Home"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:59
+msgid "Gallery"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:65
+msgid "Causes"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:73
+msgid "Advance"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:78
+msgid "Causes Settings"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:84
+msgid "Social"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:90
+msgid "Other Option"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:98
+#: vendor/vafpress/admin/option/coming-soon.php:6
+msgid "Coming Soon"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:104
+msgid "Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:109
+msgid "Home Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:115
+msgid "Other Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/option.php:135
+#: vendor/vafpress/admin/option/option.php:136
+msgid "Theme Options"
+msgstr ""
+
+#: vendor/vafpress/admin/option/causes-settings.php:6
+msgid "Causes Single Layout"
+msgstr ""
+
+#: vendor/vafpress/admin/option/causes-settings.php:8
+msgid "Causes Settings To Select Desired Single Layout From Available Options"
+msgstr ""
+
+#: vendor/vafpress/admin/option/causes-settings.php:13
+msgid "Select Causes Single Layout"
+msgstr ""
+
+#: vendor/vafpress/admin/option/causes-settings.php:14
+msgid "Select Causes Single layout here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/causes-settings.php:18
+#: vendor/vafpress/admin/option/typography-settings.php:66
+msgid "Full Width"
+msgstr ""
+
+#: vendor/vafpress/admin/option/causes-settings.php:23
+msgid "With Right Sidebar"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:6
+msgid "SOCIAL PROFILES"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:8
+msgid "Manage All Your Social Profile Settings Easily"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:13
+msgid "Facebook"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:14
+msgid "Enter link for Facebook profile here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:20
+msgid "Google Plus"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:21
+msgid "Enter link for Google Plus profile here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:27
+msgid "Twitter"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:28
+msgid "Enter link for Twitter profile here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:34
+msgid "LinkedIn"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:35
+msgid "Enter link for LinkedIn profile here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:41
+msgid "Vimeo Square"
+msgstr ""
+
+#: vendor/vafpress/admin/option/social-media-settings.php:42
+msgid "Enter link for Vimeo Square profile here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-other-settings.php:6
+msgid "BreadCrumb Default Image"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-other-settings.php:8
+msgid "Upload BreadCrumb Default Image Here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-other-settings.php:13
+msgid "Insert BreadCrumb Default Image Here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-other-settings.php:14
+msgid "Uplaod Here BreadCrumb Default Image"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-other-settings.php:21
+#: vendor/vafpress/admin/option/advanced-other-settings.php:28
+msgid "Custom CSS"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-other-settings.php:23
+msgid ""
+"Add Custom CSS and JS in this section to make a few changes & see it live in "
+"the site"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-other-settings.php:29
+msgid "Write Custom CSS In This Section"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-other-settings.php:36
+msgid "Custom JS"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-other-settings.php:37
+msgid "Write Custom JS Here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/footer-settings.php:6
+msgid "Footer Layout"
+msgstr ""
+
+#: vendor/vafpress/admin/option/footer-settings.php:8
+msgid "Select Footer layout here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/footer-settings.php:13
+msgid "Choose Footer Layout Here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/footer-settings.php:14
+msgid "Select Here Footer Layout"
+msgstr ""
+
+#: vendor/vafpress/admin/option/footer-settings.php:18
+msgid "Footer 1"
+msgstr ""
+
+#: vendor/vafpress/admin/option/footer-settings.php:23
+msgid "Footer 2"
+msgstr ""
+
+#: vendor/vafpress/admin/option/footer-settings.php:28
+msgid "Footer 3"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:8
+msgid "Change Coming Soon Page Settings From Here Accordingly"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:13
+#: vendor/vafpress/admin/option/logos-settings.php:20
+msgid "Upload Logo"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:14
+msgid "Upload Any Logo for Your Site"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:19
+msgid "Background Image"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:20
+msgid "Insert Page Background Image from Here "
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:25
+#: vendor/vafpress/admin/option/home-layout.php:142
+msgid "Select Date"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:26
+msgid "Choose to set a particular date"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:32
+msgid "Newsletter Shortcode"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:33
+msgid "This section is to include Newsletter Shortcode"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:38
+msgid "Coming Soon Mode"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:39
+msgid "Set Coming Soon Mode In On or Off mode"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:44
+msgid "Coming Soon Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:45
+msgid "Select page for coming soon"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:62
+msgid "Copyright Text"
+msgstr ""
+
+#: vendor/vafpress/admin/option/coming-soon.php:63
+msgid "Enter Copyright Text for Footer"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:7
+msgid "404 Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:9
+msgid "404 Page Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:14
+#: vendor/vafpress/admin/option/other-static-content-settings.php:15
+msgid "404 Page Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:20
+#: vendor/vafpress/admin/option/other-static-content-settings.php:21
+msgid "404 Page Description"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:29
+msgid "Our Story Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:31
+msgid "Our Story Page Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:36
+#: vendor/vafpress/admin/option/other-static-content-settings.php:37
+msgid "Our Story Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:42
+#: vendor/vafpress/admin/option/other-static-content-settings.php:43
+msgid "Work section Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:48
+#: vendor/vafpress/admin/option/other-static-content-settings.php:49
+msgid "Our Team section Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:56
+msgid "FAQ Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:58
+msgid "FAQ Page Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:63
+#: vendor/vafpress/admin/option/other-static-content-settings.php:64
+msgid "FAQ Page Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:69
+#: vendor/vafpress/admin/option/other-static-content-settings.php:70
+msgid "FAQ Section One Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:75
+#: vendor/vafpress/admin/option/other-static-content-settings.php:76
+msgid "FAQ Section Two Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:82
+msgid "Become Volunteer Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:84
+msgid "Become Volunteer Page Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:89
+#: vendor/vafpress/admin/option/other-static-content-settings.php:90
+msgid "Become Volunteer Page Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:95
+#: vendor/vafpress/admin/option/other-static-content-settings.php:96
+msgid "Become Volunteer Process Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:104
+msgid "Causes Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:106
+msgid "Causes Page Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:111
+#: vendor/vafpress/admin/option/other-static-content-settings.php:112
+msgid "Causes Page Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:119
+msgid "Causes Details Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:121
+msgid "Causes Details Page Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:126
+#: vendor/vafpress/admin/option/other-static-content-settings.php:127
+msgid "Donation Steps Section Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:132
+#: vendor/vafpress/admin/option/other-static-content-settings.php:133
+msgid "Related Section Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:141
+msgid "Our Mission Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:143
+msgid "Our Mission Page Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:148
+#: vendor/vafpress/admin/option/other-static-content-settings.php:149
+msgid "See Services Section Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:154
+#: vendor/vafpress/admin/option/other-static-content-settings.php:155
+msgid "Help Section Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:162
+msgid "Portfolio Details Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:164
+msgid "Portfolio Details Page Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:169
+#: vendor/vafpress/admin/option/other-static-content-settings.php:170
+msgid "Portfolio Related Section Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:177
+msgid "Thank You Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:179
+msgid "Thank You Page Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:184
+#: vendor/vafpress/admin/option/other-static-content-settings.php:185
+msgid "Donation Message"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:193
+msgid "Donation Form"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:195
+msgid "Donation Form Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/other-static-content-settings.php:200
+#: vendor/vafpress/admin/option/other-static-content-settings.php:201
+msgid "Donation Form Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-causes-settings.php:6
+msgid "CAUSES DONATE NOW SETTINGS"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-causes-settings.php:8
+msgid "All Options To Manage Causes Settings Are Available Here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-causes-settings.php:13
+msgid "Global Donation Causes"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-causes-settings.php:14
+msgid "Select Global Donation Causes Here "
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-causes-settings.php:27
+msgid "Urgent Causes Donation"
+msgstr ""
+
+#: vendor/vafpress/admin/option/advanced-causes-settings.php:28
+msgid "Pick Causes Here For Urgent Donation"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:7
+msgid "Home Page One"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:9
+msgid "Home Page One Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:14
+#: vendor/vafpress/admin/option/home-static-content-settings.php:15
+#: vendor/vafpress/admin/option/home-static-content-settings.php:103
+#: vendor/vafpress/admin/option/home-static-content-settings.php:104
+#: vendor/vafpress/admin/option/home-static-content-settings.php:193
+#: vendor/vafpress/admin/option/home-static-content-settings.php:194
+#: vendor/vafpress/admin/option/home-static-content-settings.php:227
+#: vendor/vafpress/admin/option/home-static-content-settings.php:228
+msgid "Causes Main Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:20
+#: vendor/vafpress/admin/option/home-static-content-settings.php:21
+#: vendor/vafpress/admin/option/home-static-content-settings.php:61
+#: vendor/vafpress/admin/option/home-static-content-settings.php:62
+#: vendor/vafpress/admin/option/home-static-content-settings.php:199
+#: vendor/vafpress/admin/option/home-static-content-settings.php:200
+#: vendor/vafpress/admin/option/home-static-content-settings.php:233
+#: vendor/vafpress/admin/option/home-static-content-settings.php:234
+msgid "How can Help Main Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:26
+#: vendor/vafpress/admin/option/home-static-content-settings.php:27
+#: vendor/vafpress/admin/option/home-static-content-settings.php:79
+#: vendor/vafpress/admin/option/home-static-content-settings.php:80
+#: vendor/vafpress/admin/option/home-static-content-settings.php:139
+#: vendor/vafpress/admin/option/home-static-content-settings.php:140
+#: vendor/vafpress/admin/option/home-static-content-settings.php:205
+#: vendor/vafpress/admin/option/home-static-content-settings.php:206
+#: vendor/vafpress/admin/option/home-static-content-settings.php:239
+#: vendor/vafpress/admin/option/home-static-content-settings.php:240
+msgid "Latest News Main Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:32
+#: vendor/vafpress/admin/option/home-static-content-settings.php:33
+#: vendor/vafpress/admin/option/home-static-content-settings.php:85
+#: vendor/vafpress/admin/option/home-static-content-settings.php:86
+#: vendor/vafpress/admin/option/home-static-content-settings.php:151
+#: vendor/vafpress/admin/option/home-static-content-settings.php:152
+#: vendor/vafpress/admin/option/home-static-content-settings.php:211
+#: vendor/vafpress/admin/option/home-static-content-settings.php:212
+#: vendor/vafpress/admin/option/home-static-content-settings.php:245
+#: vendor/vafpress/admin/option/home-static-content-settings.php:246
+msgid "Testimonial Main Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:42
+msgid "Home Page Two"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:44
+msgid "Home Page Two Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:49
+#: vendor/vafpress/admin/option/home-static-content-settings.php:50
+msgid "Urgent Causes Main Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:55
+#: vendor/vafpress/admin/option/home-static-content-settings.php:56
+msgid "All Causes Main Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:67
+#: vendor/vafpress/admin/option/home-static-content-settings.php:68
+#: vendor/vafpress/admin/option/home-static-content-settings.php:121
+#: vendor/vafpress/admin/option/home-static-content-settings.php:122
+msgid "How Can Help Video Text"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:73
+#: vendor/vafpress/admin/option/home-static-content-settings.php:74
+#: vendor/vafpress/admin/option/home-static-content-settings.php:145
+#: vendor/vafpress/admin/option/home-static-content-settings.php:146
+msgid "Get Involved Text"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:96
+msgid "Home Page Three"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:98
+msgid "Home Page Three Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:109
+#: vendor/vafpress/admin/option/home-static-content-settings.php:110
+msgid "How Can Help One Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:115
+#: vendor/vafpress/admin/option/home-static-content-settings.php:116
+msgid "How Can Help One Sub Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:127
+#: vendor/vafpress/admin/option/home-static-content-settings.php:128
+msgid "How Can Help Second Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:133
+#: vendor/vafpress/admin/option/home-static-content-settings.php:134
+msgid "How Can Help Second Sub Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:159
+msgid "Shop Landing Page"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:161
+msgid "Shop Landing Page Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:166
+#: vendor/vafpress/admin/option/home-static-content-settings.php:167
+msgid "See Our Product Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:172
+#: vendor/vafpress/admin/option/home-static-content-settings.php:173
+msgid "Latest News Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:178
+#: vendor/vafpress/admin/option/home-static-content-settings.php:179
+msgid "Testimonial Title"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:186
+msgid "Home Page Four"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:188
+msgid "Home Page Four Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:220
+msgid "Home Five Four"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:222
+msgid "Home Page Five Static Content"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-static-content-settings.php:251
+#: vendor/vafpress/admin/option/home-static-content-settings.php:252
+msgid "Volunteer Description"
+msgstr ""
+
+#: vendor/vafpress/admin/option/logos-settings.php:6
+msgid "Logo Settings"
+msgstr ""
+
+#: vendor/vafpress/admin/option/logos-settings.php:8
+msgid "General Logos Settings To Regulate Theme Accordingly"
+msgstr ""
+
+#: vendor/vafpress/admin/option/logos-settings.php:13
+msgid "Upload Favicon"
+msgstr ""
+
+#: vendor/vafpress/admin/option/logos-settings.php:14
+msgid "Upload A Favicon To Your Site"
+msgstr ""
+
+#: vendor/vafpress/admin/option/logos-settings.php:21
+msgid "Include a logo that suits your website"
+msgstr ""
+
+#: vendor/vafpress/admin/option/logos-settings.php:27
+msgid "Add Header Logo"
+msgstr ""
+
+#: vendor/vafpress/admin/option/logos-settings.php:28
+msgid "Upload logos for 2nd and 3rd Header"
+msgstr ""
+
+#: vendor/vafpress/admin/option/gallery-settings.php:6
+msgid "Gallery Layout"
+msgstr ""
+
+#: vendor/vafpress/admin/option/gallery-settings.php:8
+msgid "Gallery Layout Settings With all Possible Options To Perform Changes"
+msgstr ""
+
+#: vendor/vafpress/admin/option/gallery-settings.php:13
+msgid "Choose Any Gallery Layout Here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/gallery-settings.php:14
+msgid "Select gallery layout here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/gallery-settings.php:18
+msgid "Two Column"
+msgstr ""
+
+#: vendor/vafpress/admin/option/gallery-settings.php:23
+msgid "Three Column"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:6
+msgid "Typography Settings"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:8
+msgid "Maintain Typography Settings To Run Theme As Per Need"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:13
+msgid "Select Theme Color"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:14
+msgid "Choose the desired color for theme"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:21
+msgid "Select Theme Fonts"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:26
+msgid "'Montserrat',sans-serif"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:30
+msgid "'Open Sans', sans-serif"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:34
+msgid "'Libre Baskerville', sans-serif"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:38
+msgid "'Lato', sans-serif"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:45
+msgid "Sticky Header"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:50
+msgid "Normal"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:54
+msgid "Intelligent"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:61
+msgid "Page Layout"
+msgstr ""
+
+#: vendor/vafpress/admin/option/typography-settings.php:70
+msgid "Boxed"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:6
+msgid "Other Settings"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:8
+msgid "General Other Settings Can Be Maintained Easily"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:15
+msgid "Become Volunteer Text"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:16
+msgid "Enter Text For Become Volunteer Button"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:21
+msgid "Become Volunteer Link"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:22
+msgid "Provide Become Volunteer Button Link In This Section"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:27
+msgid "Welcome Tag Line"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:28
+msgid "Add Welcome Tag Line Here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:33
+msgid "Contact Mail ID"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:34
+msgid "Mention Contact Mail ID"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:45
+#: vendor/vafpress/admin/option/general-other-settings.php:47
+msgid "Footer Settings"
+msgstr ""
+
+#: vendor/vafpress/admin/option/general-other-settings.php:52
+msgid "Copy Right Text"
+msgstr ""
+
+#: vendor/vafpress/admin/option/settings-header.php:6
+msgid "Header Layout"
+msgstr ""
+
+#: vendor/vafpress/admin/option/settings-header.php:8
+msgid "Select Header layout here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/settings-header.php:13
+msgid "Pick Desired Header Layout From List"
+msgstr ""
+
+#: vendor/vafpress/admin/option/settings-header.php:14
+msgid "Select Here Header Layout"
+msgstr ""
+
+#: vendor/vafpress/admin/option/settings-header.php:18
+msgid "Header 1"
+msgstr ""
+
+#: vendor/vafpress/admin/option/settings-header.php:24
+msgid "Header 2"
+msgstr ""
+
+#: vendor/vafpress/admin/option/settings-header.php:29
+msgid "Header 3"
+msgstr ""
+
+#: vendor/vafpress/admin/option/settings-header.php:34
+msgid "Shop Header"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:6
+msgid "CAUSES LAYOUT"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:8
+msgid "Manage Causes Layout Settings Here According To Choice"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:13
+msgid "Single Causes Mode"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:14
+msgid "Set single causes mode to on or off"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:20
+msgid "MULTIPLE CAUSES HOME LAYOUT"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:22
+#: vendor/vafpress/admin/option/home-layout.php:119
+msgid "Manage Home Page Layout Settings Here According To Choice"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:27
+#: vendor/vafpress/admin/option/home-layout.php:150
+msgid "Select Home Page 1"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:28
+msgid "Select page for home 1"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:41
+#: vendor/vafpress/admin/option/home-layout.php:164
+msgid "Select Home Page 2"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:42
+msgid "Select page for home 2"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:55
+msgid "Select Home Page 3"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:56
+msgid "Select page for home 3"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:69
+msgid "Select Home Shop Landing"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:70
+msgid "Select page for home Shop Landing"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:83
+#: vendor/vafpress/admin/option/home-layout.php:84
+#: vendor/vafpress/admin/option/home-layout.php:178
+msgid "Select Homepage Layout Here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:88
+msgid "Blog Layout"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:93
+#: vendor/vafpress/admin/option/home-layout.php:183
+msgid "Home 1"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:98
+#: vendor/vafpress/admin/option/home-layout.php:188
+msgid "Home 2"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:103
+msgid "Home 3"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:108
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:6
+msgid "Shop Landing"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:117
+msgid "SINGLE CAUSES HOME LAYOUT"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:128
+msgid "Single Causes Donation"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:129
+msgid "Choose single causes for donation"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:143
+msgid "Choose to set target date here"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:151
+#: vendor/vafpress/admin/option/home-layout.php:165
+msgid "Select Single Causes For Home 1"
+msgstr ""
+
+#: vendor/vafpress/admin/option/home-layout.php:179
+msgid "Select Causes Homepage Layout Here"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/shortcode.php:24
+#: vendor/vafpress/admin/shortcode/shortcode.php:25
+msgid "Charity Shortcode"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:9
+msgid "BlockQuote"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:15
+msgid "BlockQuote Text"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:22
+msgid "Blog Row"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:27
+msgid "Blog Two Column"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:33
+msgid "Blog Two Column Heading"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:38
+msgid "Blog Two Column Text"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:44
+msgid "Portfolio Summary Strong Content"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:50
+msgid "Portfolio Strong Text"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:57
+msgid "List Style Yellow Icon"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:63
+msgid ""
+"Yello Icon List (For List Item (li) Please Enter [list-item]List Content[/"
+"list-item])"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:70
+msgid "Default Button Style"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:76
+msgid "Enter Here Button text"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:81
+msgid "Enter Here Button Link"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:88
+msgid "Contact Information"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:94
+msgid "Enter Here Address First Line"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:99
+msgid "Enter Here Address Second Line"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:104
+msgid "Enter Here Email Id"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:109
+msgid "Enter Here TelePhone No"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:114
+msgid "Enter Here TelePhone No For Link"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:119
+msgid "Enter Here Fax No"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:126
+msgid "Become Volunteer"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:132
+msgid "Enter Here Step Number"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:137
+msgid "Enter Here Headding Title"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:142
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:156
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:194
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:236
+msgid "Enter Here Text"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:150
+msgid "Message"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:165
+msgid "List style"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:171
+msgid ""
+"List Style Type (For List Item (li) Please Enter [list_style]List Content[/"
+"list_style])"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:203
+msgid "Notification"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:209
+msgid "Select Notification"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:245
+msgid "Slider Range"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:251
+msgid "Select Slider Type"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:274
+msgid "Slider"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:303
+msgid "Table"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:309
+msgid "Select Table Type"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:338
+msgid "Table Row"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:344
+msgid ""
+"Charity Table Text(For Table Header Put [table-heading]Table Heading[/table-"
+"heading] And For Table Data Put [table-data]Table Data[/table-data])"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:353
+msgid "Join Today Button"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:366
+msgid "Summary"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:372
+msgid "Donation Summary Text"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:383
+msgid "Bullet Content"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:392
+msgid "Donation Bullet Content"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:399
+msgid "Global Donation Button"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:405
+msgid "Causes Donation Easy Step"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:411
+msgid "Select Step Number"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:430
+msgid "Donation Title Text"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:435
+msgid "Donation Content Text"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:450
+msgid "Charity Toggle"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:456
+msgid "Charity Toggle Heading"
+msgstr ""
+
+#: vendor/vafpress/admin/shortcode/general_shortcode.php:461
+msgid "Charity Toggle Text"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/home-slider.php:6
+msgid "Home Slider Shortcode"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/home-slider.php:12
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:12
+msgid "Short Code"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/home-slider.php:13
+msgid "Add Short Code For Revolution Slider"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-event.php:12
+msgid "Charity Event"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-event.php:18
+msgid "Video image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-event.php:19
+msgid "Choose the image for the video to upload"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-event.php:24
+msgid "YouTube URL"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-event.php:25
+msgid "Enter the URL of the YouTube video to upload"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-event.php:30
+msgid "Vimeo URL"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-event.php:31
+msgid "Enter the URL of the Vimeo video to upload"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/gallery-post.php:6
+msgid "Gallery Post Format Fields"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/gallery-post.php:13
+msgid "Gallery Images"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/gallery-post.php:18
+#: vendor/vafpress/admin/metabox/our-story-image.php:18
+#: vendor/vafpress/admin/metabox/charity-gallery.php:33
+#: vendor/vafpress/admin/metabox/charity-gallery.php:52
+#: vendor/vafpress/admin/metabox/charity-our-story.php:18
+#: vendor/vafpress/admin/metabox/video-post.php:12
+msgid "Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/gallery-post.php:19
+msgid "Upload Here Gallery Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/general-question.php:6
+msgid "General Question Position"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/general-question.php:12
+msgid "Choose the position of the question as left or right"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/general-question.php:16
+msgid "Left"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/general-question.php:20
+msgid "Right"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-testimonial-one.php:6
+msgid "Home One Testimonial background"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-testimonial-one.php:12
+msgid "Testimonial Background"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-testimonial-one.php:13
+msgid "Choose image for Testimonial background"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/quote-post.php:6
+msgid "Quote Post Format Fields"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/quote-post.php:12
+msgid "Enter Here Blockquote"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/quote-post.php:13
+msgid "Enter Here Blockquote For Quote Format"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/quote-post.php:18
+msgid "Enter Here Blockquote Author"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/quote-post.php:19
+msgid "Enter Here Blockquote Author For Quote Format"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/voulunteer.php:6
+msgid "Volunteer For Home One"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/voulunteer.php:12
+msgid "Volunteer Title"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/voulunteer.php:13
+msgid "Enter Title For Volunteer"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/voulunteer.php:18
+msgid "Volunteer Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/voulunteer.php:19
+msgid "Upload Volunteer Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/voulunteer.php:24
+msgid "Volunteer Content"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/voulunteer.php:25
+msgid "Enter Volunteer Description"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/donation-list.php:21
+msgid "causes-donation"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/donation-list.php:22
+msgid "causes-donations"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/donation-list.php:43
+msgid "No donation found, dude."
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/donation-list.php:71
+#: woocommerce/single-product-reviews.php:67
+#: woocommerce/order/order-details.php:177
+msgid "Email"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/donation-list.php:72
+msgid "Transaction ID"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/donation-list.php:73
+msgid "Amount "
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/donation-list.php:74
+msgid "Payment Status"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/donation-list.php:75
+msgid "Time"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/donation-list.php:76
+msgid "View Details"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/donation-list.php:191
+msgid "Transaction Detail"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/our-story-image.php:6
+#: vendor/vafpress/admin/metabox/charity-our-story.php:6
+msgid "Our story Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/our-story-image.php:13
+#: vendor/vafpress/admin/metabox/charity-our-story.php:13
+msgid "Our Story Images"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/our-story-image.php:19
+msgid "Upload Here Our Story Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/audio-post.php:6
+msgid "Audio Post Format Fields"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/audio-post.php:12
+msgid "Upload  *.ogg file"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/audio-post.php:13
+msgid "Upload  *.ogg file for audio post format"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/audio-post.php:18
+msgid "Upload  *.mp3 file"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/audio-post.php:19
+msgid "Upload  *.ogg file for audio post format "
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/audio-post.php:24
+msgid "Upload  *.wav file"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/audio-post.php:25
+msgid "Upload  *.wav file for audio post format"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/breadcrumb.php:11
+msgid "Breadcrumb settings"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/breadcrumb.php:17
+#: vendor/vafpress/admin/metabox/product-breadcrumb.php:17
+msgid "Breadcrumb image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/breadcrumb.php:18
+msgid "Upload breadcrumb images(Size 1348x899)"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/product-shop-banner.php:6
+msgid "Product Shop Banner"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/product-shop-banner.php:12
+msgid "Banner Title"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/product-shop-banner.php:13
+msgid "Enter Here Banner Title"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/product-shop-banner.php:18
+msgid "Banner Sub Title"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/product-shop-banner.php:19
+msgid "Enter Here Banner Sub Title"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/product-shop-banner.php:24
+msgid "Banner Description"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/product-shop-banner.php:25
+msgid "Enter Here Banner Description"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/testimonial.php:6
+msgid "Testimonial"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/testimonial.php:12
+msgid "Company name"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/testimonial.php:13
+msgid "Enter the name of the new company and designation"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/testimonial.php:18
+msgid "Site Url"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/testimonial.php:19
+msgid "Enter the site URL here"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-our-story-text.php:6
+msgid "Our story Summary Text"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-our-story-text.php:12
+msgid "Our Story Summary Text"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-our-story-text.php:13
+msgid "Enter text for our story summary here"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-our-story-text.php:18
+msgid "Our Story Text"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-our-story-text.php:19
+msgid "Enter text for Our Story"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:13
+msgid "Enter short code for revolution slider here"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:18
+msgid "Left Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:19
+msgid "Uplode Image For Left Side"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:24
+msgid "Left Image text"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:25
+msgid "Enter text for Left Image here"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:30
+msgid "Left Image Text 2"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:31
+msgid "Enter second text for Left Image here"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:38
+msgid "Right Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:39
+msgid "Uplode Image For Right Side"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:44
+msgid "Right Image text"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:45
+msgid "Enter text for Right Image here"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:50
+msgid "Right Image Second"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:51
+msgid "Uplode Image For Right Side In text "
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:58
+msgid "Upcomming Product Title"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:59
+msgid "Enter text for upcoming product title"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:64
+msgid "Upcomming Product Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:65
+msgid "Upload image for right side for upcoming product"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:70
+msgid "Upcomming Product Text"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/shop-landing-data.php:71
+msgid "Enter text for upcoming product"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/product-breadcrumb.php:11
+msgid "Breadcrumb settings For Product Single"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/product-breadcrumb.php:18
+msgid "Upload Breadcrumb Image Size 1348X899"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/contact-page.php:6
+#: vendor/vafpress/admin/metabox/contact-page.php:18
+msgid "Contact Form"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/contact-page.php:12
+msgid "Contact Form Title"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/contact-page.php:13
+#: vendor/vafpress/admin/metabox/help-home1.php:25
+msgid "Add Title"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/contact-page.php:19
+msgid "Send Your Query"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-shortcode-text.php:6
+msgid "Causes Easy Step Shortcode"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-shortcode-text.php:12
+msgid "Causes Easy Step Short Code"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-shortcode-text.php:13
+msgid "Enter short code for causes easy steps here"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:6
+msgid "Metabox Type Settings"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:12
+msgid "Choose type: Select image/gallery or videos to upload"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:16
+msgid "Image/Gallery"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:20
+#: vendor/vafpress/admin/metabox/help-home1.php:45
+msgid "Video"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:28
+msgid "Gallery/Images Settings"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:34
+msgid "Upload image gallery here"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:47
+msgid "Video Settings"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:53
+msgid "Upload image for video here"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:58
+#: vendor/vafpress/admin/metabox/video-post.php:18
+msgid "YouTube video url"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:59
+msgid "eg. https://youtube.com/watch?v=jN5-3QToN1g"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:64
+#: vendor/vafpress/admin/metabox/video-post.php:24
+msgid "Viemo video url"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-gallery.php:65
+#: vendor/vafpress/admin/metabox/video-post.php:25
+msgid "eg.  https://vimeo.com/17147778  "
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-sub-page.php:6
+msgid "Select sub page"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-sub-page.php:12
+msgid "Select Page"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-sub-page.php:13
+msgid "Choose the WP pages data source in the field"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/user-get-involve.php:6
+msgid "Get Involved User Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/user-get-involve.php:12
+msgid "User Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/user-get-involve.php:13
+msgid "Upload User Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/charity-our-story.php:19
+msgid "Upload image for Our Story here"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:6
+msgid "How Can Help"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:13
+msgid "Help Icon"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:18
+msgid "Fontawesome Icon"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:19
+msgid "Upload Icon"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:24
+msgid "Help Title"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:30
+msgid "Help Content"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:31
+msgid "Enter Description About Help"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:38
+msgid "Video Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:39
+msgid "Upload Video Image"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:46
+msgid "Add Video iFrame"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:51
+msgid "Description for home 3"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/help-home1.php:52
+msgid "Write Short Description About Home2"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/video-post.php:6
+msgid "Video Post Format Fields"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/video-post.php:13
+msgid "Upload Here Image For Video"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/video-post.php:19
+msgid ""
+"&lt;iframe src=\"https://www.youtube.com/embed/G8o8u7OtuZY\"&gt;&lt;/"
+"iframe&gt;"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/video-post.php:19
+msgid "eg. "
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/video-post.php:30
+msgid "Enter only Youtube video play url OR Vimeo video play url"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-donation.php:7
+msgid "Causes donation settings"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-donation.php:13
+msgid "Target amount ($)"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-donation.php:14
+msgid "Target amount for donation"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-donation.php:21
+msgid "Current achivment ($)"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-donation.php:22
+msgid "Current achieved amount of donation"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-donation.php:29
+msgid "Donation status"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-donation.php:30
+msgid "Toggle donation status"
+msgstr ""
+
+#: vendor/vafpress/admin/metabox/causes-donation.php:36
+msgid "Doantion List via \"Easy Pay\""
+msgstr ""
+
+#: woocommerce/single-product.php:39 woocommerce/archive-product.php:47
+msgid "Shop our products &amp; <strong>Help us.</strong>"
+msgstr ""
+
+#: woocommerce/single-product.php:91
+msgid "add to cart"
+msgstr ""
+
+#: woocommerce/product-searchform.php:2
+msgid "Search for:"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:26
+msgid "Reviews"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:47
+msgid "There are no reviews yet."
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:60
+msgid "Add a review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:60
+msgid "Be the first to review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:65
+msgid "Name"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:70
+msgid "Submit"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:76
+msgid "Your Rating"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:77
+msgid "Rate&hellip;"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:78
+msgid "Perfect"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:79
+msgid "Good"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:80
+msgid "Average"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:81
+msgid "Not that bad"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:82
+msgid "Very Poor"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:86
+msgid "Your Review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:95
+msgid ""
+"Only logged in customers who have purchased this product may leave a review."
+msgstr ""
+
+#: woocommerce/archive-product.php:44
+msgid "Search"
+msgstr ""
+
+#: woocommerce/global/form-login.php:26
+#: woocommerce/myaccount/form-lost-password.php:24
+msgid "Username or email"
+msgstr ""
+
+#: woocommerce/global/form-login.php:30
+#: woocommerce/myaccount/form-login.php:39
+#: woocommerce/myaccount/form-login.php:89
+msgid "Password"
+msgstr ""
+
+#: woocommerce/global/form-login.php:39
+#: woocommerce/myaccount/form-login.php:28
+#: woocommerce/myaccount/form-login.php:47
+msgid "Login"
+msgstr ""
+
+#: woocommerce/global/form-login.php:42
+#: woocommerce/myaccount/form-login.php:49
+msgid "Remember me"
+msgstr ""
+
+#: woocommerce/global/form-login.php:46
+#: woocommerce/myaccount/form-login.php:53
+msgid "Lost your password?"
+msgstr ""
+
+#: woocommerce/emails/customer-processing-order.php:18
+#: woocommerce/emails/plain/customer-processing-order.php:16
+msgid ""
+"Your order has been received and is now being processed. Your order details "
+"are shown below for your reference:"
+msgstr ""
+
+#: woocommerce/emails/customer-processing-order.php:22
+#: woocommerce/emails/customer-invoice.php:26
+#: woocommerce/emails/customer-note.php:26
+#: woocommerce/emails/admin-new-order.php:22
+#: woocommerce/emails/customer-completed-order.php:22
+#, php-format
+msgid "Order #%s"
+msgstr ""
+
+#: woocommerce/emails/customer-processing-order.php:27
+#: woocommerce/emails/admin-cancelled-order.php:22
+#: woocommerce/emails/customer-invoice.php:31
+#: woocommerce/emails/customer-note.php:31
+#: woocommerce/emails/admin-new-order.php:27
+#: woocommerce/emails/customer-completed-order.php:27
+#: woocommerce/cart/cart.php:26 woocommerce/checkout/form-pay.php:20
+#: woocommerce/checkout/review-order.php:20
+#: woocommerce/order/order-details.php:21
+msgid "Product"
+msgstr ""
+
+#: woocommerce/emails/customer-processing-order.php:28
+#: woocommerce/emails/admin-cancelled-order.php:23
+#: woocommerce/emails/customer-invoice.php:32
+#: woocommerce/emails/customer-note.php:32
+#: woocommerce/emails/admin-new-order.php:28
+#: woocommerce/emails/customer-completed-order.php:28
+#: woocommerce/cart/cart.php:28 woocommerce/checkout/review-order.php:22
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/emails/customer-processing-order.php:29
+#: woocommerce/emails/admin-cancelled-order.php:24
+#: woocommerce/emails/customer-invoice.php:33
+#: woocommerce/emails/customer-note.php:33
+#: woocommerce/emails/admin-new-order.php:29
+#: woocommerce/emails/customer-completed-order.php:29
+#: woocommerce/cart/cart.php:27 woocommerce/checkout/review-order.php:21
+msgid "Price"
+msgstr ""
+
+#: woocommerce/emails/customer-new-account.php:18
+#: woocommerce/emails/plain/customer-new-account.php:16
+#, php-format
+msgid ""
+"Thanks for creating an account on %s. Your username is <strong>%s</strong>."
+msgstr ""
+
+#: woocommerce/emails/customer-new-account.php:22
+#, php-format
+msgid "Your password has been automatically generated: <strong>%s</strong>"
+msgstr ""
+
+#: woocommerce/emails/customer-new-account.php:26
+#: woocommerce/emails/plain/customer-new-account.php:21
+#, php-format
+msgid ""
+"You can access your account area to view your orders and change your "
+"password here: %s."
+msgstr ""
+
+#: woocommerce/emails/admin-cancelled-order.php:13
+#: woocommerce/emails/plain/admin-cancelled-order.php:15
+#, php-format
+msgid "The order #%d from %s has been cancelled. The order was as follows:"
+msgstr ""
+
+#: woocommerce/emails/admin-cancelled-order.php:17
+#, php-format
+msgid "Order: %s"
+msgstr ""
+
+#: woocommerce/emails/email-order-items.php:25
+msgid "Product Image"
+msgstr ""
+
+#: woocommerce/emails/email-order-items.php:54
+#: woocommerce/emails/plain/email-order-items.php:49
+#, php-format
+msgid "Download %d"
+msgstr ""
+
+#: woocommerce/emails/email-order-items.php:56
+#: woocommerce/emails/plain/email-order-items.php:51
+msgid "Download"
+msgstr ""
+
+#: woocommerce/emails/customer-invoice.php:20
+#: woocommerce/emails/plain/customer-invoice.php:17
+#, php-format
+msgid ""
+"An order has been created for you on %s. To pay for this order please use "
+"the following link: %s"
+msgstr ""
+
+#: woocommerce/emails/customer-invoice.php:20
+msgid "pay"
+msgstr ""
+
+#: woocommerce/emails/customer-note.php:18
+#: woocommerce/emails/plain/customer-note.php:16
+msgid "Hello, a note has just been added to your order:"
+msgstr ""
+
+#: woocommerce/emails/customer-note.php:22
+#: woocommerce/emails/plain/customer-note.php:24
+msgid "For your reference, your order details are shown below."
+msgstr ""
+
+#: woocommerce/emails/admin-new-order.php:18
+#, php-format
+msgid "You have received an order from %s. The order is as follows:"
+msgstr ""
+
+#: woocommerce/emails/email-addresses.php:20
+#: woocommerce/emails/plain/email-addresses.php:14
+msgid "Billing address"
+msgstr ""
+
+#: woocommerce/emails/email-addresses.php:30
+#: woocommerce/emails/plain/email-addresses.php:18
+msgid "Shipping address"
+msgstr ""
+
+#: woocommerce/emails/customer-reset-password.php:18
+#: woocommerce/emails/plain/customer-reset-password.php:16
+msgid "Someone requested that the password be reset for the following account:"
+msgstr ""
+
+#: woocommerce/emails/customer-reset-password.php:19
+#: woocommerce/emails/plain/customer-reset-password.php:18
+#, php-format
+msgid "Username: %s"
+msgstr ""
+
+#: woocommerce/emails/customer-reset-password.php:20
+#: woocommerce/emails/plain/customer-reset-password.php:19
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+
+#: woocommerce/emails/customer-reset-password.php:21
+#: woocommerce/emails/plain/customer-reset-password.php:20
+msgid "To reset your password, visit the following address:"
+msgstr ""
+
+#: woocommerce/emails/customer-reset-password.php:24
+msgid "Click here to reset your password"
+msgstr ""
+
+#: woocommerce/emails/customer-completed-order.php:18
+#: woocommerce/emails/plain/customer-completed-order.php:16
+#, php-format
+msgid ""
+"Hi there. Your recent order on %s has been completed. Your order details are "
+"shown below for your reference:"
+msgstr ""
+
+#: woocommerce/emails/plain/customer-processing-order.php:22
+#: woocommerce/emails/plain/admin-cancelled-order.php:21
+#: woocommerce/emails/plain/customer-invoice.php:23
+#: woocommerce/emails/plain/customer-note.php:30
+#: woocommerce/emails/plain/admin-new-order.php:22
+#: woocommerce/emails/plain/customer-completed-order.php:22
+#, php-format
+msgid "Order number: %s"
+msgstr ""
+
+#: woocommerce/emails/plain/customer-processing-order.php:23
+#: woocommerce/emails/plain/admin-cancelled-order.php:22
+#: woocommerce/emails/plain/customer-invoice.php:24
+#: woocommerce/emails/plain/customer-note.php:31
+#: woocommerce/emails/plain/admin-new-order.php:23
+#: woocommerce/emails/plain/customer-completed-order.php:23
+msgid "jS F Y"
+msgstr ""
+
+#: woocommerce/emails/plain/customer-new-account.php:19
+#, php-format
+msgid "Your password is <strong>%s</strong>."
+msgstr ""
+
+#: woocommerce/emails/plain/admin-cancelled-order.php:36
+#: woocommerce/emails/plain/admin-new-order.php:37
+#, php-format
+msgid "View order: %s"
+msgstr ""
+
+#: woocommerce/emails/plain/email-order-items.php:35
+#, php-format
+msgid "Quantity: %s"
+msgstr ""
+
+#: woocommerce/emails/plain/email-order-items.php:38
+#, php-format
+msgid "Cost: %s"
+msgstr ""
+
+#: woocommerce/emails/plain/admin-new-order.php:16
+#, php-format
+msgid "You have received an order from %s."
+msgstr ""
+
+#: woocommerce/cart/cart.php:25 woocommerce/checkout/review-order.php:19
+msgid "#Item"
+msgstr ""
+
+#: woocommerce/cart/cart.php:29 woocommerce/cart/cart-totals.php:85
+#: woocommerce/checkout/review-order.php:23
+#: woocommerce/checkout/review-order.php:156
+#: woocommerce/order/order-details.php:22
+#: woocommerce/myaccount/my-orders.php:35
+#: woocommerce/myaccount/my-orders.php:58
+msgid "Total"
+msgstr ""
+
+#: woocommerce/cart/cart.php:67 woocommerce/checkout/review-order.php:72
+msgid "Available on backorder"
+msgstr ""
+
+#: woocommerce/cart/cart.php:99 woocommerce/cart/mini-cart.php:36
+msgid "Remove this item"
+msgstr ""
+
+#: woocommerce/cart/cart.php:117
+msgid "Coupon"
+msgstr ""
+
+#: woocommerce/cart/cart.php:117 woocommerce/checkout/form-coupon.php:25
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/cart/cart.php:117 woocommerce/checkout/form-coupon.php:29
+msgid "Apply Coupon"
+msgstr ""
+
+#: woocommerce/cart/cart.php:124
+msgid "Update Cart"
+msgstr ""
+
+#: woocommerce/cart/cart-empty.php:18
+msgid "Your cart is currently empty."
+msgstr ""
+
+#: woocommerce/cart/cart-empty.php:22
+msgid "Return To Shop"
+msgstr ""
+
+#: woocommerce/cart/cross-sells.php:40
+msgid "You may be interested in&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:24
+msgid "Calculate Shipping"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:30
+msgid "Select a country&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:47
+#: woocommerce/cart/shipping-calculator.php:53
+#: woocommerce/cart/shipping-calculator.php:65
+msgid "State / county"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:54
+msgid "Select a state&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:74
+msgid "City"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:82
+msgid "Postcode / Zip"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:87
+msgid "Update Totals"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:55
+msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:63 woocommerce/cart/cart-totals.php:31
+#: woocommerce/checkout/review-order.php:109
+msgid "Subtotal"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:68
+msgid "View Cart"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:69
+msgid "Checkout"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:53 woocommerce/cart/cart-shipping.php:22
+#: woocommerce/cart/cart-shipping.php:97
+msgid "Shipping"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:99
+#, php-format
+msgid " (taxes estimated for %s)"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:102
+#, php-format
+msgid ""
+"Note: Shipping and taxes are estimated%s and will be updated during checkout "
+"based on your billing and shipping information."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:20
+#, php-format
+msgid "Shipping #%d"
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:59
+msgid "Please use the shipping calculator to see available shipping methods."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:63
+msgid ""
+"Please continue to the checkout and enter your full address to see if there "
+"are any available shipping methods."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:67
+msgid "Please fill in your details to see available shipping methods."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:76 woocommerce/cart/cart-shipping.php:82
+msgid ""
+"There are no shipping methods available. Please double check your address, "
+"or contact us if you need any help."
+msgstr ""
+
+#: woocommerce/loop/result-count.php:32
+msgid "Showing the single result"
+msgstr ""
+
+#: woocommerce/loop/result-count.php:34
+#, php-format
+msgid "Showing all %d items"
+msgstr ""
+
+#: woocommerce/loop/result-count.php:36
+#, php-format
+msgid "\"%d\" result has been found. <span class=\"line-seprater\">|</span>"
+msgstr ""
+
+#: woocommerce/loop/no-products-found.php:19
+msgid "No products were found matching your selection."
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:19
+msgid "Billing &amp; Shipping"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:23
+msgid "Billing Details"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:42
+msgid "Create an account?"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:53
+msgid ""
+"Create an account by entering the information below. If you are a returning "
+"customer please login at the top of the page."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:20
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:45
+msgid "Your Order Summary"
+msgstr ""
+
+#: woocommerce/checkout/form-pay.php:21
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/checkout/form-pay.php:22
+msgid "Totals"
+msgstr ""
+
+#: woocommerce/checkout/form-pay.php:55
+msgid "Payment"
+msgstr ""
+
+#: woocommerce/checkout/form-pay.php:80
+msgid ""
+"Sorry, it seems that there are no available payment methods for your "
+"location. Please contact us if you require assistance or wish to make "
+"alternate arrangements."
+msgstr ""
+
+#: woocommerce/checkout/form-pay.php:90
+msgid "Pay for order"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:18
+msgid ""
+"Unfortunately your order cannot be processed as the originating bank/"
+"merchant has declined your transaction."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:22
+msgid "Please attempt your purchase again or go to your account page."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:24
+msgid "Please attempt your purchase again."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:28 woocommerce/myaccount/my-orders.php:68
+msgid "Pay"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:37 woocommerce/checkout/thankyou.php:68
+msgid "Thank you. Your order has been received."
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:41
+msgid "Order Number:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:45
+msgid "Date:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:49
+msgid "Total:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:54
+msgid "Payment Method:"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:18
+msgid "Have a coupon?"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:18
+msgid "Click here to enter your code"
+msgstr ""
+
+#: woocommerce/checkout/form-login.php:18
+msgid "Returning customer?"
+msgstr ""
+
+#: woocommerce/checkout/form-login.php:19
+msgid "Click here to login"
+msgstr ""
+
+#: woocommerce/checkout/form-login.php:26
+msgid ""
+"If you have shopped with us before, please enter your details in the boxes "
+"below. If you are a new customer please proceed to the Billing &amp; "
+"Shipping section."
+msgstr ""
+
+#: woocommerce/checkout/form-shipping.php:32
+msgid "Ship to a different address?"
+msgstr ""
+
+#: woocommerce/checkout/form-shipping.php:58
+#: woocommerce/single-product/tabs/additional-information.php:16
+msgid "Additional Information"
+msgstr ""
+
+#: woocommerce/checkout/cart-errors.php:18
+msgid ""
+"There are some issues with the items in your cart (shown above). Please go "
+"back to the cart page and resolve these issues before checking out."
+msgstr ""
+
+#: woocommerce/checkout/cart-errors.php:22
+msgid "Return To Cart"
+msgstr ""
+
+#: woocommerce/checkout/payment.php:22
+msgid "Payment Method"
+msgstr ""
+
+#: woocommerce/checkout/payment.php:33
+msgid "Please fill in your details above to see available payment methods."
+msgstr ""
+
+#: woocommerce/checkout/payment.php:35
+msgid ""
+"Sorry, it seems that there are no available payment methods for your state. "
+"Please contact us if you require assistance or wish to make alternate "
+"arrangements."
+msgstr ""
+
+#: woocommerce/checkout/payment.php:46
+msgid ""
+"Since your browser does not support JavaScript, or it is disabled, please "
+"ensure you click the <em>Update Totals</em> button before placing your "
+"order. You may be charged more than the amount stated above if you fail to "
+"do so."
+msgstr ""
+
+#: woocommerce/checkout/payment.php:46
+msgid "Update totals"
+msgstr ""
+
+#: woocommerce/checkout/payment.php:56
+#, php-format
+msgid ""
+"I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">terms &amp; "
+"conditions</a>"
+msgstr ""
+
+#: woocommerce/order/tracking.php:14
+#, php-format
+msgid "Order #%s which was made %s has the status &ldquo;%s&rdquo;"
+msgstr ""
+
+#: woocommerce/order/tracking.php:14
+msgid "ago"
+msgstr ""
+
+#: woocommerce/order/tracking.php:16
+msgid "and was completed"
+msgstr ""
+
+#: woocommerce/order/tracking.php:16
+msgid " ago"
+msgstr ""
+
+#: woocommerce/order/tracking.php:25 woocommerce/myaccount/view-order.php:24
+msgid "Order Updates"
+msgstr ""
+
+#: woocommerce/order/tracking.php:31 woocommerce/myaccount/view-order.php:30
+msgid "l jS \\o\\f F Y, h:ia"
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:20
+msgid ""
+"To track your order please enter your Order ID in the box below and press "
+"the \"Track\" button. This was given to you on your receipt and in the "
+"confirmation email you should have received."
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:22
+msgid "Order ID"
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:22
+msgid "Found in your order confirmation email."
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:23
+msgid "Billing Email"
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:23
+msgid "Email you used during checkout."
+msgstr ""
+
+#: woocommerce/order/form-tracking.php:26
+msgid "Track"
+msgstr ""
+
+#: woocommerce/order/order-again.php:16
+msgid "Order Again"
+msgstr ""
+
+#: woocommerce/order/order-details.php:17
+msgid "Order Details"
+msgstr ""
+
+#: woocommerce/order/order-details.php:65
+#, php-format
+msgid "Download file%s"
+msgstr ""
+
+#: woocommerce/order/order-details.php:131
+#: woocommerce/order/order-details.php:135
+#, php-format
+msgid "(Includes %s)"
+msgstr ""
+
+#: woocommerce/order/order-details.php:153
+msgid "Refunded:"
+msgstr ""
+
+#: woocommerce/order/order-details.php:162
+msgid "Note:"
+msgstr ""
+
+#: woocommerce/order/order-details.php:172
+msgid "Customer details"
+msgstr ""
+
+#: woocommerce/order/order-details.php:177
+msgid "Email:"
+msgstr ""
+
+#: woocommerce/order/order-details.php:181
+msgid "Telephone:"
+msgstr ""
+
+#: woocommerce/order/order-details.php:181
+msgid "Telephone"
+msgstr ""
+
+#: woocommerce/order/order-details.php:198
+#: woocommerce/myaccount/my-address.php:19
+#: woocommerce/myaccount/my-address.php:25
+#: woocommerce/myaccount/form-edit-address.php:16
+msgid "Billing Address"
+msgstr ""
+
+#: woocommerce/order/order-details.php:203
+#: woocommerce/order/order-details.php:222
+#: woocommerce/single-product/meta.php:26
+msgid "N/A"
+msgstr ""
+
+#: woocommerce/order/order-details.php:217
+#: woocommerce/myaccount/my-address.php:20
+#: woocommerce/myaccount/form-edit-address.php:16
+msgid "Shipping Address"
+msgstr ""
+
+#: woocommerce/myaccount/my-downloads.php:20
+msgid "Available downloads"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:17
+msgid "My Addresses"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:23
+msgid "My Address"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:35
+msgid "The following addresses will be used on the checkout page by default."
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:45
+msgid "Edit"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:64
+msgid "You have not set up this type of address yet."
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:22
+msgid ""
+"Lost your password? Please enter your username or email address. You will "
+"receive a link to create a new password via email."
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:28
+msgid "Enter a new password below."
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:31
+msgid "New password"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:35
+msgid "Re-enter new password"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:48
+msgid "Reset Password"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:48
+msgid "Save"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:35
+msgid "Username or email address"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:66
+#: woocommerce/myaccount/form-login.php:103
+msgid "Register"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:75
+msgid "Username"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:82
+#: woocommerce/myaccount/form-edit-account.php:33
+msgid "Email address"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:96
+msgid "Anti-spam"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:26
+msgid "Recent Orders"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:32
+msgid "Order"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:33
+#: woocommerce/myaccount/my-orders.php:52
+msgid "Date"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:47
+msgid "Order Number"
+msgstr ""
+
+#: woocommerce/myaccount/my-orders.php:81
+msgid "View"
+msgstr ""
+
+#: woocommerce/myaccount/view-order.php:20
+#, php-format
+msgid ""
+"Order #<mark class=\"order-number\">%s</mark> was placed on <mark class="
+"\"order-date\">%s</mark> and is currently <mark class=\"order-status\">%s</"
+"mark>."
+msgstr ""
+
+#: woocommerce/myaccount/form-add-payment-method.php:41
+msgid ""
+"Sorry, it seems that there are no payment methods which support adding a new "
+"payment method. Please contact us if you require assistance or wish to make "
+"alternate arrangements."
+msgstr ""
+
+#: woocommerce/myaccount/form-add-payment-method.php:49
+msgid "Add Payment Method"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-address.php:45
+msgid "Save Address"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:23
+msgid "First name"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:27
+msgid "Last name"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:38
+msgid "Password Change"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:41
+msgid "Current Password (leave blank to leave unchanged)"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:45
+msgid "New Password (leave blank to leave unchanged)"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:49
+msgid "Confirm New Password"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:59
+msgid "Save changes"
+msgstr ""
+
+#: woocommerce/myaccount/my-account.php:20
+#, php-format
+msgid "Hello <strong>%1$s</strong> (not %1$s? <a href=\"%2$s\">Sign out</a>)."
+msgstr ""
+
+#: woocommerce/myaccount/my-account.php:25
+#, php-format
+msgid ""
+"From your account dashboard you can view your recent orders, manage your "
+"shipping and billing addresses and <a href=\"%s\">edit your password and "
+"account details</a>."
+msgstr ""
+
+#: woocommerce/single-product/related.php:43
+msgid "Related Products"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:42
+msgid "Placeholder"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:26
+msgid "SKU:"
+msgstr ""
+
+#: woocommerce/single-product/up-sells.php:43
+msgid "You may also like&hellip;"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:27
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:29
+#, php-format
+msgid "out of %s5%s"
+msgstr ""
+
+#: woocommerce/single-product/product-attributes.php:29
+msgid "Weight"
+msgstr ""
+
+#: woocommerce/single-product/product-attributes.php:36
+msgid "Dimensions"
+msgstr ""
+
+#: woocommerce/single-product/review.php:29
+#, php-format
+msgid "Rated %d out of 5"
+msgstr ""
+
+#: woocommerce/single-product/review.php:30
+msgid "out of 5"
+msgstr ""
+
+#: woocommerce/single-product/review.php:37
+msgid "Your comment is awaiting approval"
+msgstr ""
+
+#: woocommerce/single-product/review.php:46
+msgid "verified owner"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:27
+msgid "Choose an option"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:62
+msgid "Clear selection"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:93
+msgid "This product is currently out of stock and unavailable."
+msgstr ""
+
+#: woocommerce/single-product/tabs/description.php:16
+msgid "Product Description"
+msgstr ""
