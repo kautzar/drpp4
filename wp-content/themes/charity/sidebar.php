@@ -7,18 +7,20 @@
  */
 if (hasCharityDefault_Widgets()):
     ?>
-    <div class="container charity-default-widgets col-sm-4 col-md-3 left-block">
+<!-- hide this start  <div class="container charity-default-widgets col-sm-4 col-md-3 left-block"> -->
+  <div class="container charity-default-widgets left-block"> 
         <div class="row">
             <?php dynamic_sidebar("default-charity-section"); ?>
-        </div>
-    </div> 
+        </div> 
+ </div> 
+<!--    </div> -->
 <?php else: ?>
  
-    <div class="col-sm-4 col-md-3 left-block">
+<!--   <div class="col-sm-4 col-md-3 left-block"> --?
 
         <?php dynamic_sidebar("causes-wisget-section"); ?>
 
-    </div>
+<!--    </div> -->
 
 <?php 
 endif;
