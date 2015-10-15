@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2015 at 08:38 AM
--- Server version: 5.6.14
--- PHP Version: 5.5.6
+-- Generation Time: Oct 15, 2015 at 12:31 PM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,8 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `wp_cf7dbplugin_st` (
-  `submit_time` decimal(16,4) NOT NULL,
-  PRIMARY KEY (`submit_time`)
+  `submit_time` decimal(16,4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -43,10 +42,7 @@ CREATE TABLE IF NOT EXISTS `wp_cf7dbplugin_submits` (
   `field_name` varchar(127) CHARACTER SET utf8 DEFAULT NULL,
   `field_value` longtext CHARACTER SET utf8,
   `field_order` int(11) DEFAULT NULL,
-  `file` longblob,
-  KEY `submit_time_idx` (`submit_time`),
-  KEY `form_name_idx` (`form_name`),
-  KEY `field_name_idx` (`field_name`)
+  `file` longblob
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -56,14 +52,11 @@ CREATE TABLE IF NOT EXISTS `wp_cf7dbplugin_submits` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
-  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`meta_id` bigint(20) unsigned NOT NULL,
   `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_ci,
-  PRIMARY KEY (`meta_id`),
-  KEY `comment_id` (`comment_id`),
-  KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `meta_value` longtext COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -72,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_comments` (
-  `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`comment_ID` bigint(20) unsigned NOT NULL,
   `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',
   `comment_author` tinytext COLLATE utf8mb4_unicode_ci NOT NULL,
   `comment_author_email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -86,14 +79,8 @@ CREATE TABLE IF NOT EXISTS `wp_comments` (
   `comment_agent` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `comment_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`comment_ID`),
-  KEY `comment_post_ID` (`comment_post_ID`),
-  KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
-  KEY `comment_date_gmt` (`comment_date_gmt`),
-  KEY `comment_parent` (`comment_parent`),
-  KEY `comment_author_email` (`comment_author_email`(10))
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=2 ;
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_comments`
@@ -109,7 +96,7 @@ INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `c
 --
 
 CREATE TABLE IF NOT EXISTS `wp_easypay_payment_log` (
-  `id` int(6) NOT NULL AUTO_INCREMENT,
+`id` int(6) NOT NULL,
   `txnid` varchar(255) NOT NULL,
   `payment_amount` decimal(7,2) NOT NULL,
   `payment_actual_amount` decimal(7,2) NOT NULL,
@@ -123,9 +110,8 @@ CREATE TABLE IF NOT EXISTS `wp_easypay_payment_log` (
   `email` varchar(50) NOT NULL,
   `hash` varchar(100) DEFAULT NULL,
   `custom` longtext,
-  `transaction_info` longtext,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `transaction_info` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -134,13 +120,12 @@ CREATE TABLE IF NOT EXISTS `wp_easypay_payment_log` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_easypay_recurring` (
-  `ch_id` int(11) NOT NULL AUTO_INCREMENT,
+`ch_id` int(11) NOT NULL,
   `option_id` int(11) NOT NULL,
   `choice1` varchar(255) NOT NULL,
   `choice2` varchar(255) NOT NULL,
-  `choice3` varchar(255) NOT NULL,
-  PRIMARY KEY (`ch_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `choice3` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `wp_easypay_recurring`
@@ -156,7 +141,7 @@ INSERT INTO `wp_easypay_recurring` (`ch_id`, `option_id`, `choice1`, `choice2`, 
 --
 
 CREATE TABLE IF NOT EXISTS `wp_em_bookings` (
-  `booking_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`booking_id` bigint(20) unsigned NOT NULL,
   `event_id` bigint(20) unsigned NOT NULL,
   `person_id` bigint(20) unsigned NOT NULL,
   `booking_spaces` int(5) NOT NULL,
@@ -166,12 +151,8 @@ CREATE TABLE IF NOT EXISTS `wp_em_bookings` (
   `booking_price` decimal(14,4) unsigned NOT NULL DEFAULT '0.0000',
   `booking_tax_rate` decimal(7,4) DEFAULT NULL,
   `booking_taxes` decimal(14,4) DEFAULT NULL,
-  `booking_meta` longtext,
-  PRIMARY KEY (`booking_id`),
-  KEY `event_id` (`event_id`),
-  KEY `person_id` (`person_id`),
-  KEY `booking_status` (`booking_status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `booking_meta` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -180,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `wp_em_bookings` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_em_events` (
-  `event_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`event_id` bigint(20) unsigned NOT NULL,
   `post_id` bigint(20) unsigned NOT NULL,
   `event_slug` varchar(200) DEFAULT NULL,
   `event_owner` bigint(20) unsigned DEFAULT NULL,
@@ -212,14 +193,8 @@ CREATE TABLE IF NOT EXISTS `wp_em_events` (
   `recurrence_days` int(4) DEFAULT NULL,
   `recurrence_rsvp_days` int(3) DEFAULT NULL,
   `blog_id` bigint(20) unsigned DEFAULT NULL,
-  `group_id` bigint(20) unsigned DEFAULT NULL,
-  PRIMARY KEY (`event_id`),
-  KEY `event_status` (`event_status`),
-  KEY `post_id` (`post_id`),
-  KEY `blog_id` (`blog_id`),
-  KEY `group_id` (`group_id`),
-  KEY `location_id` (`location_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `group_id` bigint(20) unsigned DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_em_events`
@@ -238,7 +213,7 @@ INSERT INTO `wp_em_events` (`event_id`, `post_id`, `event_slug`, `event_owner`, 
 --
 
 CREATE TABLE IF NOT EXISTS `wp_em_locations` (
-  `location_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`location_id` bigint(20) unsigned NOT NULL,
   `post_id` bigint(20) unsigned NOT NULL,
   `blog_id` bigint(20) unsigned DEFAULT NULL,
   `location_slug` varchar(200) DEFAULT NULL,
@@ -254,14 +229,8 @@ CREATE TABLE IF NOT EXISTS `wp_em_locations` (
   `location_longitude` float(10,6) DEFAULT NULL,
   `post_content` longtext,
   `location_status` int(1) DEFAULT NULL,
-  `location_private` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`location_id`),
-  KEY `location_state` (`location_state`),
-  KEY `location_region` (`location_region`),
-  KEY `location_country` (`location_country`),
-  KEY `post_id` (`post_id`),
-  KEY `blog_id` (`blog_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `location_private` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wp_em_locations`
@@ -279,15 +248,12 @@ INSERT INTO `wp_em_locations` (`location_id`, `post_id`, `blog_id`, `location_sl
 --
 
 CREATE TABLE IF NOT EXISTS `wp_em_meta` (
-  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`meta_id` bigint(20) unsigned NOT NULL,
   `object_id` bigint(20) unsigned NOT NULL,
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext,
-  `meta_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`meta_id`),
-  KEY `object_id` (`object_id`),
-  KEY `meta_key` (`meta_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `meta_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -296,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `wp_em_meta` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_em_tickets` (
-  `ticket_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`ticket_id` bigint(20) unsigned NOT NULL,
   `event_id` bigint(20) unsigned NOT NULL,
   `ticket_name` tinytext NOT NULL,
   `ticket_description` text,
@@ -310,10 +276,8 @@ CREATE TABLE IF NOT EXISTS `wp_em_tickets` (
   `ticket_members_roles` longtext,
   `ticket_guests` int(1) DEFAULT NULL,
   `ticket_required` int(1) DEFAULT NULL,
-  `ticket_meta` longtext,
-  PRIMARY KEY (`ticket_id`),
-  KEY `event_id` (`event_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `ticket_meta` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -322,15 +286,12 @@ CREATE TABLE IF NOT EXISTS `wp_em_tickets` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_em_tickets_bookings` (
-  `ticket_booking_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`ticket_booking_id` bigint(20) unsigned NOT NULL,
   `booking_id` bigint(20) unsigned NOT NULL,
   `ticket_id` bigint(20) unsigned NOT NULL,
   `ticket_booking_spaces` int(6) NOT NULL,
-  `ticket_booking_price` decimal(14,4) NOT NULL,
-  PRIMARY KEY (`ticket_booking_id`),
-  KEY `booking_id` (`booking_id`),
-  KEY `ticket_id` (`ticket_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `ticket_booking_price` decimal(14,4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -339,7 +300,7 @@ CREATE TABLE IF NOT EXISTS `wp_em_tickets_bookings` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_links` (
-  `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`link_id` bigint(20) unsigned NOT NULL,
   `link_url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `link_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `link_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -351,10 +312,8 @@ CREATE TABLE IF NOT EXISTS `wp_links` (
   `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `link_rel` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `link_notes` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `link_rss` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`link_id`),
-  KEY `link_visible` (`link_visible`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `link_rss` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -363,13 +322,11 @@ CREATE TABLE IF NOT EXISTS `wp_links` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_options` (
-  `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`option_id` bigint(20) unsigned NOT NULL,
   `option_name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `option_value` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `autoload` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'yes',
-  PRIMARY KEY (`option_id`),
-  UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=6113 ;
+  `autoload` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'yes'
+) ENGINE=InnoDB AUTO_INCREMENT=6275 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_options`
@@ -466,10 +423,10 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (88, 'finished_splitting_shared_terms', '1', 'yes'),
 (89, 'initial_db_version', '33055', 'yes'),
 (90, 'wp_user_roles', 'a:7:{s:13:"administrator";a:2:{s:4:"name";s:13:"Administrator";s:12:"capabilities";a:155:{s:13:"switch_themes";b:1;s:11:"edit_themes";b:1;s:16:"activate_plugins";b:1;s:12:"edit_plugins";b:1;s:10:"edit_users";b:1;s:10:"edit_files";b:1;s:14:"manage_options";b:1;s:17:"moderate_comments";b:1;s:17:"manage_categories";b:1;s:12:"manage_links";b:1;s:12:"upload_files";b:1;s:6:"import";b:1;s:15:"unfiltered_html";b:1;s:10:"edit_posts";b:1;s:17:"edit_others_posts";b:1;s:20:"edit_published_posts";b:1;s:13:"publish_posts";b:1;s:10:"edit_pages";b:1;s:4:"read";b:1;s:8:"level_10";b:1;s:7:"level_9";b:1;s:7:"level_8";b:1;s:7:"level_7";b:1;s:7:"level_6";b:1;s:7:"level_5";b:1;s:7:"level_4";b:1;s:7:"level_3";b:1;s:7:"level_2";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:17:"edit_others_pages";b:1;s:20:"edit_published_pages";b:1;s:13:"publish_pages";b:1;s:12:"delete_pages";b:1;s:19:"delete_others_pages";b:1;s:22:"delete_published_pages";b:1;s:12:"delete_posts";b:1;s:19:"delete_others_posts";b:1;s:22:"delete_published_posts";b:1;s:20:"delete_private_posts";b:1;s:18:"edit_private_posts";b:1;s:18:"read_private_posts";b:1;s:20:"delete_private_pages";b:1;s:18:"edit_private_pages";b:1;s:18:"read_private_pages";b:1;s:12:"delete_users";b:1;s:12:"create_users";b:1;s:17:"unfiltered_upload";b:1;s:14:"edit_dashboard";b:1;s:14:"update_plugins";b:1;s:14:"delete_plugins";b:1;s:15:"install_plugins";b:1;s:13:"update_themes";b:1;s:14:"install_themes";b:1;s:11:"update_core";b:1;s:10:"list_users";b:1;s:12:"remove_users";b:1;s:9:"add_users";b:1;s:13:"promote_users";b:1;s:18:"edit_theme_options";b:1;s:13:"delete_themes";b:1;s:6:"export";b:1;s:14:"publish_events";b:1;s:20:"delete_others_events";b:1;s:18:"edit_others_events";b:1;s:22:"manage_others_bookings";b:1;s:24:"publish_recurring_events";b:1;s:30:"delete_others_recurring_events";b:1;s:28:"edit_others_recurring_events";b:1;s:17:"publish_locations";b:1;s:23:"delete_others_locations";b:1;s:16:"delete_locations";b:1;s:21:"edit_others_locations";b:1;s:23:"delete_event_categories";b:1;s:21:"edit_event_categories";b:1;s:15:"manage_bookings";b:1;s:19:"upload_event_images";b:1;s:13:"delete_events";b:1;s:11:"edit_events";b:1;s:19:"read_private_events";b:1;s:23:"delete_recurring_events";b:1;s:21:"edit_recurring_events";b:1;s:14:"edit_locations";b:1;s:22:"read_private_locations";b:1;s:21:"read_others_locations";b:1;s:18:"manage_woocommerce";b:1;s:24:"view_woocommerce_reports";b:1;s:12:"edit_product";b:1;s:12:"read_product";b:1;s:14:"delete_product";b:1;s:13:"edit_products";b:1;s:20:"edit_others_products";b:1;s:16:"publish_products";b:1;s:21:"read_private_products";b:1;s:15:"delete_products";b:1;s:23:"delete_private_products";b:1;s:25:"delete_published_products";b:1;s:22:"delete_others_products";b:1;s:21:"edit_private_products";b:1;s:23:"edit_published_products";b:1;s:20:"manage_product_terms";b:1;s:18:"edit_product_terms";b:1;s:20:"delete_product_terms";b:1;s:20:"assign_product_terms";b:1;s:15:"edit_shop_order";b:1;s:15:"read_shop_order";b:1;s:17:"delete_shop_order";b:1;s:16:"edit_shop_orders";b:1;s:23:"edit_others_shop_orders";b:1;s:19:"publish_shop_orders";b:1;s:24:"read_private_shop_orders";b:1;s:18:"delete_shop_orders";b:1;s:26:"delete_private_shop_orders";b:1;s:28:"delete_published_shop_orders";b:1;s:25:"delete_others_shop_orders";b:1;s:24:"edit_private_shop_orders";b:1;s:26:"edit_published_shop_orders";b:1;s:23:"manage_shop_order_terms";b:1;s:21:"edit_shop_order_terms";b:1;s:23:"delete_shop_order_terms";b:1;s:23:"assign_shop_order_terms";b:1;s:16:"edit_shop_coupon";b:1;s:16:"read_shop_coupon";b:1;s:18:"delete_shop_coupon";b:1;s:17:"edit_shop_coupons";b:1;s:24:"edit_others_shop_coupons";b:1;s:20:"publish_shop_coupons";b:1;s:25:"read_private_shop_coupons";b:1;s:19:"delete_shop_coupons";b:1;s:27:"delete_private_shop_coupons";b:1;s:29:"delete_published_shop_coupons";b:1;s:26:"delete_others_shop_coupons";b:1;s:25:"edit_private_shop_coupons";b:1;s:27:"edit_published_shop_coupons";b:1;s:24:"manage_shop_coupon_terms";b:1;s:22:"edit_shop_coupon_terms";b:1;s:24:"delete_shop_coupon_terms";b:1;s:24:"assign_shop_coupon_terms";b:1;s:17:"edit_shop_webhook";b:1;s:17:"read_shop_webhook";b:1;s:19:"delete_shop_webhook";b:1;s:18:"edit_shop_webhooks";b:1;s:25:"edit_others_shop_webhooks";b:1;s:21:"publish_shop_webhooks";b:1;s:26:"read_private_shop_webhooks";b:1;s:20:"delete_shop_webhooks";b:1;s:28:"delete_private_shop_webhooks";b:1;s:30:"delete_published_shop_webhooks";b:1;s:27:"delete_others_shop_webhooks";b:1;s:26:"edit_private_shop_webhooks";b:1;s:28:"edit_published_shop_webhooks";b:1;s:25:"manage_shop_webhook_terms";b:1;s:23:"edit_shop_webhook_terms";b:1;s:25:"delete_shop_webhook_terms";b:1;s:25:"assign_shop_webhook_terms";b:1;}}s:6:"editor";a:2:{s:4:"name";s:6:"Editor";s:12:"capabilities";a:57:{s:17:"moderate_comments";b:1;s:17:"manage_categories";b:1;s:12:"manage_links";b:1;s:12:"upload_files";b:1;s:15:"unfiltered_html";b:1;s:10:"edit_posts";b:1;s:17:"edit_others_posts";b:1;s:20:"edit_published_posts";b:1;s:13:"publish_posts";b:1;s:10:"edit_pages";b:1;s:4:"read";b:1;s:7:"level_7";b:1;s:7:"level_6";b:1;s:7:"level_5";b:1;s:7:"level_4";b:1;s:7:"level_3";b:1;s:7:"level_2";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:17:"edit_others_pages";b:1;s:20:"edit_published_pages";b:1;s:13:"publish_pages";b:1;s:12:"delete_pages";b:1;s:19:"delete_others_pages";b:1;s:22:"delete_published_pages";b:1;s:12:"delete_posts";b:1;s:19:"delete_others_posts";b:1;s:22:"delete_published_posts";b:1;s:20:"delete_private_posts";b:1;s:18:"edit_private_posts";b:1;s:18:"read_private_posts";b:1;s:20:"delete_private_pages";b:1;s:18:"edit_private_pages";b:1;s:18:"read_private_pages";b:1;s:14:"publish_events";b:1;s:20:"delete_others_events";b:1;s:18:"edit_others_events";b:1;s:22:"manage_others_bookings";b:1;s:24:"publish_recurring_events";b:1;s:30:"delete_others_recurring_events";b:1;s:28:"edit_others_recurring_events";b:1;s:17:"publish_locations";b:1;s:23:"delete_others_locations";b:1;s:16:"delete_locations";b:1;s:21:"edit_others_locations";b:1;s:23:"delete_event_categories";b:1;s:21:"edit_event_categories";b:1;s:15:"manage_bookings";b:1;s:19:"upload_event_images";b:1;s:13:"delete_events";b:1;s:11:"edit_events";b:1;s:19:"read_private_events";b:1;s:23:"delete_recurring_events";b:1;s:21:"edit_recurring_events";b:1;s:14:"edit_locations";b:1;s:22:"read_private_locations";b:1;s:21:"read_others_locations";b:1;}}s:6:"author";a:2:{s:4:"name";s:6:"Author";s:12:"capabilities";a:20:{s:12:"upload_files";b:1;s:10:"edit_posts";b:1;s:20:"edit_published_posts";b:1;s:13:"publish_posts";b:1;s:4:"read";b:1;s:7:"level_2";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:12:"delete_posts";b:1;s:22:"delete_published_posts";b:1;s:15:"manage_bookings";b:1;s:19:"upload_event_images";b:1;s:13:"delete_events";b:1;s:11:"edit_events";b:1;s:19:"read_private_events";b:1;s:23:"delete_recurring_events";b:1;s:21:"edit_recurring_events";b:1;s:14:"edit_locations";b:1;s:22:"read_private_locations";b:1;s:21:"read_others_locations";b:1;}}s:11:"contributor";a:2:{s:4:"name";s:11:"Contributor";s:12:"capabilities";a:15:{s:10:"edit_posts";b:1;s:4:"read";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:12:"delete_posts";b:1;s:15:"manage_bookings";b:1;s:19:"upload_event_images";b:1;s:13:"delete_events";b:1;s:11:"edit_events";b:1;s:19:"read_private_events";b:1;s:23:"delete_recurring_events";b:1;s:21:"edit_recurring_events";b:1;s:14:"edit_locations";b:1;s:22:"read_private_locations";b:1;s:21:"read_others_locations";b:1;}}s:10:"subscriber";a:2:{s:4:"name";s:10:"Subscriber";s:12:"capabilities";a:12:{s:4:"read";b:1;s:7:"level_0";b:1;s:15:"manage_bookings";b:1;s:19:"upload_event_images";b:1;s:13:"delete_events";b:1;s:11:"edit_events";b:1;s:19:"read_private_events";b:1;s:23:"delete_recurring_events";b:1;s:21:"edit_recurring_events";b:1;s:14:"edit_locations";b:1;s:22:"read_private_locations";b:1;s:21:"read_others_locations";b:1;}}s:8:"customer";a:2:{s:4:"name";s:8:"Customer";s:12:"capabilities";a:3:{s:4:"read";b:1;s:10:"edit_posts";b:0;s:12:"delete_posts";b:0;}}s:12:"shop_manager";a:2:{s:4:"name";s:12:"Shop Manager";s:12:"capabilities";a:110:{s:7:"level_9";b:1;s:7:"level_8";b:1;s:7:"level_7";b:1;s:7:"level_6";b:1;s:7:"level_5";b:1;s:7:"level_4";b:1;s:7:"level_3";b:1;s:7:"level_2";b:1;s:7:"level_1";b:1;s:7:"level_0";b:1;s:4:"read";b:1;s:18:"read_private_pages";b:1;s:18:"read_private_posts";b:1;s:10:"edit_users";b:1;s:10:"edit_posts";b:1;s:10:"edit_pages";b:1;s:20:"edit_published_posts";b:1;s:20:"edit_published_pages";b:1;s:18:"edit_private_pages";b:1;s:18:"edit_private_posts";b:1;s:17:"edit_others_posts";b:1;s:17:"edit_others_pages";b:1;s:13:"publish_posts";b:1;s:13:"publish_pages";b:1;s:12:"delete_posts";b:1;s:12:"delete_pages";b:1;s:20:"delete_private_pages";b:1;s:20:"delete_private_posts";b:1;s:22:"delete_published_pages";b:1;s:22:"delete_published_posts";b:1;s:19:"delete_others_posts";b:1;s:19:"delete_others_pages";b:1;s:17:"manage_categories";b:1;s:12:"manage_links";b:1;s:17:"moderate_comments";b:1;s:15:"unfiltered_html";b:1;s:12:"upload_files";b:1;s:6:"export";b:1;s:6:"import";b:1;s:10:"list_users";b:1;s:18:"manage_woocommerce";b:1;s:24:"view_woocommerce_reports";b:1;s:12:"edit_product";b:1;s:12:"read_product";b:1;s:14:"delete_product";b:1;s:13:"edit_products";b:1;s:20:"edit_others_products";b:1;s:16:"publish_products";b:1;s:21:"read_private_products";b:1;s:15:"delete_products";b:1;s:23:"delete_private_products";b:1;s:25:"delete_published_products";b:1;s:22:"delete_others_products";b:1;s:21:"edit_private_products";b:1;s:23:"edit_published_products";b:1;s:20:"manage_product_terms";b:1;s:18:"edit_product_terms";b:1;s:20:"delete_product_terms";b:1;s:20:"assign_product_terms";b:1;s:15:"edit_shop_order";b:1;s:15:"read_shop_order";b:1;s:17:"delete_shop_order";b:1;s:16:"edit_shop_orders";b:1;s:23:"edit_others_shop_orders";b:1;s:19:"publish_shop_orders";b:1;s:24:"read_private_shop_orders";b:1;s:18:"delete_shop_orders";b:1;s:26:"delete_private_shop_orders";b:1;s:28:"delete_published_shop_orders";b:1;s:25:"delete_others_shop_orders";b:1;s:24:"edit_private_shop_orders";b:1;s:26:"edit_published_shop_orders";b:1;s:23:"manage_shop_order_terms";b:1;s:21:"edit_shop_order_terms";b:1;s:23:"delete_shop_order_terms";b:1;s:23:"assign_shop_order_terms";b:1;s:16:"edit_shop_coupon";b:1;s:16:"read_shop_coupon";b:1;s:18:"delete_shop_coupon";b:1;s:17:"edit_shop_coupons";b:1;s:24:"edit_others_shop_coupons";b:1;s:20:"publish_shop_coupons";b:1;s:25:"read_private_shop_coupons";b:1;s:19:"delete_shop_coupons";b:1;s:27:"delete_private_shop_coupons";b:1;s:29:"delete_published_shop_coupons";b:1;s:26:"delete_others_shop_coupons";b:1;s:25:"edit_private_shop_coupons";b:1;s:27:"edit_published_shop_coupons";b:1;s:24:"manage_shop_coupon_terms";b:1;s:22:"edit_shop_coupon_terms";b:1;s:24:"delete_shop_coupon_terms";b:1;s:24:"assign_shop_coupon_terms";b:1;s:17:"edit_shop_webhook";b:1;s:17:"read_shop_webhook";b:1;s:19:"delete_shop_webhook";b:1;s:18:"edit_shop_webhooks";b:1;s:25:"edit_others_shop_webhooks";b:1;s:21:"publish_shop_webhooks";b:1;s:26:"read_private_shop_webhooks";b:1;s:20:"delete_shop_webhooks";b:1;s:28:"delete_private_shop_webhooks";b:1;s:30:"delete_published_shop_webhooks";b:1;s:27:"delete_others_shop_webhooks";b:1;s:26:"edit_private_shop_webhooks";b:1;s:28:"edit_published_shop_webhooks";b:1;s:25:"manage_shop_webhook_terms";b:1;s:23:"edit_shop_webhook_terms";b:1;s:25:"delete_shop_webhook_terms";b:1;s:25:"assign_shop_webhook_terms";b:1;}}}', 'yes'),
-(91, 'cron', 'a:9:{i:1444892519;a:1:{s:32:"woocommerce_cancel_unpaid_orders";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:2:{s:8:"schedule";b:0;s:4:"args";a:0:{}}}}i:1444893600;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1444901784;a:2:{s:30:"woocommerce_tracker_send_event";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:28:"woocommerce_cleanup_sessions";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1444912567;a:3:{s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1444953600;a:1:{s:27:"woocommerce_scheduled_sales";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1444955783;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1444956414;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1446724800;a:1:{s:25:"woocommerce_geoip_updater";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:7:"monthly";s:4:"args";a:0:{}s:8:"interval";i:2635200;}}}s:7:"version";i:2;}', 'yes'),
-(93, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:2:{i:0;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.3.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.3.1-new-bundled.zip";s:7:"partial";s:69:"https://downloads.wordpress.org/release/wordpress-4.3.1-partial-0.zip";s:8:"rollback";b:0;}s:7:"current";s:5:"4.3.1";s:7:"version";s:5:"4.3.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:3:"4.3";}i:1;O:8:"stdClass":12:{s:8:"response";s:10:"autoupdate";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.3.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.3.1-new-bundled.zip";s:7:"partial";s:69:"https://downloads.wordpress.org/release/wordpress-4.3.1-partial-0.zip";s:8:"rollback";s:70:"https://downloads.wordpress.org/release/wordpress-4.3.1-rollback-0.zip";}s:7:"current";s:5:"4.3.1";s:7:"version";s:5:"4.3.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:3:"4.3";s:13:"support_email";s:26:"updatehelp42@wordpress.org";s:9:"new_files";s:0:"";}}s:12:"last_checked";i:1444888932;s:15:"version_checked";s:3:"4.3";s:12:"translations";a:0:{}}', 'yes'),
-(94, '_transient_random_seed', '9fcda29d09ec3b9e4a7e02f4275aa63e', 'yes'),
-(99, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1444888936;s:7:"checked";a:4:{s:7:"charity";s:5:"1.4.1";s:13:"twentyfifteen";s:3:"1.3";s:14:"twentyfourteen";s:3:"1.5";s:14:"twentythirteen";s:3:"1.6";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'yes'),
+(91, 'cron', 'a:10:{i:1444908652;a:1:{s:32:"woocommerce_cancel_unpaid_orders";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:2:{s:8:"schedule";b:0;s:4:"args";a:0:{}}}}i:1444912567;a:3:{s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1444936800;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1444944984;a:1:{s:28:"woocommerce_cleanup_sessions";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1444953600;a:1:{s:27:"woocommerce_scheduled_sales";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1444955783;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1444956414;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1444988184;a:1:{s:30:"woocommerce_tracker_send_event";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1446724800;a:1:{s:25:"woocommerce_geoip_updater";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:7:"monthly";s:4:"args";a:0:{}s:8:"interval";i:2635200;}}}s:7:"version";i:2;}', 'yes'),
+(93, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:2:{i:0;O:8:"stdClass":10:{s:8:"response";s:7:"upgrade";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.3.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.3.1-new-bundled.zip";s:7:"partial";s:69:"https://downloads.wordpress.org/release/wordpress-4.3.1-partial-0.zip";s:8:"rollback";b:0;}s:7:"current";s:5:"4.3.1";s:7:"version";s:5:"4.3.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:3:"4.3";}i:1;O:8:"stdClass":12:{s:8:"response";s:10:"autoupdate";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.3.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.3.1-new-bundled.zip";s:7:"partial";s:69:"https://downloads.wordpress.org/release/wordpress-4.3.1-partial-0.zip";s:8:"rollback";s:70:"https://downloads.wordpress.org/release/wordpress-4.3.1-rollback-0.zip";}s:7:"current";s:5:"4.3.1";s:7:"version";s:5:"4.3.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:3:"4.3";s:13:"support_email";s:26:"updatehelp42@wordpress.org";s:9:"new_files";s:0:"";}}s:12:"last_checked";i:1444897825;s:15:"version_checked";s:3:"4.3";s:12:"translations";a:0:{}}', 'yes'),
+(94, '_transient_random_seed', '42d92d162aa00e94ccb16d6ea72c6cde', 'yes'),
+(99, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1444897826;s:7:"checked";a:4:{s:7:"charity";s:5:"1.4.1";s:13:"twentyfifteen";s:3:"1.3";s:14:"twentyfourteen";s:3:"1.5";s:14:"twentythirteen";s:3:"1.6";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'yes'),
 (100, '_site_transient_timeout_browser_d222b6a854d35c9c9584e695b623c468', '1440549375', 'yes'),
 (101, '_site_transient_browser_d222b6a854d35c9c9584e695b623c468', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:13:"44.0.2403.155";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
 (102, 'can_compress_scripts', '1', 'yes'),
@@ -482,7 +439,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (126, 'easypay_form_builder', '[{"title":"Text Input","fields":{"id":{"label":"ID / Name","type":"input","value":"name","name":"id"},"label":{"label":"Label Text","type":"input","value":"Name","name":"label"},"placeholder":{"label":"Placeholder","type":"input","value":"","name":"placeholder"},"helptext":{"label":"Help Text","type":"input","value":"","name":"helptext"},"required":{"label":"Required","type":"checkbox","value":true,"name":"required"},"inputsize":{"label":"Input Size","type":"select","value":[{"value":"col-md-1","selected":false,"label":"Mini"},{"value":"col-md-2","selected":false,"label":"Small"},{"value":"col-md-4","selected":false,"label":"Medium"},{"value":"col-md-5","selected":true,"label":"Large"},{"value":"col-md-6","selected":false,"label":"Xlarge"},{"value":"col-md-8","selected":false,"label":"Xxlarge"}],"name":"inputsize"}}},{"title":"Text Input","fields":{"id":{"label":"ID / Name","type":"input","value":"lastname","name":"id"},"label":{"label":"Label Text","type":"input","value":"Last Name","name":"label"},"placeholder":{"label":"Placeholder","type":"input","value":"","name":"placeholder"},"helptext":{"label":"Help Text","type":"input","value":"","name":"helptext"},"required":{"label":"Required","type":"checkbox","value":true,"name":"required"},"inputsize":{"label":"Input Size","type":"select","value":[{"value":"col-md-1","selected":false,"label":"Mini"},{"value":"col-md-2","selected":false,"label":"Small"},{"value":"col-md-4","selected":false,"label":"Medium"},{"value":"col-md-5","selected":true,"label":"Large"},{"value":"col-md-6","selected":false,"label":"Xlarge"},{"value":"col-md-8","selected":false,"label":"Xxlarge"}],"name":"inputsize"}}},{"title":"Text Input","fields":{"id":{"label":"ID / Name","type":"input","value":"phone","name":"id"},"label":{"label":"Label Text","type":"input","value":"Phone","name":"label"},"placeholder":{"label":"Placeholder","type":"input","value":"","name":"placeholder"},"helptext":{"label":"Help Text","type":"input","value":"","name":"helptext"},"required":{"label":"Required","type":"checkbox","value":true,"name":"required"},"inputsize":{"label":"Input Size","type":"select","value":[{"value":"col-md-1","selected":false,"label":"Mini"},{"value":"col-md-2","selected":false,"label":"Small"},{"value":"col-md-4","selected":false,"label":"Medium"},{"value":"col-md-5","selected":true,"label":"Large"},{"value":"col-md-6","selected":false,"label":"Xlarge"},{"value":"col-md-8","selected":false,"label":"Xxlarge"}],"name":"inputsize"}}},{"title":"Text Area","fields":{"id":{"label":"ID / Name","type":"input","value":"address","name":"id"},"label":{"label":"Label Text","type":"input","value":"Address","name":"label"},"textarea":{"label":"Starting Text","type":"textarea","value":"","name":"textarea"}}},{"title":"Text Area","fields":{"id":{"label":"ID / Name","type":"input","value":"additional","name":"id"},"label":{"label":"Label Text","type":"input","value":"Additional Note","name":"label"},"textarea":{"label":"Starting Text","type":"textarea","value":"","name":"textarea"}}}]', 'yes'),
 (127, 'easypay_stripe_setting', 'a:7:{s:20:"easypay_strip_enable";s:4:"true";s:25:"easypay_strip_description";s:46:"Pay using Stripe, if you have a Stripe account";s:19:"easypay_strip_title";s:6:"Stripe";s:19:"easypay_private_key";s:32:"pk_test_y4Ot3N4ZDWL6jb2xH8nHABEp";s:18:"easypay_secret_key";s:32:"sk_test_bajvh4G8hxAwfjOsJZG36uSt";s:23:"easypay_strip_verifySSL";s:4:"true";s:21:"easypay_strip_pay_mod";s:45:"https://www.sandbox.paypal.com/cgi-bin/webscr";}', 'yes'),
 (128, 'wpb_js_import_option', '1', 'yes'),
-(129, 'vpt_option', 'a:96:{s:18:"single_causes_mode";s:0:"";s:21:"charity_home_1_select";s:2:"11";s:21:"charity_home_2_select";s:2:"11";s:21:"charity_home_3_select";s:2:"11";s:24:"charity_home_shoplanding";s:2:"11";s:11:"home_layout";s:3:"one";s:23:"charity_single_cause_id";s:0:"";s:18:"single_causes_date";s:0:"";s:21:"charity_home_4_select";s:0:"";s:21:"charity_home_5_select";s:0:"";s:18:"causes_home_layout";s:0:"";s:7:"favicon";s:89:"http://localhost/drpp4/wp-content/uploads/2015/08/logo-The-Learning-Center-Diapositif.png";s:9:"site_logo";s:84:"http://localhost/drpp4/wp-content/uploads/2015/08/logo-The-Learning-Center-Putih.png";s:20:"site_header_two_logo";s:84:"http://localhost/drpp4/wp-content/uploads/2015/08/logo-The-Learning-Center-Putih.png";s:11:"theme_color";s:7:"#076e3c";s:11:"theme_fonts";s:23:"''Montserrat'',sans-serif";s:13:"sticky_header";s:9:"sticky-no";s:11:"page_layout";s:10:"full-width";s:25:"become_volunteer_btn_text";s:6:"Daftar";s:25:"become_volunteer_btn_link";s:21:"http://localhost/drpp";s:16:"welcome_tag_line";s:37:"Selamat Datang ke The Learning Center";s:12:"info_mail_id";s:0:"";s:10:"copy_right";s:62:"© Copyright 2015, All Rights Reserved by The Learning Center.";s:22:"reserve_textarea_error";s:0:"";s:13:"header_layout";s:5:"three";s:13:"footer_layout";s:3:"one";s:22:"charity-gallery-layout";s:8:"col-sm-6";s:28:"charity-causes-single-layout";s:9:"fullwidth";s:32:"charity_global_donation_cause_id";s:0:"";s:23:"charity_urgent_cause_id";s:0:"";s:16:"charity-facebook";s:19:"http://facebook.com";s:19:"charity-google-plus";s:22:"http://plus.google.com";s:15:"charity-twitter";s:18:"http://twitter.com";s:16:"charity-linkedin";s:19:"http://linkedin.com";s:20:"charity-vimeo-square";s:16:"http://vimeo.com";s:7:"img_404";s:0:"";s:6:"ch_css";s:0:"";s:5:"ch_js";s:0:"";s:21:"coming_soon_page_logo";s:86:"http://theemon.com/c/charity-wp/PlaceHolder/wp-content/uploads/2015/04/launch-logo.png";s:19:"coming_soon_page_bg";s:84:"http://theemon.com/c/charity-wp/PlaceHolder/wp-content/uploads/2015/04/launch-bg.jpg";s:16:"coming_soon_date";s:10:"16-04-2015";s:22:"coming_soon_newsletter";s:12:"[mc4wp_form]";s:16:"coming_soon_mode";s:0:"";s:16:"coming_soon_page";s:0:"";s:26:"coming_soon_copyright_text";s:56:"© Copyright 2014, All Rights Reserved by Charity Theme.";s:20:"ch_hOne_causes_title";s:42:"Siapa saja <strong>Tim Ahli</strong> kami?";s:22:"ch_hOne_how_help_title";s:48:"<strong>Fitur Utama</strong> The Learning Center";s:25:"ch_hOne_latest_news_title";s:15:"Berita Terakhir";s:25:"ch_hOne_testimonial_title";s:48:"Donation Holders say <strong>Read Below</strong>";s:26:"ch_htwo_urgentcauses_title";s:12:"Urgent Cause";s:23:"ch_htwo_allcauses_title";s:10:"All Causes";s:22:"ch_hTwo_how_help_title";s:44:"How can you help? <strong>See below</strong>";s:23:"ch_hTwo_help_video_text";s:21:"Watch our media video";s:25:"ch_hTwo_get_involved_text";s:26:"GET <span>INVOLVED </span>";s:25:"ch_hTwo_latest_news_title";s:39:"Latest News <strong>On Charity</strong>";s:25:"ch_hTwo_testimonial_title";s:25:"What Donation Holders say";s:22:"ch_hThree_causes_title";s:79:"You can help lots of people by donating little. <strong>See our causes</strong>";s:24:"ch_hThree_help_one_title";s:13:"We can change";s:28:"ch_hThree_help_one_sub_title";s:43:"the life of African people with small help ";s:25:"ch_hThree_help_video_text";s:21:"Watch our media video";s:27:"ch_hThree_help_second_title";s:17:"How can you help?";s:31:"ch_hThree_help_second_sub_title";s:9:"See below";s:27:"ch_hThree_latest_news_title";s:36:"Latest News <strong>Charity</strong>";s:27:"ch_hThree_get_involved_text";s:25:"GET <span>INVOLVED</span>";s:27:"ch_hThree_testimonial_title";s:25:"What Donation Holders say";s:29:"ch_shop_landing_product_title";s:71:"Lorem Ipsum is simply dummy printing. <strong>See our products</strong>";s:20:"ch_shop_landing_news";s:53:"Checkout whats going on. <strong>Latest News</strong>";s:27:"ch_shop_landing_testimonial";s:48:"Donation Holders say <strong>Read Below</strong>";s:21:"ch_hfour_causes_title";s:0:"";s:23:"ch_hfour_how_help_title";s:0:"";s:26:"ch_hfour_latest_news_title";s:0:"";s:26:"ch_hfour_testimonial_title";s:0:"";s:21:"ch_hfive_causes_title";s:0:"";s:23:"ch_hfive_how_help_title";s:0:"";s:26:"ch_hfive_latest_news_title";s:0:"";s:26:"ch_hfive_testimonial_title";s:0:"";s:18:"ch_hfive_volunteer";s:0:"";s:12:"ch_404_title";s:33:"No Page Found. Something is Wrong";s:11:"ch_404_desc";s:197:"Phllus felis purus placerat vel augue vitae aliquam tincidunt dolor sed hendrerit diam in mat tis mollis donecut Phasellus felis purus placerat vel augue vitae, Sed hendrerit diam in mattis mollis.";s:18:"ch_our_story_title";s:82:"Apa itu Learning Center? <strong class="border-none">Sekilas tentang kami</strong>";s:15:"ch_work_section";s:64:"Apa fitur The Learning Center? <strong>Fitur utama kami</strong>";s:19:"ch_our_team_section";s:8:"Our Team";s:12:"ch_faq_title";s:60:"Please make sure that you finish <strong>FAQ below.</strong>";s:23:"ch_faq_section_onetitle";s:17:"General Questions";s:23:"ch_faq_section_twotitle";s:17:"General Questions";s:18:"ch_volunteer_title";s:64:"We need you, <strong class="border-none">Help us around</strong>";s:26:"ch_volunteer_process_title";s:71:"How you can apply, <strong class="border-none">Here is process</strong>";s:15:"ch_causes_title";s:27:"<strong>Our Expert</strong>";s:31:"ch_donation_steps_section_title";s:0:"";s:24:"ch_related_section_title";s:0:"";s:25:"ch_mission_services_title";s:68:"See Services, <strong class="border-none">We are on Mission</strong>";s:21:"ch_mission_help_title";s:62:"How We Help, <strong class="border-none">Several Ways</strong>";s:34:"ch_portfolio_related_section_title";s:17:"Related Portfolio";s:25:"ch_donation_message_title";s:29:"You have successfully donated";s:22:"ch_donation_form_title";s:20:"You are donating to.";s:0:"";s:0:"";}', 'yes'),
+(129, 'vpt_option', 'a:96:{s:18:"single_causes_mode";s:0:"";s:21:"charity_home_1_select";s:2:"11";s:21:"charity_home_2_select";s:2:"11";s:21:"charity_home_3_select";s:2:"11";s:24:"charity_home_shoplanding";s:2:"11";s:11:"home_layout";s:3:"one";s:23:"charity_single_cause_id";s:0:"";s:18:"single_causes_date";s:0:"";s:21:"charity_home_4_select";s:0:"";s:21:"charity_home_5_select";s:0:"";s:18:"causes_home_layout";s:0:"";s:7:"favicon";s:89:"http://localhost/drpp4/wp-content/uploads/2015/08/logo-The-Learning-Center-Diapositif.png";s:9:"site_logo";s:84:"http://localhost/drpp4/wp-content/uploads/2015/08/logo-The-Learning-Center-Putih.png";s:20:"site_header_two_logo";s:84:"http://localhost/drpp4/wp-content/uploads/2015/08/logo-The-Learning-Center-Putih.png";s:11:"theme_color";s:7:"#076e3c";s:11:"theme_fonts";s:23:"''Open Sans'', sans-serif";s:13:"sticky_header";s:9:"sticky-no";s:11:"page_layout";s:10:"full-width";s:25:"become_volunteer_btn_text";s:6:"Daftar";s:25:"become_volunteer_btn_link";s:21:"http://localhost/drpp";s:16:"welcome_tag_line";s:37:"Selamat Datang ke The Learning Center";s:12:"info_mail_id";s:0:"";s:10:"copy_right";s:62:"© Copyright 2015, All Rights Reserved by The Learning Center.";s:22:"reserve_textarea_error";s:0:"";s:13:"header_layout";s:3:"one";s:13:"footer_layout";s:3:"one";s:22:"charity-gallery-layout";s:8:"col-sm-6";s:28:"charity-causes-single-layout";s:9:"fullwidth";s:32:"charity_global_donation_cause_id";s:0:"";s:23:"charity_urgent_cause_id";s:0:"";s:16:"charity-facebook";s:19:"http://facebook.com";s:19:"charity-google-plus";s:22:"http://plus.google.com";s:15:"charity-twitter";s:18:"http://twitter.com";s:16:"charity-linkedin";s:19:"http://linkedin.com";s:20:"charity-vimeo-square";s:16:"http://vimeo.com";s:7:"img_404";s:0:"";s:6:"ch_css";s:0:"";s:5:"ch_js";s:0:"";s:21:"coming_soon_page_logo";s:86:"http://theemon.com/c/charity-wp/PlaceHolder/wp-content/uploads/2015/04/launch-logo.png";s:19:"coming_soon_page_bg";s:84:"http://theemon.com/c/charity-wp/PlaceHolder/wp-content/uploads/2015/04/launch-bg.jpg";s:16:"coming_soon_date";s:10:"16-04-2015";s:22:"coming_soon_newsletter";s:12:"[mc4wp_form]";s:16:"coming_soon_mode";s:0:"";s:16:"coming_soon_page";s:0:"";s:26:"coming_soon_copyright_text";s:56:"© Copyright 2014, All Rights Reserved by Charity Theme.";s:20:"ch_hOne_causes_title";s:42:"Siapa saja <strong>Tim Ahli</strong> kami?";s:22:"ch_hOne_how_help_title";s:48:"<strong>Fitur Utama</strong> The Learning Center";s:25:"ch_hOne_latest_news_title";s:15:"Berita Terakhir";s:25:"ch_hOne_testimonial_title";s:48:"Donation Holders say <strong>Read Below</strong>";s:26:"ch_htwo_urgentcauses_title";s:12:"Urgent Cause";s:23:"ch_htwo_allcauses_title";s:10:"All Causes";s:22:"ch_hTwo_how_help_title";s:44:"How can you help? <strong>See below</strong>";s:23:"ch_hTwo_help_video_text";s:21:"Watch our media video";s:25:"ch_hTwo_get_involved_text";s:26:"GET <span>INVOLVED </span>";s:25:"ch_hTwo_latest_news_title";s:39:"Latest News <strong>On Charity</strong>";s:25:"ch_hTwo_testimonial_title";s:25:"What Donation Holders say";s:22:"ch_hThree_causes_title";s:79:"You can help lots of people by donating little. <strong>See our causes</strong>";s:24:"ch_hThree_help_one_title";s:13:"We can change";s:28:"ch_hThree_help_one_sub_title";s:43:"the life of African people with small help ";s:25:"ch_hThree_help_video_text";s:21:"Watch our media video";s:27:"ch_hThree_help_second_title";s:17:"How can you help?";s:31:"ch_hThree_help_second_sub_title";s:9:"See below";s:27:"ch_hThree_latest_news_title";s:36:"Latest News <strong>Charity</strong>";s:27:"ch_hThree_get_involved_text";s:25:"GET <span>INVOLVED</span>";s:27:"ch_hThree_testimonial_title";s:25:"What Donation Holders say";s:29:"ch_shop_landing_product_title";s:71:"Lorem Ipsum is simply dummy printing. <strong>See our products</strong>";s:20:"ch_shop_landing_news";s:53:"Checkout whats going on. <strong>Latest News</strong>";s:27:"ch_shop_landing_testimonial";s:48:"Donation Holders say <strong>Read Below</strong>";s:21:"ch_hfour_causes_title";s:0:"";s:23:"ch_hfour_how_help_title";s:0:"";s:26:"ch_hfour_latest_news_title";s:0:"";s:26:"ch_hfour_testimonial_title";s:0:"";s:21:"ch_hfive_causes_title";s:0:"";s:23:"ch_hfive_how_help_title";s:0:"";s:26:"ch_hfive_latest_news_title";s:0:"";s:26:"ch_hfive_testimonial_title";s:0:"";s:18:"ch_hfive_volunteer";s:0:"";s:12:"ch_404_title";s:33:"No Page Found. Something is Wrong";s:11:"ch_404_desc";s:197:"Phllus felis purus placerat vel augue vitae aliquam tincidunt dolor sed hendrerit diam in mat tis mollis donecut Phasellus felis purus placerat vel augue vitae, Sed hendrerit diam in mattis mollis.";s:18:"ch_our_story_title";s:82:"Apa itu Learning Center? <strong class="border-none">Sekilas tentang kami</strong>";s:15:"ch_work_section";s:64:"Apa fitur The Learning Center? <strong>Fitur utama kami</strong>";s:19:"ch_our_team_section";s:8:"Our Team";s:12:"ch_faq_title";s:60:"Please make sure that you finish <strong>FAQ below.</strong>";s:23:"ch_faq_section_onetitle";s:17:"General Questions";s:23:"ch_faq_section_twotitle";s:17:"General Questions";s:18:"ch_volunteer_title";s:64:"We need you, <strong class="border-none">Help us around</strong>";s:26:"ch_volunteer_process_title";s:71:"How you can apply, <strong class="border-none">Here is process</strong>";s:15:"ch_causes_title";s:27:"<strong>Our Expert</strong>";s:31:"ch_donation_steps_section_title";s:0:"";s:24:"ch_related_section_title";s:0:"";s:25:"ch_mission_services_title";s:68:"See Services, <strong class="border-none">We are on Mission</strong>";s:21:"ch_mission_help_title";s:62:"How We Help, <strong class="border-none">Several Ways</strong>";s:34:"ch_portfolio_related_section_title";s:17:"Related Portfolio";s:25:"ch_donation_message_title";s:29:"You have successfully donated";s:22:"ch_donation_form_title";s:20:"You are donating to.";s:0:"";s:0:"";}', 'yes'),
 (131, 'revslider_checktables', '1', 'yes'),
 (132, 'revslider-static-css', '.tp-caption a {\ncolor:#ff7302;\ntext-shadow:none;\n-webkit-transition:all 0.2s ease-out;\n-moz-transition:all 0.2s ease-out;\n-o-transition:all 0.2s ease-out;\n-ms-transition:all 0.2s ease-out;\n}\n\n.tp-caption a:hover {\ncolor:#ffa902;\n}', 'yes'),
 (133, 'revslider-update-check-short', '1444819790', 'yes'),
@@ -1019,9 +976,6 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (5929, '_site_transient_poptags_40cd750bba9870f18aada2478b24840a', 'a:100:{s:6:"widget";a:3:{s:4:"name";s:6:"widget";s:4:"slug";s:6:"widget";s:5:"count";s:4:"5472";}s:4:"post";a:3:{s:4:"name";s:4:"Post";s:4:"slug";s:4:"post";s:5:"count";s:4:"3428";}s:6:"plugin";a:3:{s:4:"name";s:6:"plugin";s:4:"slug";s:6:"plugin";s:5:"count";s:4:"3390";}s:5:"admin";a:3:{s:4:"name";s:5:"admin";s:4:"slug";s:5:"admin";s:5:"count";s:4:"2884";}s:5:"posts";a:3:{s:4:"name";s:5:"posts";s:4:"slug";s:5:"posts";s:5:"count";s:4:"2640";}s:7:"sidebar";a:3:{s:4:"name";s:7:"sidebar";s:4:"slug";s:7:"sidebar";s:5:"count";s:4:"2101";}s:9:"shortcode";a:3:{s:4:"name";s:9:"shortcode";s:4:"slug";s:9:"shortcode";s:5:"count";s:4:"2061";}s:6:"google";a:3:{s:4:"name";s:6:"google";s:4:"slug";s:6:"google";s:5:"count";s:4:"1937";}s:7:"twitter";a:3:{s:4:"name";s:7:"twitter";s:4:"slug";s:7:"twitter";s:5:"count";s:4:"1892";}s:6:"images";a:3:{s:4:"name";s:6:"images";s:4:"slug";s:6:"images";s:5:"count";s:4:"1872";}s:4:"page";a:3:{s:4:"name";s:4:"page";s:4:"slug";s:4:"page";s:5:"count";s:4:"1855";}s:8:"comments";a:3:{s:4:"name";s:8:"comments";s:4:"slug";s:8:"comments";s:5:"count";s:4:"1826";}s:5:"image";a:3:{s:4:"name";s:5:"image";s:4:"slug";s:5:"image";s:5:"count";s:4:"1730";}s:8:"facebook";a:3:{s:4:"name";s:8:"Facebook";s:4:"slug";s:8:"facebook";s:5:"count";s:4:"1534";}s:3:"seo";a:3:{s:4:"name";s:3:"seo";s:4:"slug";s:3:"seo";s:5:"count";s:4:"1449";}s:9:"wordpress";a:3:{s:4:"name";s:9:"wordpress";s:4:"slug";s:9:"wordpress";s:5:"count";s:4:"1411";}s:6:"social";a:3:{s:4:"name";s:6:"social";s:4:"slug";s:6:"social";s:5:"count";s:4:"1248";}s:5:"links";a:3:{s:4:"name";s:5:"links";s:4:"slug";s:5:"links";s:5:"count";s:4:"1230";}s:11:"woocommerce";a:3:{s:4:"name";s:11:"woocommerce";s:4:"slug";s:11:"woocommerce";s:5:"count";s:4:"1217";}s:7:"gallery";a:3:{s:4:"name";s:7:"gallery";s:4:"slug";s:7:"gallery";s:5:"count";s:4:"1198";}s:5:"email";a:3:{s:4:"name";s:5:"email";s:4:"slug";s:5:"email";s:5:"count";s:4:"1091";}s:7:"widgets";a:3:{s:4:"name";s:7:"widgets";s:4:"slug";s:7:"widgets";s:5:"count";s:4:"1034";}s:5:"pages";a:3:{s:4:"name";s:5:"pages";s:4:"slug";s:5:"pages";s:5:"count";s:3:"993";}s:6:"jquery";a:3:{s:4:"name";s:6:"jquery";s:4:"slug";s:6:"jquery";s:5:"count";s:3:"949";}s:5:"media";a:3:{s:4:"name";s:5:"media";s:4:"slug";s:5:"media";s:5:"count";s:3:"906";}s:3:"rss";a:3:{s:4:"name";s:3:"rss";s:4:"slug";s:3:"rss";s:5:"count";s:3:"890";}s:4:"ajax";a:3:{s:4:"name";s:4:"AJAX";s:4:"slug";s:4:"ajax";s:5:"count";s:3:"846";}s:5:"video";a:3:{s:4:"name";s:5:"video";s:4:"slug";s:5:"video";s:5:"count";s:3:"837";}s:9:"ecommerce";a:3:{s:4:"name";s:9:"ecommerce";s:4:"slug";s:9:"ecommerce";s:5:"count";s:3:"824";}s:7:"content";a:3:{s:4:"name";s:7:"content";s:4:"slug";s:7:"content";s:5:"count";s:3:"820";}s:5:"login";a:3:{s:4:"name";s:5:"login";s:4:"slug";s:5:"login";s:5:"count";s:3:"808";}s:10:"javascript";a:3:{s:4:"name";s:10:"javascript";s:4:"slug";s:10:"javascript";s:5:"count";s:3:"772";}s:10:"buddypress";a:3:{s:4:"name";s:10:"buddypress";s:4:"slug";s:10:"buddypress";s:5:"count";s:3:"744";}s:5:"photo";a:3:{s:4:"name";s:5:"photo";s:4:"slug";s:5:"photo";s:5:"count";s:3:"716";}s:4:"feed";a:3:{s:4:"name";s:4:"feed";s:4:"slug";s:4:"feed";s:5:"count";s:3:"705";}s:4:"link";a:3:{s:4:"name";s:4:"link";s:4:"slug";s:4:"link";s:5:"count";s:3:"698";}s:8:"security";a:3:{s:4:"name";s:8:"security";s:4:"slug";s:8:"security";s:5:"count";s:3:"696";}s:7:"youtube";a:3:{s:4:"name";s:7:"youtube";s:4:"slug";s:7:"youtube";s:5:"count";s:3:"693";}s:4:"spam";a:3:{s:4:"name";s:4:"spam";s:4:"slug";s:4:"spam";s:5:"count";s:3:"683";}s:5:"share";a:3:{s:4:"name";s:5:"Share";s:4:"slug";s:5:"share";s:5:"count";s:3:"681";}s:10:"responsive";a:3:{s:4:"name";s:10:"responsive";s:4:"slug";s:10:"responsive";s:5:"count";s:3:"672";}s:6:"photos";a:3:{s:4:"name";s:6:"photos";s:4:"slug";s:6:"photos";s:5:"count";s:3:"660";}s:10:"e-commerce";a:3:{s:4:"name";s:10:"e-commerce";s:4:"slug";s:10:"e-commerce";s:5:"count";s:3:"654";}s:8:"category";a:3:{s:4:"name";s:8:"category";s:4:"slug";s:8:"category";s:5:"count";s:3:"650";}s:5:"embed";a:3:{s:4:"name";s:5:"embed";s:4:"slug";s:5:"embed";s:5:"count";s:3:"627";}s:9:"analytics";a:3:{s:4:"name";s:9:"analytics";s:4:"slug";s:9:"analytics";s:5:"count";s:3:"613";}s:3:"css";a:3:{s:4:"name";s:3:"CSS";s:4:"slug";s:3:"css";s:5:"count";s:3:"610";}s:6:"search";a:3:{s:4:"name";s:6:"search";s:4:"slug";s:6:"search";s:5:"count";s:3:"605";}s:9:"slideshow";a:3:{s:4:"name";s:9:"slideshow";s:4:"slug";s:9:"slideshow";s:5:"count";s:3:"601";}s:4:"form";a:3:{s:4:"name";s:4:"form";s:4:"slug";s:4:"form";s:5:"count";s:3:"598";}s:5:"stats";a:3:{s:4:"name";s:5:"stats";s:4:"slug";s:5:"stats";s:5:"count";s:3:"586";}s:7:"comment";a:3:{s:4:"name";s:7:"comment";s:4:"slug";s:7:"comment";s:5:"count";s:3:"572";}s:6:"custom";a:3:{s:4:"name";s:6:"custom";s:4:"slug";s:6:"custom";s:5:"count";s:3:"571";}s:5:"theme";a:3:{s:4:"name";s:5:"theme";s:4:"slug";s:5:"theme";s:5:"count";s:3:"557";}s:4:"tags";a:3:{s:4:"name";s:4:"tags";s:4:"slug";s:4:"tags";s:5:"count";s:3:"556";}s:4:"menu";a:3:{s:4:"name";s:4:"menu";s:4:"slug";s:4:"menu";s:5:"count";s:3:"555";}s:6:"button";a:3:{s:4:"name";s:6:"button";s:4:"slug";s:6:"button";s:5:"count";s:3:"555";}s:6:"slider";a:3:{s:4:"name";s:6:"slider";s:4:"slug";s:6:"slider";s:5:"count";s:3:"552";}s:9:"dashboard";a:3:{s:4:"name";s:9:"dashboard";s:4:"slug";s:9:"dashboard";s:5:"count";s:3:"543";}s:10:"categories";a:3:{s:4:"name";s:10:"categories";s:4:"slug";s:10:"categories";s:5:"count";s:3:"541";}s:10:"statistics";a:3:{s:4:"name";s:10:"statistics";s:4:"slug";s:10:"statistics";s:5:"count";s:3:"533";}s:3:"ads";a:3:{s:4:"name";s:3:"ads";s:4:"slug";s:3:"ads";s:5:"count";s:3:"511";}s:6:"mobile";a:3:{s:4:"name";s:6:"mobile";s:4:"slug";s:6:"mobile";s:5:"count";s:3:"507";}s:6:"editor";a:3:{s:4:"name";s:6:"editor";s:4:"slug";s:6:"editor";s:5:"count";s:3:"496";}s:7:"picture";a:3:{s:4:"name";s:7:"picture";s:4:"slug";s:7:"picture";s:5:"count";s:3:"495";}s:4:"user";a:3:{s:4:"name";s:4:"user";s:4:"slug";s:4:"user";s:5:"count";s:3:"495";}s:5:"users";a:3:{s:4:"name";s:5:"users";s:4:"slug";s:5:"users";s:5:"count";s:3:"489";}s:4:"list";a:3:{s:4:"name";s:4:"list";s:4:"slug";s:4:"list";s:5:"count";s:3:"486";}s:7:"plugins";a:3:{s:4:"name";s:7:"plugins";s:4:"slug";s:7:"plugins";s:5:"count";s:3:"475";}s:9:"affiliate";a:3:{s:4:"name";s:9:"affiliate";s:4:"slug";s:9:"affiliate";s:5:"count";s:3:"471";}s:9:"multisite";a:3:{s:4:"name";s:9:"multisite";s:4:"slug";s:9:"multisite";s:5:"count";s:3:"460";}s:6:"simple";a:3:{s:4:"name";s:6:"simple";s:4:"slug";s:6:"simple";s:5:"count";s:3:"457";}s:8:"pictures";a:3:{s:4:"name";s:8:"pictures";s:4:"slug";s:8:"pictures";s:5:"count";s:3:"448";}s:7:"contact";a:3:{s:4:"name";s:7:"contact";s:4:"slug";s:7:"contact";s:5:"count";s:3:"433";}s:12:"contact-form";a:3:{s:4:"name";s:12:"contact form";s:4:"slug";s:12:"contact-form";s:5:"count";s:3:"431";}s:12:"social-media";a:3:{s:4:"name";s:12:"social media";s:4:"slug";s:12:"social-media";s:5:"count";s:3:"430";}s:10:"navigation";a:3:{s:4:"name";s:10:"navigation";s:4:"slug";s:10:"navigation";s:5:"count";s:3:"422";}s:5:"flash";a:3:{s:4:"name";s:5:"flash";s:4:"slug";s:5:"flash";s:5:"count";s:3:"420";}s:3:"url";a:3:{s:4:"name";s:3:"url";s:4:"slug";s:3:"url";s:5:"count";s:3:"415";}s:4:"html";a:3:{s:4:"name";s:4:"html";s:4:"slug";s:4:"html";s:5:"count";s:3:"408";}s:4:"meta";a:3:{s:4:"name";s:4:"meta";s:4:"slug";s:4:"meta";s:5:"count";s:3:"393";}s:10:"newsletter";a:3:{s:4:"name";s:10:"newsletter";s:4:"slug";s:10:"newsletter";s:5:"count";s:3:"391";}s:3:"api";a:3:{s:4:"name";s:3:"api";s:4:"slug";s:3:"api";s:5:"count";s:3:"390";}s:4:"news";a:3:{s:4:"name";s:4:"News";s:4:"slug";s:4:"news";s:5:"count";s:3:"389";}s:3:"tag";a:3:{s:4:"name";s:3:"tag";s:4:"slug";s:3:"tag";s:5:"count";s:3:"380";}s:4:"shop";a:3:{s:4:"name";s:4:"shop";s:4:"slug";s:4:"shop";s:5:"count";s:3:"380";}s:6:"events";a:3:{s:4:"name";s:6:"events";s:4:"slug";s:6:"events";s:5:"count";s:3:"376";}s:9:"marketing";a:3:{s:4:"name";s:9:"marketing";s:4:"slug";s:9:"marketing";s:5:"count";s:3:"374";}s:4:"text";a:3:{s:4:"name";s:4:"text";s:4:"slug";s:4:"text";s:5:"count";s:3:"373";}s:9:"thumbnail";a:3:{s:4:"name";s:9:"thumbnail";s:4:"slug";s:9:"thumbnail";s:5:"count";s:3:"372";}s:4:"code";a:3:{s:4:"name";s:4:"code";s:4:"slug";s:4:"code";s:5:"count";s:3:"368";}s:8:"tracking";a:3:{s:4:"name";s:8:"tracking";s:4:"slug";s:8:"tracking";s:5:"count";s:3:"367";}s:11:"advertising";a:3:{s:4:"name";s:11:"advertising";s:4:"slug";s:11:"advertising";s:5:"count";s:3:"366";}s:9:"automatic";a:3:{s:4:"name";s:9:"automatic";s:4:"slug";s:9:"automatic";s:5:"count";s:3:"366";}s:8:"calendar";a:3:{s:4:"name";s:8:"calendar";s:4:"slug";s:8:"calendar";s:5:"count";s:3:"364";}s:6:"upload";a:3:{s:4:"name";s:6:"upload";s:4:"slug";s:6:"upload";s:5:"count";s:3:"364";}s:7:"sharing";a:3:{s:4:"name";s:7:"sharing";s:4:"slug";s:7:"sharing";s:5:"count";s:3:"361";}s:7:"profile";a:3:{s:4:"name";s:7:"profile";s:4:"slug";s:7:"profile";s:5:"count";s:3:"357";}s:14:"administration";a:3:{s:4:"name";s:14:"administration";s:4:"slug";s:14:"administration";s:5:"count";s:3:"356";}s:8:"lightbox";a:3:{s:4:"name";s:8:"lightbox";s:4:"slug";s:8:"lightbox";s:5:"count";s:3:"356";}}', 'yes'),
 (5944, 'revslider-valid-notice', 'false', 'yes'),
 (5970, 'tonjoo_ecae_options', 'a:53:{s:14:"excerpt_method";s:9:"paragraph";s:5:"width";s:3:"500";s:15:"strip_shortcode";s:3:"yes";s:16:"strip_empty_tags";s:3:"yes";s:15:"disable_on_feed";s:3:"yes";s:14:"special_method";s:2:"no";s:7:"justify";s:2:"no";s:17:"extra_html_markup";s:4:"span";s:10:"show_image";s:3:"yes";s:14:"image_position";s:4:"none";s:16:"image_width_type";s:6:"manual";s:11:"image_width";s:3:"300";s:17:"image_padding_top";s:1:"5";s:19:"image_padding_right";s:1:"5";s:20:"image_padding_bottom";s:1:"5";s:18:"image_padding_left";s:1:"5";s:22:"location_settings_type";s:5:"basic";s:4:"home";s:3:"yes";s:10:"front_page";s:3:"yes";s:7:"archive";s:3:"yes";s:6:"search";s:3:"yes";s:13:"advanced_home";s:3:"all";s:19:"advanced_home_width";s:1:"0";s:18:"advanced_frontpage";s:3:"all";s:24:"advanced_frontpage_width";s:1:"0";s:16:"advanced_archive";s:3:"all";s:22:"advanced_archive_width";s:1:"0";s:15:"advanced_search";s:3:"all";s:21:"advanced_search_width";s:1:"0";s:18:"advanced_page_main";s:7:"disable";s:24:"advanced_page_main_width";s:1:"0";s:21:"button_display_option";s:6:"normal";s:9:"read_more";s:9:"Read more";s:21:"read_more_text_before";s:0:"";s:15:"readmore_inline";s:2:"no";s:15:"read_more_align";s:4:"left";s:11:"button_font";s:0:"";s:16:"button_font_size";s:2:"14";s:11:"button_skin";s:20:"ecae-buttonskin-none";s:10:"custom_css";s:0:"";s:15:"excerpt_in_page";s:0:"";s:14:"home_post_type";s:0:"";s:13:"home_category";s:0:"";s:19:"frontpage_post_type";s:0:"";s:18:"frontpage_category";s:0:"";s:17:"archive_post_type";s:0:"";s:16:"archive_category";s:0:"";s:16:"search_post_type";s:0:"";s:15:"search_category";s:0:"";s:24:"excerpt_in_page_advanced";s:0:"";s:13:"advanced_page";s:0:"";s:14:"page_post_type";s:28:"a:1:{i:0;a:1:{i:0;s:1:"0";}}";s:13:"page_category";s:28:"a:1:{i:0;a:1:{i:0;s:1:"0";}}";}', 'yes'),
-(6001, '_site_transient_timeout_theme_roots', '1444890729', 'yes'),
-(6002, '_site_transient_theme_roots', 'a:4:{s:7:"charity";s:7:"/themes";s:13:"twentyfifteen";s:7:"/themes";s:14:"twentyfourteen";s:7:"/themes";s:14:"twentythirteen";s:7:"/themes";}', 'yes'),
-(6003, '_site_transient_update_plugins', 'O:8:"stdClass":4:{s:12:"last_checked";i:1444888937;s:8:"response";a:2:{s:19:"akismet/akismet.php";O:8:"stdClass":8:{s:2:"id";s:2:"15";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"3.1.5";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.3.1.5.zip";s:14:"upgrade_notice";s:78:"Version 3.1.5 contains security fixes and is highly recommended for all users.";s:10:"autoupdate";b:1;}s:37:"mailchimp-for-wp/mailchimp-for-wp.php";O:8:"stdClass":6:{s:2:"id";s:5:"41550";s:4:"slug";s:16:"mailchimp-for-wp";s:6:"plugin";s:37:"mailchimp-for-wp/mailchimp-for-wp.php";s:11:"new_version";s:6:"2.3.16";s:3:"url";s:47:"https://wordpress.org/plugins/mailchimp-for-wp/";s:7:"package";s:66:"https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.3.16.zip";}}s:12:"translations";a:0:{}s:9:"no_update";a:6:{s:36:"contact-form-7/wp-contact-form-7.php";O:8:"stdClass":6:{s:2:"id";s:3:"790";s:4:"slug";s:14:"contact-form-7";s:6:"plugin";s:36:"contact-form-7/wp-contact-form-7.php";s:11:"new_version";s:3:"4.3";s:3:"url";s:45:"https://wordpress.org/plugins/contact-form-7/";s:7:"package";s:61:"https://downloads.wordpress.org/plugin/contact-form-7.4.3.zip";}s:58:"contact-form-7-to-database-extension/contact-form-7-db.php";O:8:"stdClass":6:{s:2:"id";s:5:"16507";s:4:"slug";s:36:"contact-form-7-to-database-extension";s:6:"plugin";s:58:"contact-form-7-to-database-extension/contact-form-7-db.php";s:11:"new_version";s:6:"2.9.10";s:3:"url";s:67:"https://wordpress.org/plugins/contact-form-7-to-database-extension/";s:7:"package";s:79:"https://downloads.wordpress.org/plugin/contact-form-7-to-database-extension.zip";}s:53:"easy-custom-auto-excerpt/easy-custom-auto-excerpt.php";O:8:"stdClass":6:{s:2:"id";s:5:"39321";s:4:"slug";s:24:"easy-custom-auto-excerpt";s:6:"plugin";s:53:"easy-custom-auto-excerpt/easy-custom-auto-excerpt.php";s:11:"new_version";s:5:"2.3.0";s:3:"url";s:55:"https://wordpress.org/plugins/easy-custom-auto-excerpt/";s:7:"package";s:67:"https://downloads.wordpress.org/plugin/easy-custom-auto-excerpt.zip";}s:33:"events-manager/events-manager.php";O:8:"stdClass":6:{s:2:"id";s:4:"4075";s:4:"slug";s:14:"events-manager";s:6:"plugin";s:33:"events-manager/events-manager.php";s:11:"new_version";s:5:"5.6.1";s:3:"url";s:45:"https://wordpress.org/plugins/events-manager/";s:7:"package";s:63:"https://downloads.wordpress.org/plugin/events-manager.5.6.1.zip";}s:9:"hello.php";O:8:"stdClass":6:{s:2:"id";s:4:"3564";s:4:"slug";s:11:"hello-dolly";s:6:"plugin";s:9:"hello.php";s:11:"new_version";s:3:"1.6";s:3:"url";s:42:"https://wordpress.org/plugins/hello-dolly/";s:7:"package";s:58:"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip";}s:27:"woocommerce/woocommerce.php";O:8:"stdClass":6:{s:2:"id";s:5:"25331";s:4:"slug";s:11:"woocommerce";s:6:"plugin";s:27:"woocommerce/woocommerce.php";s:11:"new_version";s:5:"2.4.7";s:3:"url";s:42:"https://wordpress.org/plugins/woocommerce/";s:7:"package";s:60:"https://downloads.wordpress.org/plugin/woocommerce.2.4.7.zip";}}}', 'yes'),
 (6010, '_site_transient_timeout_browser_d345f0fc2588ba33770d312d084b0dfc', '1445494160', 'yes'),
 (6011, '_site_transient_browser_d345f0fc2588ba33770d312d084b0dfc', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:13:"45.0.2454.101";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
 (6015, '_transient_timeout_feed_ac0b00fe65abe10e0c5b588f3ed8c7ca', '1444932581', 'no');
@@ -1035,9 +989,12 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (6033, '_transient_timeout_feed_mod_b9388c83948825c1edaef0d856b7b109', '1444932635', 'no'),
 (6034, '_transient_feed_mod_b9388c83948825c1edaef0d856b7b109', '1444889435', 'no'),
 (6035, '_transient_timeout_dash_88ae138922fe95674369b1cb3d215a2b', '1444932635', 'no'),
-(6036, '_transient_dash_88ae138922fe95674369b1cb3d215a2b', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''https://wordpress.org/news/2015/09/wordpress-4-3-1/''>WordPress 4.3.1 Security and Maintenance Release</a> <span class="rss-date">September 15, 2015</span><div class="rssSummary">WordPress 4.3.1 is now available. This is a security release for all previous versions and we strongly encourage you to update your sites immediately. This release addresses three issues, including two cross-site scripting vulnerabilities and a potential privilege escalation. WordPress versions 4.3 and earlier are vulnerable to a cross-site scripting vulnerability when processing shortcode tags (CVE-2015-5714). Reported by [&hellip;]</div></li></ul></div><div class="rss-widget"><p><strong>RSS Error</strong>: WP HTTP Error: Resolving timed out after 10000 milliseconds</p></div><div class="rss-widget"><ul><li class=''dashboard-news-plugin''><span>Popular Plugin:</span> <a href=''https://wordpress.org/plugins/updraftplus/'' class=''dashboard-news-plugin-link''>UpdraftPlus Backup and Restoration</a>&nbsp;<span>(<a href=''plugin-install.php?tab=plugin-information&amp;plugin=updraftplus&amp;_wpnonce=40662d4f06&amp;TB_iframe=true&amp;width=600&amp;height=800'' class=''thickbox'' title=''UpdraftPlus Backup and Restoration''>Install</a>)</span></li></ul></div>', 'no');
+(6036, '_transient_dash_88ae138922fe95674369b1cb3d215a2b', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''https://wordpress.org/news/2015/09/wordpress-4-3-1/''>WordPress 4.3.1 Security and Maintenance Release</a> <span class="rss-date">September 15, 2015</span><div class="rssSummary">WordPress 4.3.1 is now available. This is a security release for all previous versions and we strongly encourage you to update your sites immediately. This release addresses three issues, including two cross-site scripting vulnerabilities and a potential privilege escalation. WordPress versions 4.3 and earlier are vulnerable to a cross-site scripting vulnerability when processing shortcode tags (CVE-2015-5714). Reported by [&hellip;]</div></li></ul></div><div class="rss-widget"><p><strong>RSS Error</strong>: WP HTTP Error: Resolving timed out after 10000 milliseconds</p></div><div class="rss-widget"><ul><li class=''dashboard-news-plugin''><span>Popular Plugin:</span> <a href=''https://wordpress.org/plugins/updraftplus/'' class=''dashboard-news-plugin-link''>UpdraftPlus Backup and Restoration</a>&nbsp;<span>(<a href=''plugin-install.php?tab=plugin-information&amp;plugin=updraftplus&amp;_wpnonce=40662d4f06&amp;TB_iframe=true&amp;width=600&amp;height=800'' class=''thickbox'' title=''UpdraftPlus Backup and Restoration''>Install</a>)</span></li></ul></div>', 'no'),
+(6118, '_site_transient_timeout_theme_roots', '1444899622', 'yes'),
+(6119, '_site_transient_theme_roots', 'a:4:{s:7:"charity";s:7:"/themes";s:13:"twentyfifteen";s:7:"/themes";s:14:"twentyfourteen";s:7:"/themes";s:14:"twentythirteen";s:7:"/themes";}', 'yes'),
+(6120, '_site_transient_update_plugins', 'O:8:"stdClass":4:{s:12:"last_checked";i:1444897827;s:8:"response";a:2:{s:19:"akismet/akismet.php";O:8:"stdClass":8:{s:2:"id";s:2:"15";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"3.1.5";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.3.1.5.zip";s:14:"upgrade_notice";s:78:"Version 3.1.5 contains security fixes and is highly recommended for all users.";s:10:"autoupdate";b:1;}s:37:"mailchimp-for-wp/mailchimp-for-wp.php";O:8:"stdClass":6:{s:2:"id";s:5:"41550";s:4:"slug";s:16:"mailchimp-for-wp";s:6:"plugin";s:37:"mailchimp-for-wp/mailchimp-for-wp.php";s:11:"new_version";s:6:"2.3.16";s:3:"url";s:47:"https://wordpress.org/plugins/mailchimp-for-wp/";s:7:"package";s:66:"https://downloads.wordpress.org/plugin/mailchimp-for-wp.2.3.16.zip";}}s:12:"translations";a:0:{}s:9:"no_update";a:6:{s:36:"contact-form-7/wp-contact-form-7.php";O:8:"stdClass":6:{s:2:"id";s:3:"790";s:4:"slug";s:14:"contact-form-7";s:6:"plugin";s:36:"contact-form-7/wp-contact-form-7.php";s:11:"new_version";s:3:"4.3";s:3:"url";s:45:"https://wordpress.org/plugins/contact-form-7/";s:7:"package";s:61:"https://downloads.wordpress.org/plugin/contact-form-7.4.3.zip";}s:58:"contact-form-7-to-database-extension/contact-form-7-db.php";O:8:"stdClass":6:{s:2:"id";s:5:"16507";s:4:"slug";s:36:"contact-form-7-to-database-extension";s:6:"plugin";s:58:"contact-form-7-to-database-extension/contact-form-7-db.php";s:11:"new_version";s:6:"2.9.10";s:3:"url";s:67:"https://wordpress.org/plugins/contact-form-7-to-database-extension/";s:7:"package";s:79:"https://downloads.wordpress.org/plugin/contact-form-7-to-database-extension.zip";}s:53:"easy-custom-auto-excerpt/easy-custom-auto-excerpt.php";O:8:"stdClass":6:{s:2:"id";s:5:"39321";s:4:"slug";s:24:"easy-custom-auto-excerpt";s:6:"plugin";s:53:"easy-custom-auto-excerpt/easy-custom-auto-excerpt.php";s:11:"new_version";s:5:"2.3.0";s:3:"url";s:55:"https://wordpress.org/plugins/easy-custom-auto-excerpt/";s:7:"package";s:67:"https://downloads.wordpress.org/plugin/easy-custom-auto-excerpt.zip";}s:33:"events-manager/events-manager.php";O:8:"stdClass":6:{s:2:"id";s:4:"4075";s:4:"slug";s:14:"events-manager";s:6:"plugin";s:33:"events-manager/events-manager.php";s:11:"new_version";s:5:"5.6.1";s:3:"url";s:45:"https://wordpress.org/plugins/events-manager/";s:7:"package";s:63:"https://downloads.wordpress.org/plugin/events-manager.5.6.1.zip";}s:9:"hello.php";O:8:"stdClass":6:{s:2:"id";s:4:"3564";s:4:"slug";s:11:"hello-dolly";s:6:"plugin";s:9:"hello.php";s:11:"new_version";s:3:"1.6";s:3:"url";s:42:"https://wordpress.org/plugins/hello-dolly/";s:7:"package";s:58:"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip";}s:27:"woocommerce/woocommerce.php";O:8:"stdClass":6:{s:2:"id";s:5:"25331";s:4:"slug";s:11:"woocommerce";s:6:"plugin";s:27:"woocommerce/woocommerce.php";s:11:"new_version";s:5:"2.4.7";s:3:"url";s:42:"https://wordpress.org/plugins/woocommerce/";s:7:"package";s:60:"https://downloads.wordpress.org/plugin/woocommerce.2.4.7.zip";}}}', 'yes');
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(6112, 'rewrite_rules', 'a:440:{s:29:"kegiatan/(\\d{4}-\\d{2}-\\d{2})$";s:53:"index.php?pagename=kegiatan/&calendar_day=$matches[1]";s:15:"kegiatan/rss/?$";s:35:"index.php?post_type=event&feed=feed";s:16:"kegiatan/feed/?$";s:35:"index.php?post_type=event&feed=feed";s:20:"kegiatan/event/(.+)$";s:65:"index.php?pagename=kegiatan/&em_redirect=1&event_slug=$matches[1]";s:23:"kegiatan/location/(.+)$";s:68:"index.php?pagename=kegiatan/&em_redirect=1&location_slug=$matches[1]";s:23:"kegiatan/category/(.+)$";s:68:"index.php?pagename=kegiatan/&em_redirect=1&category_slug=$matches[1]";s:11:"kegiatan/?$";s:27:"index.php?pagename=kegiatan";s:22:"events/([^/]+)/ical/?$";s:34:"index.php?event=$matches[1]&ical=1";s:25:"locations/([^/]+)/ical/?$";s:37:"index.php?location=$matches[1]&ical=1";s:33:"events/categories/([^/]+)/ical/?$";s:45:"index.php?event-categories=$matches[1]&ical=1";s:27:"events/tags/([^/]+)/ical/?$";s:39:"index.php?event-tags=$matches[1]&ical=1";s:24:"locations/([^/]+)/rss/?$";s:36:"index.php?location=$matches[1]&rss=1";s:9:"causes/?$";s:34:"index.php?post_type=charity-causes";s:39:"causes/feed/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?post_type=charity-causes&feed=$matches[1]";s:34:"causes/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?post_type=charity-causes&feed=$matches[1]";s:26:"causes/page/([0-9]{1,})/?$";s:52:"index.php?post_type=charity-causes&paged=$matches[1]";s:18:"charity-gallery/?$";s:35:"index.php?post_type=charity-gallery";s:48:"charity-gallery/feed/(feed|rdf|rss|rss2|atom)/?$";s:52:"index.php?post_type=charity-gallery&feed=$matches[1]";s:43:"charity-gallery/(feed|rdf|rss|rss2|atom)/?$";s:52:"index.php?post_type=charity-gallery&feed=$matches[1]";s:35:"charity-gallery/page/([0-9]{1,})/?$";s:53:"index.php?post_type=charity-gallery&paged=$matches[1]";s:20:"charity-portfolio/?$";s:37:"index.php?post_type=charity-portfolio";s:50:"charity-portfolio/feed/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?post_type=charity-portfolio&feed=$matches[1]";s:45:"charity-portfolio/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?post_type=charity-portfolio&feed=$matches[1]";s:37:"charity-portfolio/page/([0-9]{1,})/?$";s:55:"index.php?post_type=charity-portfolio&paged=$matches[1]";s:20:"charity-our-works/?$";s:37:"index.php?post_type=charity-our-works";s:50:"charity-our-works/feed/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?post_type=charity-our-works&feed=$matches[1]";s:45:"charity-our-works/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?post_type=charity-our-works&feed=$matches[1]";s:37:"charity-our-works/page/([0-9]{1,})/?$";s:55:"index.php?post_type=charity-our-works&paged=$matches[1]";s:22:"charity_our_mission/?$";s:39:"index.php?post_type=charity_our_mission";s:52:"charity_our_mission/feed/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?post_type=charity_our_mission&feed=$matches[1]";s:47:"charity_our_mission/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?post_type=charity_our_mission&feed=$matches[1]";s:39:"charity_our_mission/page/([0-9]{1,})/?$";s:57:"index.php?post_type=charity_our_mission&paged=$matches[1]";s:15:"charity_help/?$";s:32:"index.php?post_type=charity_help";s:45:"charity_help/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?post_type=charity_help&feed=$matches[1]";s:40:"charity_help/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?post_type=charity_help&feed=$matches[1]";s:32:"charity_help/page/([0-9]{1,})/?$";s:50:"index.php?post_type=charity_help&paged=$matches[1]";s:14:"charity_faq/?$";s:31:"index.php?post_type=charity_faq";s:44:"charity_faq/feed/(feed|rdf|rss|rss2|atom)/?$";s:48:"index.php?post_type=charity_faq&feed=$matches[1]";s:39:"charity_faq/(feed|rdf|rss|rss2|atom)/?$";s:48:"index.php?post_type=charity_faq&feed=$matches[1]";s:31:"charity_faq/page/([0-9]{1,})/?$";s:49:"index.php?post_type=charity_faq&paged=$matches[1]";s:14:"testimonial/?$";s:31:"index.php?post_type=testimonial";s:44:"testimonial/feed/(feed|rdf|rss|rss2|atom)/?$";s:48:"index.php?post_type=testimonial&feed=$matches[1]";s:39:"testimonial/(feed|rdf|rss|rss2|atom)/?$";s:48:"index.php?post_type=testimonial&feed=$matches[1]";s:31:"testimonial/page/([0-9]{1,})/?$";s:49:"index.php?post_type=testimonial&paged=$matches[1]";s:22:"^wc-api/v([1-3]{1})/?$";s:51:"index.php?wc-api-version=$matches[1]&wc-api-route=/";s:24:"^wc-api/v([1-3]{1})(.*)?";s:61:"index.php?wc-api-version=$matches[1]&wc-api-route=$matches[2]";s:24:"^wc-auth/v([1]{1})/(.*)?";s:63:"index.php?wc-auth-version=$matches[1]&wc-auth-route=$matches[2]";s:12:"locations/?$";s:28:"index.php?post_type=location";s:42:"locations/feed/(feed|rdf|rss|rss2|atom)/?$";s:45:"index.php?post_type=location&feed=$matches[1]";s:37:"locations/(feed|rdf|rss|rss2|atom)/?$";s:45:"index.php?post_type=location&feed=$matches[1]";s:29:"locations/page/([0-9]{1,})/?$";s:46:"index.php?post_type=location&paged=$matches[1]";s:9:"events/?$";s:25:"index.php?post_type=event";s:39:"events/feed/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?post_type=event&feed=$matches[1]";s:34:"events/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?post_type=event&feed=$matches[1]";s:26:"events/page/([0-9]{1,})/?$";s:43:"index.php?post_type=event&paged=$matches[1]";s:7:"shop/?$";s:27:"index.php?post_type=product";s:37:"shop/feed/(feed|rdf|rss|rss2|atom)/?$";s:44:"index.php?post_type=product&feed=$matches[1]";s:32:"shop/(feed|rdf|rss|rss2|atom)/?$";s:44:"index.php?post_type=product&feed=$matches[1]";s:24:"shop/page/([0-9]{1,})/?$";s:45:"index.php?post_type=product&paged=$matches[1]";s:47:"category/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:52:"index.php?category_name=$matches[1]&feed=$matches[2]";s:42:"category/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:52:"index.php?category_name=$matches[1]&feed=$matches[2]";s:35:"category/(.+?)/page/?([0-9]{1,})/?$";s:53:"index.php?category_name=$matches[1]&paged=$matches[2]";s:32:"category/(.+?)/wc-api(/(.*))?/?$";s:54:"index.php?category_name=$matches[1]&wc-api=$matches[3]";s:17:"category/(.+?)/?$";s:35:"index.php?category_name=$matches[1]";s:44:"tag/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?tag=$matches[1]&feed=$matches[2]";s:39:"tag/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?tag=$matches[1]&feed=$matches[2]";s:32:"tag/([^/]+)/page/?([0-9]{1,})/?$";s:43:"index.php?tag=$matches[1]&paged=$matches[2]";s:29:"tag/([^/]+)/wc-api(/(.*))?/?$";s:44:"index.php?tag=$matches[1]&wc-api=$matches[3]";s:14:"tag/([^/]+)/?$";s:25:"index.php?tag=$matches[1]";s:45:"type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?post_format=$matches[1]&feed=$matches[2]";s:40:"type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?post_format=$matches[1]&feed=$matches[2]";s:33:"type/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?post_format=$matches[1]&paged=$matches[2]";s:15:"type/([^/]+)/?$";s:33:"index.php?post_format=$matches[1]";s:34:"causes/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:44:"causes/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:64:"causes/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"causes/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"causes/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:27:"causes/([^/]+)/trackback/?$";s:41:"index.php?charity-causes=$matches[1]&tb=1";s:47:"causes/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:53:"index.php?charity-causes=$matches[1]&feed=$matches[2]";s:42:"causes/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:53:"index.php?charity-causes=$matches[1]&feed=$matches[2]";s:35:"causes/([^/]+)/page/?([0-9]{1,})/?$";s:54:"index.php?charity-causes=$matches[1]&paged=$matches[2]";s:42:"causes/([^/]+)/comment-page-([0-9]{1,})/?$";s:54:"index.php?charity-causes=$matches[1]&cpage=$matches[2]";s:32:"causes/([^/]+)/wc-api(/(.*))?/?$";s:55:"index.php?charity-causes=$matches[1]&wc-api=$matches[3]";s:38:"causes/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:49:"causes/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:27:"causes/([^/]+)(/[0-9]+)?/?$";s:53:"index.php?charity-causes=$matches[1]&page=$matches[2]";s:23:"causes/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:33:"causes/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:53:"causes/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:48:"causes/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:48:"causes/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:52:"causes-type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?causes-category=$matches[1]&feed=$matches[2]";s:47:"causes-type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?causes-category=$matches[1]&feed=$matches[2]";s:40:"causes-type/([^/]+)/page/?([0-9]{1,})/?$";s:55:"index.php?causes-category=$matches[1]&paged=$matches[2]";s:22:"causes-type/([^/]+)/?$";s:37:"index.php?causes-category=$matches[1]";s:56:"causes-location/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?causes-location=$matches[1]&feed=$matches[2]";s:51:"causes-location/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?causes-location=$matches[1]&feed=$matches[2]";s:44:"causes-location/([^/]+)/page/?([0-9]{1,})/?$";s:55:"index.php?causes-location=$matches[1]&paged=$matches[2]";s:26:"causes-location/([^/]+)/?$";s:37:"index.php?causes-location=$matches[1]";s:43:"charity-gallery/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:53:"charity-gallery/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:73:"charity-gallery/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:68:"charity-gallery/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:68:"charity-gallery/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:36:"charity-gallery/([^/]+)/trackback/?$";s:42:"index.php?charity-gallery=$matches[1]&tb=1";s:56:"charity-gallery/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?charity-gallery=$matches[1]&feed=$matches[2]";s:51:"charity-gallery/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?charity-gallery=$matches[1]&feed=$matches[2]";s:44:"charity-gallery/([^/]+)/page/?([0-9]{1,})/?$";s:55:"index.php?charity-gallery=$matches[1]&paged=$matches[2]";s:51:"charity-gallery/([^/]+)/comment-page-([0-9]{1,})/?$";s:55:"index.php?charity-gallery=$matches[1]&cpage=$matches[2]";s:41:"charity-gallery/([^/]+)/wc-api(/(.*))?/?$";s:56:"index.php?charity-gallery=$matches[1]&wc-api=$matches[3]";s:47:"charity-gallery/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:58:"charity-gallery/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:36:"charity-gallery/([^/]+)(/[0-9]+)?/?$";s:54:"index.php?charity-gallery=$matches[1]&page=$matches[2]";s:32:"charity-gallery/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:42:"charity-gallery/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:62:"charity-gallery/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:57:"charity-gallery/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:57:"charity-gallery/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:53:"gallery-type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?gallery-type=$matches[1]&feed=$matches[2]";s:48:"gallery-type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?gallery-type=$matches[1]&feed=$matches[2]";s:41:"gallery-type/([^/]+)/page/?([0-9]{1,})/?$";s:52:"index.php?gallery-type=$matches[1]&paged=$matches[2]";s:23:"gallery-type/([^/]+)/?$";s:34:"index.php?gallery-type=$matches[1]";s:45:"charity-portfolio/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:55:"charity-portfolio/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:75:"charity-portfolio/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"charity-portfolio/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"charity-portfolio/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:38:"charity-portfolio/([^/]+)/trackback/?$";s:44:"index.php?charity-portfolio=$matches[1]&tb=1";s:58:"charity-portfolio/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?charity-portfolio=$matches[1]&feed=$matches[2]";s:53:"charity-portfolio/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?charity-portfolio=$matches[1]&feed=$matches[2]";s:46:"charity-portfolio/([^/]+)/page/?([0-9]{1,})/?$";s:57:"index.php?charity-portfolio=$matches[1]&paged=$matches[2]";s:53:"charity-portfolio/([^/]+)/comment-page-([0-9]{1,})/?$";s:57:"index.php?charity-portfolio=$matches[1]&cpage=$matches[2]";s:43:"charity-portfolio/([^/]+)/wc-api(/(.*))?/?$";s:58:"index.php?charity-portfolio=$matches[1]&wc-api=$matches[3]";s:49:"charity-portfolio/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:60:"charity-portfolio/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:38:"charity-portfolio/([^/]+)(/[0-9]+)?/?$";s:56:"index.php?charity-portfolio=$matches[1]&page=$matches[2]";s:34:"charity-portfolio/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:44:"charity-portfolio/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:64:"charity-portfolio/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"charity-portfolio/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"charity-portfolio/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:55:"portfolio-type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:53:"index.php?portfolio-type=$matches[1]&feed=$matches[2]";s:50:"portfolio-type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:53:"index.php?portfolio-type=$matches[1]&feed=$matches[2]";s:43:"portfolio-type/([^/]+)/page/?([0-9]{1,})/?$";s:54:"index.php?portfolio-type=$matches[1]&paged=$matches[2]";s:25:"portfolio-type/([^/]+)/?$";s:36:"index.php?portfolio-type=$matches[1]";s:43:"charity-our-works/.+?/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:53:"charity-our-works/.+?/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:73:"charity-our-works/.+?/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:68:"charity-our-works/.+?/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:68:"charity-our-works/.+?/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:36:"charity-our-works/(.+?)/trackback/?$";s:44:"index.php?charity-our-works=$matches[1]&tb=1";s:56:"charity-our-works/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?charity-our-works=$matches[1]&feed=$matches[2]";s:51:"charity-our-works/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?charity-our-works=$matches[1]&feed=$matches[2]";s:44:"charity-our-works/(.+?)/page/?([0-9]{1,})/?$";s:57:"index.php?charity-our-works=$matches[1]&paged=$matches[2]";s:51:"charity-our-works/(.+?)/comment-page-([0-9]{1,})/?$";s:57:"index.php?charity-our-works=$matches[1]&cpage=$matches[2]";s:41:"charity-our-works/(.+?)/wc-api(/(.*))?/?$";s:58:"index.php?charity-our-works=$matches[1]&wc-api=$matches[3]";s:47:"charity-our-works/.+?/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:58:"charity-our-works/.+?/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:36:"charity-our-works/(.+?)(/[0-9]+)?/?$";s:56:"index.php?charity-our-works=$matches[1]&page=$matches[2]";s:47:"charity_our_mission/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:57:"charity_our_mission/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:77:"charity_our_mission/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:72:"charity_our_mission/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:72:"charity_our_mission/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:40:"charity_our_mission/([^/]+)/trackback/?$";s:46:"index.php?charity_our_mission=$matches[1]&tb=1";s:60:"charity_our_mission/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:58:"index.php?charity_our_mission=$matches[1]&feed=$matches[2]";s:55:"charity_our_mission/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:58:"index.php?charity_our_mission=$matches[1]&feed=$matches[2]";s:48:"charity_our_mission/([^/]+)/page/?([0-9]{1,})/?$";s:59:"index.php?charity_our_mission=$matches[1]&paged=$matches[2]";s:55:"charity_our_mission/([^/]+)/comment-page-([0-9]{1,})/?$";s:59:"index.php?charity_our_mission=$matches[1]&cpage=$matches[2]";s:45:"charity_our_mission/([^/]+)/wc-api(/(.*))?/?$";s:60:"index.php?charity_our_mission=$matches[1]&wc-api=$matches[3]";s:51:"charity_our_mission/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:62:"charity_our_mission/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:40:"charity_our_mission/([^/]+)(/[0-9]+)?/?$";s:58:"index.php?charity_our_mission=$matches[1]&page=$matches[2]";s:36:"charity_our_mission/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:46:"charity_our_mission/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:66:"charity_our_mission/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:61:"charity_our_mission/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:61:"charity_our_mission/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:38:"charity_help/.+?/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:48:"charity_help/.+?/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:68:"charity_help/.+?/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:63:"charity_help/.+?/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:63:"charity_help/.+?/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:31:"charity_help/(.+?)/trackback/?$";s:39:"index.php?charity_help=$matches[1]&tb=1";s:51:"charity_help/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?charity_help=$matches[1]&feed=$matches[2]";s:46:"charity_help/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?charity_help=$matches[1]&feed=$matches[2]";s:39:"charity_help/(.+?)/page/?([0-9]{1,})/?$";s:52:"index.php?charity_help=$matches[1]&paged=$matches[2]";s:46:"charity_help/(.+?)/comment-page-([0-9]{1,})/?$";s:52:"index.php?charity_help=$matches[1]&cpage=$matches[2]";s:36:"charity_help/(.+?)/wc-api(/(.*))?/?$";s:53:"index.php?charity_help=$matches[1]&wc-api=$matches[3]";s:42:"charity_help/.+?/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:53:"charity_help/.+?/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:31:"charity_help/(.+?)(/[0-9]+)?/?$";s:51:"index.php?charity_help=$matches[1]&page=$matches[2]";s:39:"charity_faq/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:49:"charity_faq/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:69:"charity_faq/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:64:"charity_faq/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:64:"charity_faq/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:32:"charity_faq/([^/]+)/trackback/?$";s:38:"index.php?charity_faq=$matches[1]&tb=1";s:52:"charity_faq/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?charity_faq=$matches[1]&feed=$matches[2]";s:47:"charity_faq/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?charity_faq=$matches[1]&feed=$matches[2]";s:40:"charity_faq/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?charity_faq=$matches[1]&paged=$matches[2]";s:47:"charity_faq/([^/]+)/comment-page-([0-9]{1,})/?$";s:51:"index.php?charity_faq=$matches[1]&cpage=$matches[2]";s:37:"charity_faq/([^/]+)/wc-api(/(.*))?/?$";s:52:"index.php?charity_faq=$matches[1]&wc-api=$matches[3]";s:43:"charity_faq/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:54:"charity_faq/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:32:"charity_faq/([^/]+)(/[0-9]+)?/?$";s:50:"index.php?charity_faq=$matches[1]&page=$matches[2]";s:28:"charity_faq/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:38:"charity_faq/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:58:"charity_faq/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:53:"charity_faq/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:53:"charity_faq/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:39:"testimonial/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:49:"testimonial/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:69:"testimonial/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:64:"testimonial/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:64:"testimonial/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:32:"testimonial/([^/]+)/trackback/?$";s:38:"index.php?testimonial=$matches[1]&tb=1";s:52:"testimonial/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?testimonial=$matches[1]&feed=$matches[2]";s:47:"testimonial/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?testimonial=$matches[1]&feed=$matches[2]";s:40:"testimonial/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?testimonial=$matches[1]&paged=$matches[2]";s:47:"testimonial/([^/]+)/comment-page-([0-9]{1,})/?$";s:51:"index.php?testimonial=$matches[1]&cpage=$matches[2]";s:37:"testimonial/([^/]+)/wc-api(/(.*))?/?$";s:52:"index.php?testimonial=$matches[1]&wc-api=$matches[3]";s:43:"testimonial/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:54:"testimonial/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:32:"testimonial/([^/]+)(/[0-9]+)?/?$";s:50:"index.php?testimonial=$matches[1]&page=$matches[2]";s:28:"testimonial/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:38:"testimonial/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:58:"testimonial/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:53:"testimonial/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:53:"testimonial/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:52:"events/tags/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?event-tags=$matches[1]&feed=$matches[2]";s:47:"events/tags/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?event-tags=$matches[1]&feed=$matches[2]";s:40:"events/tags/([^/]+)/page/?([0-9]{1,})/?$";s:50:"index.php?event-tags=$matches[1]&paged=$matches[2]";s:22:"events/tags/([^/]+)/?$";s:32:"index.php?event-tags=$matches[1]";s:56:"events/categories/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:55:"index.php?event-categories=$matches[1]&feed=$matches[2]";s:51:"events/categories/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:55:"index.php?event-categories=$matches[1]&feed=$matches[2]";s:44:"events/categories/(.+?)/page/?([0-9]{1,})/?$";s:56:"index.php?event-categories=$matches[1]&paged=$matches[2]";s:26:"events/categories/(.+?)/?$";s:38:"index.php?event-categories=$matches[1]";s:37:"locations/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:47:"locations/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:67:"locations/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:62:"locations/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:62:"locations/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:30:"locations/([^/]+)/trackback/?$";s:35:"index.php?location=$matches[1]&tb=1";s:50:"locations/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:47:"index.php?location=$matches[1]&feed=$matches[2]";s:45:"locations/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:47:"index.php?location=$matches[1]&feed=$matches[2]";s:38:"locations/([^/]+)/page/?([0-9]{1,})/?$";s:48:"index.php?location=$matches[1]&paged=$matches[2]";s:45:"locations/([^/]+)/comment-page-([0-9]{1,})/?$";s:48:"index.php?location=$matches[1]&cpage=$matches[2]";s:35:"locations/([^/]+)/wc-api(/(.*))?/?$";s:49:"index.php?location=$matches[1]&wc-api=$matches[3]";s:41:"locations/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:52:"locations/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:30:"locations/([^/]+)(/[0-9]+)?/?$";s:47:"index.php?location=$matches[1]&page=$matches[2]";s:26:"locations/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:36:"locations/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:56:"locations/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:51:"locations/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:51:"locations/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:34:"events/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:44:"events/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:64:"events/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"events/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"events/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:27:"events/([^/]+)/trackback/?$";s:32:"index.php?event=$matches[1]&tb=1";s:47:"events/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:44:"index.php?event=$matches[1]&feed=$matches[2]";s:42:"events/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:44:"index.php?event=$matches[1]&feed=$matches[2]";s:35:"events/([^/]+)/page/?([0-9]{1,})/?$";s:45:"index.php?event=$matches[1]&paged=$matches[2]";s:42:"events/([^/]+)/comment-page-([0-9]{1,})/?$";s:45:"index.php?event=$matches[1]&cpage=$matches[2]";s:32:"events/([^/]+)/wc-api(/(.*))?/?$";s:46:"index.php?event=$matches[1]&wc-api=$matches[3]";s:38:"events/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:49:"events/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:27:"events/([^/]+)(/[0-9]+)?/?$";s:44:"index.php?event=$matches[1]&page=$matches[2]";s:23:"events/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:33:"events/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:53:"events/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:48:"events/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:48:"events/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:55:"product-category/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?product_cat=$matches[1]&feed=$matches[2]";s:50:"product-category/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?product_cat=$matches[1]&feed=$matches[2]";s:43:"product-category/(.+?)/page/?([0-9]{1,})/?$";s:51:"index.php?product_cat=$matches[1]&paged=$matches[2]";s:25:"product-category/(.+?)/?$";s:33:"index.php?product_cat=$matches[1]";s:52:"product-tag/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?product_tag=$matches[1]&feed=$matches[2]";s:47:"product-tag/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?product_tag=$matches[1]&feed=$matches[2]";s:40:"product-tag/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?product_tag=$matches[1]&paged=$matches[2]";s:22:"product-tag/([^/]+)/?$";s:33:"index.php?product_tag=$matches[1]";s:35:"product/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:45:"product/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:65:"product/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:60:"product/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:60:"product/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:28:"product/([^/]+)/trackback/?$";s:34:"index.php?product=$matches[1]&tb=1";s:48:"product/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:46:"index.php?product=$matches[1]&feed=$matches[2]";s:43:"product/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:46:"index.php?product=$matches[1]&feed=$matches[2]";s:36:"product/([^/]+)/page/?([0-9]{1,})/?$";s:47:"index.php?product=$matches[1]&paged=$matches[2]";s:43:"product/([^/]+)/comment-page-([0-9]{1,})/?$";s:47:"index.php?product=$matches[1]&cpage=$matches[2]";s:33:"product/([^/]+)/wc-api(/(.*))?/?$";s:48:"index.php?product=$matches[1]&wc-api=$matches[3]";s:39:"product/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:50:"product/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:28:"product/([^/]+)(/[0-9]+)?/?$";s:46:"index.php?product=$matches[1]&page=$matches[2]";s:24:"product/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:34:"product/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:54:"product/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:49:"product/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:49:"product/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:45:"product_variation/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:55:"product_variation/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:75:"product_variation/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"product_variation/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"product_variation/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:38:"product_variation/([^/]+)/trackback/?$";s:44:"index.php?product_variation=$matches[1]&tb=1";s:46:"product_variation/([^/]+)/page/?([0-9]{1,})/?$";s:57:"index.php?product_variation=$matches[1]&paged=$matches[2]";s:53:"product_variation/([^/]+)/comment-page-([0-9]{1,})/?$";s:57:"index.php?product_variation=$matches[1]&cpage=$matches[2]";s:43:"product_variation/([^/]+)/wc-api(/(.*))?/?$";s:58:"index.php?product_variation=$matches[1]&wc-api=$matches[3]";s:49:"product_variation/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:60:"product_variation/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:38:"product_variation/([^/]+)(/[0-9]+)?/?$";s:56:"index.php?product_variation=$matches[1]&page=$matches[2]";s:34:"product_variation/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:44:"product_variation/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:64:"product_variation/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"product_variation/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"product_variation/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:45:"shop_order_refund/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:55:"shop_order_refund/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:75:"shop_order_refund/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"shop_order_refund/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"shop_order_refund/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:38:"shop_order_refund/([^/]+)/trackback/?$";s:44:"index.php?shop_order_refund=$matches[1]&tb=1";s:46:"shop_order_refund/([^/]+)/page/?([0-9]{1,})/?$";s:57:"index.php?shop_order_refund=$matches[1]&paged=$matches[2]";s:53:"shop_order_refund/([^/]+)/comment-page-([0-9]{1,})/?$";s:57:"index.php?shop_order_refund=$matches[1]&cpage=$matches[2]";s:43:"shop_order_refund/([^/]+)/wc-api(/(.*))?/?$";s:58:"index.php?shop_order_refund=$matches[1]&wc-api=$matches[3]";s:49:"shop_order_refund/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:60:"shop_order_refund/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:38:"shop_order_refund/([^/]+)(/[0-9]+)?/?$";s:56:"index.php?shop_order_refund=$matches[1]&page=$matches[2]";s:34:"shop_order_refund/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:44:"shop_order_refund/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:64:"shop_order_refund/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"shop_order_refund/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"shop_order_refund/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:40:"vc_grid_item/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:50:"vc_grid_item/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:70:"vc_grid_item/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:65:"vc_grid_item/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:65:"vc_grid_item/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:33:"vc_grid_item/([^/]+)/trackback/?$";s:39:"index.php?vc_grid_item=$matches[1]&tb=1";s:41:"vc_grid_item/([^/]+)/page/?([0-9]{1,})/?$";s:52:"index.php?vc_grid_item=$matches[1]&paged=$matches[2]";s:48:"vc_grid_item/([^/]+)/comment-page-([0-9]{1,})/?$";s:52:"index.php?vc_grid_item=$matches[1]&cpage=$matches[2]";s:38:"vc_grid_item/([^/]+)/wc-api(/(.*))?/?$";s:53:"index.php?vc_grid_item=$matches[1]&wc-api=$matches[3]";s:44:"vc_grid_item/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:55:"vc_grid_item/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:33:"vc_grid_item/([^/]+)(/[0-9]+)?/?$";s:51:"index.php?vc_grid_item=$matches[1]&page=$matches[2]";s:29:"vc_grid_item/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:39:"vc_grid_item/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:59:"vc_grid_item/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:54:"vc_grid_item/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:54:"vc_grid_item/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:48:".*wp-(atom|rdf|rss|rss2|feed|commentsrss2)\\.php$";s:18:"index.php?feed=old";s:20:".*wp-app\\.php(/.*)?$";s:19:"index.php?error=403";s:18:".*wp-register.php$";s:23:"index.php?register=true";s:32:"feed/(feed|rdf|rss|rss2|atom)/?$";s:27:"index.php?&feed=$matches[1]";s:27:"(feed|rdf|rss|rss2|atom)/?$";s:27:"index.php?&feed=$matches[1]";s:20:"page/?([0-9]{1,})/?$";s:28:"index.php?&paged=$matches[1]";s:27:"comment-page-([0-9]{1,})/?$";s:39:"index.php?&page_id=11&cpage=$matches[1]";s:17:"wc-api(/(.*))?/?$";s:29:"index.php?&wc-api=$matches[2]";s:20:"order-pay(/(.*))?/?$";s:32:"index.php?&order-pay=$matches[2]";s:25:"order-received(/(.*))?/?$";s:37:"index.php?&order-received=$matches[2]";s:21:"view-order(/(.*))?/?$";s:33:"index.php?&view-order=$matches[2]";s:23:"edit-account(/(.*))?/?$";s:35:"index.php?&edit-account=$matches[2]";s:23:"edit-address(/(.*))?/?$";s:35:"index.php?&edit-address=$matches[2]";s:24:"lost-password(/(.*))?/?$";s:36:"index.php?&lost-password=$matches[2]";s:26:"customer-logout(/(.*))?/?$";s:38:"index.php?&customer-logout=$matches[2]";s:29:"add-payment-method(/(.*))?/?$";s:41:"index.php?&add-payment-method=$matches[2]";s:41:"comments/feed/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?&feed=$matches[1]&withcomments=1";s:36:"comments/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?&feed=$matches[1]&withcomments=1";s:26:"comments/wc-api(/(.*))?/?$";s:29:"index.php?&wc-api=$matches[2]";s:44:"search/(.+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:40:"index.php?s=$matches[1]&feed=$matches[2]";s:39:"search/(.+)/(feed|rdf|rss|rss2|atom)/?$";s:40:"index.php?s=$matches[1]&feed=$matches[2]";s:32:"search/(.+)/page/?([0-9]{1,})/?$";s:41:"index.php?s=$matches[1]&paged=$matches[2]";s:29:"search/(.+)/wc-api(/(.*))?/?$";s:42:"index.php?s=$matches[1]&wc-api=$matches[3]";s:14:"search/(.+)/?$";s:23:"index.php?s=$matches[1]";s:47:"author/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?author_name=$matches[1]&feed=$matches[2]";s:42:"author/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?author_name=$matches[1]&feed=$matches[2]";s:35:"author/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?author_name=$matches[1]&paged=$matches[2]";s:32:"author/([^/]+)/wc-api(/(.*))?/?$";s:52:"index.php?author_name=$matches[1]&wc-api=$matches[3]";s:17:"author/([^/]+)/?$";s:33:"index.php?author_name=$matches[1]";s:69:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/feed/(feed|rdf|rss|rss2|atom)/?$";s:80:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&feed=$matches[4]";s:64:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/(feed|rdf|rss|rss2|atom)/?$";s:80:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&feed=$matches[4]";s:57:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/page/?([0-9]{1,})/?$";s:81:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&paged=$matches[4]";s:54:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/wc-api(/(.*))?/?$";s:82:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&wc-api=$matches[5]";s:39:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$";s:63:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]";s:56:"([0-9]{4})/([0-9]{1,2})/feed/(feed|rdf|rss|rss2|atom)/?$";s:64:"index.php?year=$matches[1]&monthnum=$matches[2]&feed=$matches[3]";s:51:"([0-9]{4})/([0-9]{1,2})/(feed|rdf|rss|rss2|atom)/?$";s:64:"index.php?year=$matches[1]&monthnum=$matches[2]&feed=$matches[3]";s:44:"([0-9]{4})/([0-9]{1,2})/page/?([0-9]{1,})/?$";s:65:"index.php?year=$matches[1]&monthnum=$matches[2]&paged=$matches[3]";s:41:"([0-9]{4})/([0-9]{1,2})/wc-api(/(.*))?/?$";s:66:"index.php?year=$matches[1]&monthnum=$matches[2]&wc-api=$matches[4]";s:26:"([0-9]{4})/([0-9]{1,2})/?$";s:47:"index.php?year=$matches[1]&monthnum=$matches[2]";s:43:"([0-9]{4})/feed/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?year=$matches[1]&feed=$matches[2]";s:38:"([0-9]{4})/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?year=$matches[1]&feed=$matches[2]";s:31:"([0-9]{4})/page/?([0-9]{1,})/?$";s:44:"index.php?year=$matches[1]&paged=$matches[2]";s:28:"([0-9]{4})/wc-api(/(.*))?/?$";s:45:"index.php?year=$matches[1]&wc-api=$matches[3]";s:13:"([0-9]{4})/?$";s:26:"index.php?year=$matches[1]";s:27:".?.+?/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:37:".?.+?/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:57:".?.+?/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:".?.+?/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:".?.+?/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:20:"(.?.+?)/trackback/?$";s:35:"index.php?pagename=$matches[1]&tb=1";s:40:"(.?.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:47:"index.php?pagename=$matches[1]&feed=$matches[2]";s:35:"(.?.+?)/(feed|rdf|rss|rss2|atom)/?$";s:47:"index.php?pagename=$matches[1]&feed=$matches[2]";s:28:"(.?.+?)/page/?([0-9]{1,})/?$";s:48:"index.php?pagename=$matches[1]&paged=$matches[2]";s:35:"(.?.+?)/comment-page-([0-9]{1,})/?$";s:48:"index.php?pagename=$matches[1]&cpage=$matches[2]";s:25:"(.?.+?)/wc-api(/(.*))?/?$";s:49:"index.php?pagename=$matches[1]&wc-api=$matches[3]";s:28:"(.?.+?)/order-pay(/(.*))?/?$";s:52:"index.php?pagename=$matches[1]&order-pay=$matches[3]";s:33:"(.?.+?)/order-received(/(.*))?/?$";s:57:"index.php?pagename=$matches[1]&order-received=$matches[3]";s:29:"(.?.+?)/view-order(/(.*))?/?$";s:53:"index.php?pagename=$matches[1]&view-order=$matches[3]";s:31:"(.?.+?)/edit-account(/(.*))?/?$";s:55:"index.php?pagename=$matches[1]&edit-account=$matches[3]";s:31:"(.?.+?)/edit-address(/(.*))?/?$";s:55:"index.php?pagename=$matches[1]&edit-address=$matches[3]";s:32:"(.?.+?)/lost-password(/(.*))?/?$";s:56:"index.php?pagename=$matches[1]&lost-password=$matches[3]";s:34:"(.?.+?)/customer-logout(/(.*))?/?$";s:58:"index.php?pagename=$matches[1]&customer-logout=$matches[3]";s:37:"(.?.+?)/add-payment-method(/(.*))?/?$";s:61:"index.php?pagename=$matches[1]&add-payment-method=$matches[3]";s:31:".?.+?/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:42:".?.+?/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:20:"(.?.+?)(/[0-9]+)?/?$";s:47:"index.php?pagename=$matches[1]&page=$matches[2]";s:27:"[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:37:"[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:57:"[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:"[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:"[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:20:"([^/]+)/trackback/?$";s:31:"index.php?name=$matches[1]&tb=1";s:40:"([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?name=$matches[1]&feed=$matches[2]";s:35:"([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?name=$matches[1]&feed=$matches[2]";s:28:"([^/]+)/page/?([0-9]{1,})/?$";s:44:"index.php?name=$matches[1]&paged=$matches[2]";s:35:"([^/]+)/comment-page-([0-9]{1,})/?$";s:44:"index.php?name=$matches[1]&cpage=$matches[2]";s:25:"([^/]+)/wc-api(/(.*))?/?$";s:45:"index.php?name=$matches[1]&wc-api=$matches[3]";s:31:"[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:42:"[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:20:"([^/]+)(/[0-9]+)?/?$";s:43:"index.php?name=$matches[1]&page=$matches[2]";s:16:"[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:26:"[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:46:"[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:41:"[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:41:"[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";}', 'yes');
+(6274, 'rewrite_rules', 'a:423:{s:29:"kegiatan/(\\d{4}-\\d{2}-\\d{2})$";s:53:"index.php?pagename=kegiatan/&calendar_day=$matches[1]";s:15:"kegiatan/rss/?$";s:35:"index.php?post_type=event&feed=feed";s:16:"kegiatan/feed/?$";s:35:"index.php?post_type=event&feed=feed";s:20:"kegiatan/event/(.+)$";s:65:"index.php?pagename=kegiatan/&em_redirect=1&event_slug=$matches[1]";s:23:"kegiatan/location/(.+)$";s:68:"index.php?pagename=kegiatan/&em_redirect=1&location_slug=$matches[1]";s:23:"kegiatan/category/(.+)$";s:68:"index.php?pagename=kegiatan/&em_redirect=1&category_slug=$matches[1]";s:11:"kegiatan/?$";s:27:"index.php?pagename=kegiatan";s:22:"events/([^/]+)/ical/?$";s:34:"index.php?event=$matches[1]&ical=1";s:25:"locations/([^/]+)/ical/?$";s:37:"index.php?location=$matches[1]&ical=1";s:33:"events/categories/([^/]+)/ical/?$";s:45:"index.php?event-categories=$matches[1]&ical=1";s:27:"events/tags/([^/]+)/ical/?$";s:39:"index.php?event-tags=$matches[1]&ical=1";s:24:"locations/([^/]+)/rss/?$";s:36:"index.php?location=$matches[1]&rss=1";s:9:"causes/?$";s:34:"index.php?post_type=charity-causes";s:39:"causes/feed/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?post_type=charity-causes&feed=$matches[1]";s:34:"causes/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?post_type=charity-causes&feed=$matches[1]";s:26:"causes/page/([0-9]{1,})/?$";s:52:"index.php?post_type=charity-causes&paged=$matches[1]";s:18:"charity-gallery/?$";s:35:"index.php?post_type=charity-gallery";s:48:"charity-gallery/feed/(feed|rdf|rss|rss2|atom)/?$";s:52:"index.php?post_type=charity-gallery&feed=$matches[1]";s:43:"charity-gallery/(feed|rdf|rss|rss2|atom)/?$";s:52:"index.php?post_type=charity-gallery&feed=$matches[1]";s:35:"charity-gallery/page/([0-9]{1,})/?$";s:53:"index.php?post_type=charity-gallery&paged=$matches[1]";s:20:"charity-portfolio/?$";s:37:"index.php?post_type=charity-portfolio";s:50:"charity-portfolio/feed/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?post_type=charity-portfolio&feed=$matches[1]";s:45:"charity-portfolio/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?post_type=charity-portfolio&feed=$matches[1]";s:37:"charity-portfolio/page/([0-9]{1,})/?$";s:55:"index.php?post_type=charity-portfolio&paged=$matches[1]";s:20:"charity-our-works/?$";s:37:"index.php?post_type=charity-our-works";s:50:"charity-our-works/feed/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?post_type=charity-our-works&feed=$matches[1]";s:45:"charity-our-works/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?post_type=charity-our-works&feed=$matches[1]";s:37:"charity-our-works/page/([0-9]{1,})/?$";s:55:"index.php?post_type=charity-our-works&paged=$matches[1]";s:22:"charity_our_mission/?$";s:39:"index.php?post_type=charity_our_mission";s:52:"charity_our_mission/feed/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?post_type=charity_our_mission&feed=$matches[1]";s:47:"charity_our_mission/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?post_type=charity_our_mission&feed=$matches[1]";s:39:"charity_our_mission/page/([0-9]{1,})/?$";s:57:"index.php?post_type=charity_our_mission&paged=$matches[1]";s:15:"charity_help/?$";s:32:"index.php?post_type=charity_help";s:45:"charity_help/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?post_type=charity_help&feed=$matches[1]";s:40:"charity_help/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?post_type=charity_help&feed=$matches[1]";s:32:"charity_help/page/([0-9]{1,})/?$";s:50:"index.php?post_type=charity_help&paged=$matches[1]";s:14:"charity_faq/?$";s:31:"index.php?post_type=charity_faq";s:44:"charity_faq/feed/(feed|rdf|rss|rss2|atom)/?$";s:48:"index.php?post_type=charity_faq&feed=$matches[1]";s:39:"charity_faq/(feed|rdf|rss|rss2|atom)/?$";s:48:"index.php?post_type=charity_faq&feed=$matches[1]";s:31:"charity_faq/page/([0-9]{1,})/?$";s:49:"index.php?post_type=charity_faq&paged=$matches[1]";s:14:"testimonial/?$";s:31:"index.php?post_type=testimonial";s:44:"testimonial/feed/(feed|rdf|rss|rss2|atom)/?$";s:48:"index.php?post_type=testimonial&feed=$matches[1]";s:39:"testimonial/(feed|rdf|rss|rss2|atom)/?$";s:48:"index.php?post_type=testimonial&feed=$matches[1]";s:31:"testimonial/page/([0-9]{1,})/?$";s:49:"index.php?post_type=testimonial&paged=$matches[1]";s:22:"^wc-api/v([1-3]{1})/?$";s:51:"index.php?wc-api-version=$matches[1]&wc-api-route=/";s:24:"^wc-api/v([1-3]{1})(.*)?";s:61:"index.php?wc-api-version=$matches[1]&wc-api-route=$matches[2]";s:24:"^wc-auth/v([1]{1})/(.*)?";s:63:"index.php?wc-auth-version=$matches[1]&wc-auth-route=$matches[2]";s:12:"locations/?$";s:28:"index.php?post_type=location";s:42:"locations/feed/(feed|rdf|rss|rss2|atom)/?$";s:45:"index.php?post_type=location&feed=$matches[1]";s:37:"locations/(feed|rdf|rss|rss2|atom)/?$";s:45:"index.php?post_type=location&feed=$matches[1]";s:29:"locations/page/([0-9]{1,})/?$";s:46:"index.php?post_type=location&paged=$matches[1]";s:9:"events/?$";s:25:"index.php?post_type=event";s:39:"events/feed/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?post_type=event&feed=$matches[1]";s:34:"events/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?post_type=event&feed=$matches[1]";s:26:"events/page/([0-9]{1,})/?$";s:43:"index.php?post_type=event&paged=$matches[1]";s:7:"shop/?$";s:27:"index.php?post_type=product";s:37:"shop/feed/(feed|rdf|rss|rss2|atom)/?$";s:44:"index.php?post_type=product&feed=$matches[1]";s:32:"shop/(feed|rdf|rss|rss2|atom)/?$";s:44:"index.php?post_type=product&feed=$matches[1]";s:24:"shop/page/([0-9]{1,})/?$";s:45:"index.php?post_type=product&paged=$matches[1]";s:47:"category/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:52:"index.php?category_name=$matches[1]&feed=$matches[2]";s:42:"category/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:52:"index.php?category_name=$matches[1]&feed=$matches[2]";s:35:"category/(.+?)/page/?([0-9]{1,})/?$";s:53:"index.php?category_name=$matches[1]&paged=$matches[2]";s:32:"category/(.+?)/wc-api(/(.*))?/?$";s:54:"index.php?category_name=$matches[1]&wc-api=$matches[3]";s:17:"category/(.+?)/?$";s:35:"index.php?category_name=$matches[1]";s:44:"tag/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?tag=$matches[1]&feed=$matches[2]";s:39:"tag/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?tag=$matches[1]&feed=$matches[2]";s:32:"tag/([^/]+)/page/?([0-9]{1,})/?$";s:43:"index.php?tag=$matches[1]&paged=$matches[2]";s:29:"tag/([^/]+)/wc-api(/(.*))?/?$";s:44:"index.php?tag=$matches[1]&wc-api=$matches[3]";s:14:"tag/([^/]+)/?$";s:25:"index.php?tag=$matches[1]";s:45:"type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?post_format=$matches[1]&feed=$matches[2]";s:40:"type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?post_format=$matches[1]&feed=$matches[2]";s:33:"type/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?post_format=$matches[1]&paged=$matches[2]";s:15:"type/([^/]+)/?$";s:33:"index.php?post_format=$matches[1]";s:34:"causes/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:44:"causes/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:64:"causes/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"causes/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"causes/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:27:"causes/([^/]+)/trackback/?$";s:41:"index.php?charity-causes=$matches[1]&tb=1";s:47:"causes/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:53:"index.php?charity-causes=$matches[1]&feed=$matches[2]";s:42:"causes/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:53:"index.php?charity-causes=$matches[1]&feed=$matches[2]";s:35:"causes/([^/]+)/page/?([0-9]{1,})/?$";s:54:"index.php?charity-causes=$matches[1]&paged=$matches[2]";s:42:"causes/([^/]+)/comment-page-([0-9]{1,})/?$";s:54:"index.php?charity-causes=$matches[1]&cpage=$matches[2]";s:32:"causes/([^/]+)/wc-api(/(.*))?/?$";s:55:"index.php?charity-causes=$matches[1]&wc-api=$matches[3]";s:38:"causes/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:49:"causes/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:27:"causes/([^/]+)(/[0-9]+)?/?$";s:53:"index.php?charity-causes=$matches[1]&page=$matches[2]";s:23:"causes/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:33:"causes/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:53:"causes/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:48:"causes/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:48:"causes/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:52:"causes-type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?causes-category=$matches[1]&feed=$matches[2]";s:47:"causes-type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?causes-category=$matches[1]&feed=$matches[2]";s:40:"causes-type/([^/]+)/page/?([0-9]{1,})/?$";s:55:"index.php?causes-category=$matches[1]&paged=$matches[2]";s:22:"causes-type/([^/]+)/?$";s:37:"index.php?causes-category=$matches[1]";s:56:"causes-location/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?causes-location=$matches[1]&feed=$matches[2]";s:51:"causes-location/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?causes-location=$matches[1]&feed=$matches[2]";s:44:"causes-location/([^/]+)/page/?([0-9]{1,})/?$";s:55:"index.php?causes-location=$matches[1]&paged=$matches[2]";s:26:"causes-location/([^/]+)/?$";s:37:"index.php?causes-location=$matches[1]";s:43:"charity-gallery/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:53:"charity-gallery/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:73:"charity-gallery/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:68:"charity-gallery/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:68:"charity-gallery/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:36:"charity-gallery/([^/]+)/trackback/?$";s:42:"index.php?charity-gallery=$matches[1]&tb=1";s:56:"charity-gallery/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?charity-gallery=$matches[1]&feed=$matches[2]";s:51:"charity-gallery/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:54:"index.php?charity-gallery=$matches[1]&feed=$matches[2]";s:44:"charity-gallery/([^/]+)/page/?([0-9]{1,})/?$";s:55:"index.php?charity-gallery=$matches[1]&paged=$matches[2]";s:51:"charity-gallery/([^/]+)/comment-page-([0-9]{1,})/?$";s:55:"index.php?charity-gallery=$matches[1]&cpage=$matches[2]";s:41:"charity-gallery/([^/]+)/wc-api(/(.*))?/?$";s:56:"index.php?charity-gallery=$matches[1]&wc-api=$matches[3]";s:47:"charity-gallery/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:58:"charity-gallery/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:36:"charity-gallery/([^/]+)(/[0-9]+)?/?$";s:54:"index.php?charity-gallery=$matches[1]&page=$matches[2]";s:32:"charity-gallery/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:42:"charity-gallery/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:62:"charity-gallery/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:57:"charity-gallery/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:57:"charity-gallery/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:53:"gallery-type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?gallery-type=$matches[1]&feed=$matches[2]";s:48:"gallery-type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?gallery-type=$matches[1]&feed=$matches[2]";s:41:"gallery-type/([^/]+)/page/?([0-9]{1,})/?$";s:52:"index.php?gallery-type=$matches[1]&paged=$matches[2]";s:23:"gallery-type/([^/]+)/?$";s:34:"index.php?gallery-type=$matches[1]";s:45:"charity-portfolio/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:55:"charity-portfolio/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:75:"charity-portfolio/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"charity-portfolio/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"charity-portfolio/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:38:"charity-portfolio/([^/]+)/trackback/?$";s:44:"index.php?charity-portfolio=$matches[1]&tb=1";s:58:"charity-portfolio/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?charity-portfolio=$matches[1]&feed=$matches[2]";s:53:"charity-portfolio/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?charity-portfolio=$matches[1]&feed=$matches[2]";s:46:"charity-portfolio/([^/]+)/page/?([0-9]{1,})/?$";s:57:"index.php?charity-portfolio=$matches[1]&paged=$matches[2]";s:53:"charity-portfolio/([^/]+)/comment-page-([0-9]{1,})/?$";s:57:"index.php?charity-portfolio=$matches[1]&cpage=$matches[2]";s:43:"charity-portfolio/([^/]+)/wc-api(/(.*))?/?$";s:58:"index.php?charity-portfolio=$matches[1]&wc-api=$matches[3]";s:49:"charity-portfolio/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:60:"charity-portfolio/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:38:"charity-portfolio/([^/]+)(/[0-9]+)?/?$";s:56:"index.php?charity-portfolio=$matches[1]&page=$matches[2]";s:34:"charity-portfolio/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:44:"charity-portfolio/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:64:"charity-portfolio/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"charity-portfolio/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"charity-portfolio/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:55:"portfolio-type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:53:"index.php?portfolio-type=$matches[1]&feed=$matches[2]";s:50:"portfolio-type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:53:"index.php?portfolio-type=$matches[1]&feed=$matches[2]";s:43:"portfolio-type/([^/]+)/page/?([0-9]{1,})/?$";s:54:"index.php?portfolio-type=$matches[1]&paged=$matches[2]";s:25:"portfolio-type/([^/]+)/?$";s:36:"index.php?portfolio-type=$matches[1]";s:43:"charity-our-works/.+?/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:53:"charity-our-works/.+?/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:73:"charity-our-works/.+?/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:68:"charity-our-works/.+?/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:68:"charity-our-works/.+?/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:36:"charity-our-works/(.+?)/trackback/?$";s:44:"index.php?charity-our-works=$matches[1]&tb=1";s:56:"charity-our-works/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?charity-our-works=$matches[1]&feed=$matches[2]";s:51:"charity-our-works/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:56:"index.php?charity-our-works=$matches[1]&feed=$matches[2]";s:44:"charity-our-works/(.+?)/page/?([0-9]{1,})/?$";s:57:"index.php?charity-our-works=$matches[1]&paged=$matches[2]";s:51:"charity-our-works/(.+?)/comment-page-([0-9]{1,})/?$";s:57:"index.php?charity-our-works=$matches[1]&cpage=$matches[2]";s:41:"charity-our-works/(.+?)/wc-api(/(.*))?/?$";s:58:"index.php?charity-our-works=$matches[1]&wc-api=$matches[3]";s:47:"charity-our-works/.+?/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:58:"charity-our-works/.+?/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:36:"charity-our-works/(.+?)(/[0-9]+)?/?$";s:56:"index.php?charity-our-works=$matches[1]&page=$matches[2]";s:47:"charity_our_mission/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:57:"charity_our_mission/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:77:"charity_our_mission/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:72:"charity_our_mission/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:72:"charity_our_mission/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:40:"charity_our_mission/([^/]+)/trackback/?$";s:46:"index.php?charity_our_mission=$matches[1]&tb=1";s:60:"charity_our_mission/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:58:"index.php?charity_our_mission=$matches[1]&feed=$matches[2]";s:55:"charity_our_mission/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:58:"index.php?charity_our_mission=$matches[1]&feed=$matches[2]";s:48:"charity_our_mission/([^/]+)/page/?([0-9]{1,})/?$";s:59:"index.php?charity_our_mission=$matches[1]&paged=$matches[2]";s:55:"charity_our_mission/([^/]+)/comment-page-([0-9]{1,})/?$";s:59:"index.php?charity_our_mission=$matches[1]&cpage=$matches[2]";s:45:"charity_our_mission/([^/]+)/wc-api(/(.*))?/?$";s:60:"index.php?charity_our_mission=$matches[1]&wc-api=$matches[3]";s:51:"charity_our_mission/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:62:"charity_our_mission/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:40:"charity_our_mission/([^/]+)(/[0-9]+)?/?$";s:58:"index.php?charity_our_mission=$matches[1]&page=$matches[2]";s:36:"charity_our_mission/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:46:"charity_our_mission/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:66:"charity_our_mission/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:61:"charity_our_mission/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:61:"charity_our_mission/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:38:"charity_help/.+?/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:48:"charity_help/.+?/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:68:"charity_help/.+?/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:63:"charity_help/.+?/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:63:"charity_help/.+?/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:31:"charity_help/(.+?)/trackback/?$";s:39:"index.php?charity_help=$matches[1]&tb=1";s:51:"charity_help/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?charity_help=$matches[1]&feed=$matches[2]";s:46:"charity_help/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?charity_help=$matches[1]&feed=$matches[2]";s:39:"charity_help/(.+?)/page/?([0-9]{1,})/?$";s:52:"index.php?charity_help=$matches[1]&paged=$matches[2]";s:46:"charity_help/(.+?)/comment-page-([0-9]{1,})/?$";s:52:"index.php?charity_help=$matches[1]&cpage=$matches[2]";s:36:"charity_help/(.+?)/wc-api(/(.*))?/?$";s:53:"index.php?charity_help=$matches[1]&wc-api=$matches[3]";s:42:"charity_help/.+?/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:53:"charity_help/.+?/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:31:"charity_help/(.+?)(/[0-9]+)?/?$";s:51:"index.php?charity_help=$matches[1]&page=$matches[2]";s:39:"charity_faq/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:49:"charity_faq/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:69:"charity_faq/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:64:"charity_faq/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:64:"charity_faq/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:32:"charity_faq/([^/]+)/trackback/?$";s:38:"index.php?charity_faq=$matches[1]&tb=1";s:52:"charity_faq/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?charity_faq=$matches[1]&feed=$matches[2]";s:47:"charity_faq/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?charity_faq=$matches[1]&feed=$matches[2]";s:40:"charity_faq/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?charity_faq=$matches[1]&paged=$matches[2]";s:47:"charity_faq/([^/]+)/comment-page-([0-9]{1,})/?$";s:51:"index.php?charity_faq=$matches[1]&cpage=$matches[2]";s:37:"charity_faq/([^/]+)/wc-api(/(.*))?/?$";s:52:"index.php?charity_faq=$matches[1]&wc-api=$matches[3]";s:43:"charity_faq/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:54:"charity_faq/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:32:"charity_faq/([^/]+)(/[0-9]+)?/?$";s:50:"index.php?charity_faq=$matches[1]&page=$matches[2]";s:28:"charity_faq/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:38:"charity_faq/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:58:"charity_faq/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:53:"charity_faq/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:53:"charity_faq/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:39:"testimonial/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:49:"testimonial/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:69:"testimonial/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:64:"testimonial/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:64:"testimonial/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:32:"testimonial/([^/]+)/trackback/?$";s:38:"index.php?testimonial=$matches[1]&tb=1";s:52:"testimonial/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?testimonial=$matches[1]&feed=$matches[2]";s:47:"testimonial/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?testimonial=$matches[1]&feed=$matches[2]";s:40:"testimonial/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?testimonial=$matches[1]&paged=$matches[2]";s:47:"testimonial/([^/]+)/comment-page-([0-9]{1,})/?$";s:51:"index.php?testimonial=$matches[1]&cpage=$matches[2]";s:37:"testimonial/([^/]+)/wc-api(/(.*))?/?$";s:52:"index.php?testimonial=$matches[1]&wc-api=$matches[3]";s:43:"testimonial/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:54:"testimonial/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:32:"testimonial/([^/]+)(/[0-9]+)?/?$";s:50:"index.php?testimonial=$matches[1]&page=$matches[2]";s:28:"testimonial/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:38:"testimonial/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:58:"testimonial/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:53:"testimonial/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:53:"testimonial/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:52:"events/tags/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?event-tags=$matches[1]&feed=$matches[2]";s:47:"events/tags/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?event-tags=$matches[1]&feed=$matches[2]";s:40:"events/tags/([^/]+)/page/?([0-9]{1,})/?$";s:50:"index.php?event-tags=$matches[1]&paged=$matches[2]";s:22:"events/tags/([^/]+)/?$";s:32:"index.php?event-tags=$matches[1]";s:56:"events/categories/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:55:"index.php?event-categories=$matches[1]&feed=$matches[2]";s:51:"events/categories/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:55:"index.php?event-categories=$matches[1]&feed=$matches[2]";s:44:"events/categories/(.+?)/page/?([0-9]{1,})/?$";s:56:"index.php?event-categories=$matches[1]&paged=$matches[2]";s:26:"events/categories/(.+?)/?$";s:38:"index.php?event-categories=$matches[1]";s:37:"locations/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:47:"locations/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:67:"locations/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:62:"locations/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:62:"locations/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:30:"locations/([^/]+)/trackback/?$";s:35:"index.php?location=$matches[1]&tb=1";s:50:"locations/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:47:"index.php?location=$matches[1]&feed=$matches[2]";s:45:"locations/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:47:"index.php?location=$matches[1]&feed=$matches[2]";s:38:"locations/([^/]+)/page/?([0-9]{1,})/?$";s:48:"index.php?location=$matches[1]&paged=$matches[2]";s:45:"locations/([^/]+)/comment-page-([0-9]{1,})/?$";s:48:"index.php?location=$matches[1]&cpage=$matches[2]";s:35:"locations/([^/]+)/wc-api(/(.*))?/?$";s:49:"index.php?location=$matches[1]&wc-api=$matches[3]";s:41:"locations/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:52:"locations/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:30:"locations/([^/]+)(/[0-9]+)?/?$";s:47:"index.php?location=$matches[1]&page=$matches[2]";s:26:"locations/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:36:"locations/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:56:"locations/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:51:"locations/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:51:"locations/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:34:"events/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:44:"events/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:64:"events/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"events/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"events/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:27:"events/([^/]+)/trackback/?$";s:32:"index.php?event=$matches[1]&tb=1";s:47:"events/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:44:"index.php?event=$matches[1]&feed=$matches[2]";s:42:"events/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:44:"index.php?event=$matches[1]&feed=$matches[2]";s:35:"events/([^/]+)/page/?([0-9]{1,})/?$";s:45:"index.php?event=$matches[1]&paged=$matches[2]";s:42:"events/([^/]+)/comment-page-([0-9]{1,})/?$";s:45:"index.php?event=$matches[1]&cpage=$matches[2]";s:32:"events/([^/]+)/wc-api(/(.*))?/?$";s:46:"index.php?event=$matches[1]&wc-api=$matches[3]";s:38:"events/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:49:"events/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:27:"events/([^/]+)(/[0-9]+)?/?$";s:44:"index.php?event=$matches[1]&page=$matches[2]";s:23:"events/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:33:"events/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:53:"events/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:48:"events/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:48:"events/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:55:"product-category/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?product_cat=$matches[1]&feed=$matches[2]";s:50:"product-category/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?product_cat=$matches[1]&feed=$matches[2]";s:43:"product-category/(.+?)/page/?([0-9]{1,})/?$";s:51:"index.php?product_cat=$matches[1]&paged=$matches[2]";s:25:"product-category/(.+?)/?$";s:33:"index.php?product_cat=$matches[1]";s:52:"product-tag/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?product_tag=$matches[1]&feed=$matches[2]";s:47:"product-tag/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?product_tag=$matches[1]&feed=$matches[2]";s:40:"product-tag/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?product_tag=$matches[1]&paged=$matches[2]";s:22:"product-tag/([^/]+)/?$";s:33:"index.php?product_tag=$matches[1]";s:35:"product/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:45:"product/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:65:"product/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:60:"product/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:60:"product/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:28:"product/([^/]+)/trackback/?$";s:34:"index.php?product=$matches[1]&tb=1";s:48:"product/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:46:"index.php?product=$matches[1]&feed=$matches[2]";s:43:"product/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:46:"index.php?product=$matches[1]&feed=$matches[2]";s:36:"product/([^/]+)/page/?([0-9]{1,})/?$";s:47:"index.php?product=$matches[1]&paged=$matches[2]";s:43:"product/([^/]+)/comment-page-([0-9]{1,})/?$";s:47:"index.php?product=$matches[1]&cpage=$matches[2]";s:33:"product/([^/]+)/wc-api(/(.*))?/?$";s:48:"index.php?product=$matches[1]&wc-api=$matches[3]";s:39:"product/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:50:"product/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:28:"product/([^/]+)(/[0-9]+)?/?$";s:46:"index.php?product=$matches[1]&page=$matches[2]";s:24:"product/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:34:"product/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:54:"product/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:49:"product/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:49:"product/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:45:"product_variation/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:55:"product_variation/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:75:"product_variation/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"product_variation/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"product_variation/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:38:"product_variation/([^/]+)/trackback/?$";s:44:"index.php?product_variation=$matches[1]&tb=1";s:46:"product_variation/([^/]+)/page/?([0-9]{1,})/?$";s:57:"index.php?product_variation=$matches[1]&paged=$matches[2]";s:53:"product_variation/([^/]+)/comment-page-([0-9]{1,})/?$";s:57:"index.php?product_variation=$matches[1]&cpage=$matches[2]";s:43:"product_variation/([^/]+)/wc-api(/(.*))?/?$";s:58:"index.php?product_variation=$matches[1]&wc-api=$matches[3]";s:49:"product_variation/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:60:"product_variation/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:38:"product_variation/([^/]+)(/[0-9]+)?/?$";s:56:"index.php?product_variation=$matches[1]&page=$matches[2]";s:34:"product_variation/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:44:"product_variation/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:64:"product_variation/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"product_variation/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"product_variation/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:45:"shop_order_refund/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:55:"shop_order_refund/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:75:"shop_order_refund/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"shop_order_refund/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:70:"shop_order_refund/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:38:"shop_order_refund/([^/]+)/trackback/?$";s:44:"index.php?shop_order_refund=$matches[1]&tb=1";s:46:"shop_order_refund/([^/]+)/page/?([0-9]{1,})/?$";s:57:"index.php?shop_order_refund=$matches[1]&paged=$matches[2]";s:53:"shop_order_refund/([^/]+)/comment-page-([0-9]{1,})/?$";s:57:"index.php?shop_order_refund=$matches[1]&cpage=$matches[2]";s:43:"shop_order_refund/([^/]+)/wc-api(/(.*))?/?$";s:58:"index.php?shop_order_refund=$matches[1]&wc-api=$matches[3]";s:49:"shop_order_refund/[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:60:"shop_order_refund/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:38:"shop_order_refund/([^/]+)(/[0-9]+)?/?$";s:56:"index.php?shop_order_refund=$matches[1]&page=$matches[2]";s:34:"shop_order_refund/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:44:"shop_order_refund/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:64:"shop_order_refund/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"shop_order_refund/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:59:"shop_order_refund/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:48:".*wp-(atom|rdf|rss|rss2|feed|commentsrss2)\\.php$";s:18:"index.php?feed=old";s:20:".*wp-app\\.php(/.*)?$";s:19:"index.php?error=403";s:18:".*wp-register.php$";s:23:"index.php?register=true";s:32:"feed/(feed|rdf|rss|rss2|atom)/?$";s:27:"index.php?&feed=$matches[1]";s:27:"(feed|rdf|rss|rss2|atom)/?$";s:27:"index.php?&feed=$matches[1]";s:20:"page/?([0-9]{1,})/?$";s:28:"index.php?&paged=$matches[1]";s:27:"comment-page-([0-9]{1,})/?$";s:39:"index.php?&page_id=11&cpage=$matches[1]";s:17:"wc-api(/(.*))?/?$";s:29:"index.php?&wc-api=$matches[2]";s:20:"order-pay(/(.*))?/?$";s:32:"index.php?&order-pay=$matches[2]";s:25:"order-received(/(.*))?/?$";s:37:"index.php?&order-received=$matches[2]";s:21:"view-order(/(.*))?/?$";s:33:"index.php?&view-order=$matches[2]";s:23:"edit-account(/(.*))?/?$";s:35:"index.php?&edit-account=$matches[2]";s:23:"edit-address(/(.*))?/?$";s:35:"index.php?&edit-address=$matches[2]";s:24:"lost-password(/(.*))?/?$";s:36:"index.php?&lost-password=$matches[2]";s:26:"customer-logout(/(.*))?/?$";s:38:"index.php?&customer-logout=$matches[2]";s:29:"add-payment-method(/(.*))?/?$";s:41:"index.php?&add-payment-method=$matches[2]";s:41:"comments/feed/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?&feed=$matches[1]&withcomments=1";s:36:"comments/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?&feed=$matches[1]&withcomments=1";s:26:"comments/wc-api(/(.*))?/?$";s:29:"index.php?&wc-api=$matches[2]";s:44:"search/(.+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:40:"index.php?s=$matches[1]&feed=$matches[2]";s:39:"search/(.+)/(feed|rdf|rss|rss2|atom)/?$";s:40:"index.php?s=$matches[1]&feed=$matches[2]";s:32:"search/(.+)/page/?([0-9]{1,})/?$";s:41:"index.php?s=$matches[1]&paged=$matches[2]";s:29:"search/(.+)/wc-api(/(.*))?/?$";s:42:"index.php?s=$matches[1]&wc-api=$matches[3]";s:14:"search/(.+)/?$";s:23:"index.php?s=$matches[1]";s:47:"author/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?author_name=$matches[1]&feed=$matches[2]";s:42:"author/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?author_name=$matches[1]&feed=$matches[2]";s:35:"author/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?author_name=$matches[1]&paged=$matches[2]";s:32:"author/([^/]+)/wc-api(/(.*))?/?$";s:52:"index.php?author_name=$matches[1]&wc-api=$matches[3]";s:17:"author/([^/]+)/?$";s:33:"index.php?author_name=$matches[1]";s:69:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/feed/(feed|rdf|rss|rss2|atom)/?$";s:80:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&feed=$matches[4]";s:64:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/(feed|rdf|rss|rss2|atom)/?$";s:80:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&feed=$matches[4]";s:57:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/page/?([0-9]{1,})/?$";s:81:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&paged=$matches[4]";s:54:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/wc-api(/(.*))?/?$";s:82:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&wc-api=$matches[5]";s:39:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$";s:63:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]";s:56:"([0-9]{4})/([0-9]{1,2})/feed/(feed|rdf|rss|rss2|atom)/?$";s:64:"index.php?year=$matches[1]&monthnum=$matches[2]&feed=$matches[3]";s:51:"([0-9]{4})/([0-9]{1,2})/(feed|rdf|rss|rss2|atom)/?$";s:64:"index.php?year=$matches[1]&monthnum=$matches[2]&feed=$matches[3]";s:44:"([0-9]{4})/([0-9]{1,2})/page/?([0-9]{1,})/?$";s:65:"index.php?year=$matches[1]&monthnum=$matches[2]&paged=$matches[3]";s:41:"([0-9]{4})/([0-9]{1,2})/wc-api(/(.*))?/?$";s:66:"index.php?year=$matches[1]&monthnum=$matches[2]&wc-api=$matches[4]";s:26:"([0-9]{4})/([0-9]{1,2})/?$";s:47:"index.php?year=$matches[1]&monthnum=$matches[2]";s:43:"([0-9]{4})/feed/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?year=$matches[1]&feed=$matches[2]";s:38:"([0-9]{4})/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?year=$matches[1]&feed=$matches[2]";s:31:"([0-9]{4})/page/?([0-9]{1,})/?$";s:44:"index.php?year=$matches[1]&paged=$matches[2]";s:28:"([0-9]{4})/wc-api(/(.*))?/?$";s:45:"index.php?year=$matches[1]&wc-api=$matches[3]";s:13:"([0-9]{4})/?$";s:26:"index.php?year=$matches[1]";s:27:".?.+?/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:37:".?.+?/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:57:".?.+?/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:".?.+?/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:".?.+?/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:20:"(.?.+?)/trackback/?$";s:35:"index.php?pagename=$matches[1]&tb=1";s:40:"(.?.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:47:"index.php?pagename=$matches[1]&feed=$matches[2]";s:35:"(.?.+?)/(feed|rdf|rss|rss2|atom)/?$";s:47:"index.php?pagename=$matches[1]&feed=$matches[2]";s:28:"(.?.+?)/page/?([0-9]{1,})/?$";s:48:"index.php?pagename=$matches[1]&paged=$matches[2]";s:35:"(.?.+?)/comment-page-([0-9]{1,})/?$";s:48:"index.php?pagename=$matches[1]&cpage=$matches[2]";s:25:"(.?.+?)/wc-api(/(.*))?/?$";s:49:"index.php?pagename=$matches[1]&wc-api=$matches[3]";s:28:"(.?.+?)/order-pay(/(.*))?/?$";s:52:"index.php?pagename=$matches[1]&order-pay=$matches[3]";s:33:"(.?.+?)/order-received(/(.*))?/?$";s:57:"index.php?pagename=$matches[1]&order-received=$matches[3]";s:29:"(.?.+?)/view-order(/(.*))?/?$";s:53:"index.php?pagename=$matches[1]&view-order=$matches[3]";s:31:"(.?.+?)/edit-account(/(.*))?/?$";s:55:"index.php?pagename=$matches[1]&edit-account=$matches[3]";s:31:"(.?.+?)/edit-address(/(.*))?/?$";s:55:"index.php?pagename=$matches[1]&edit-address=$matches[3]";s:32:"(.?.+?)/lost-password(/(.*))?/?$";s:56:"index.php?pagename=$matches[1]&lost-password=$matches[3]";s:34:"(.?.+?)/customer-logout(/(.*))?/?$";s:58:"index.php?pagename=$matches[1]&customer-logout=$matches[3]";s:37:"(.?.+?)/add-payment-method(/(.*))?/?$";s:61:"index.php?pagename=$matches[1]&add-payment-method=$matches[3]";s:31:".?.+?/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:42:".?.+?/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:20:"(.?.+?)(/[0-9]+)?/?$";s:47:"index.php?pagename=$matches[1]&page=$matches[2]";s:27:"[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:37:"[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:57:"[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:"[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:"[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:20:"([^/]+)/trackback/?$";s:31:"index.php?name=$matches[1]&tb=1";s:40:"([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?name=$matches[1]&feed=$matches[2]";s:35:"([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?name=$matches[1]&feed=$matches[2]";s:28:"([^/]+)/page/?([0-9]{1,})/?$";s:44:"index.php?name=$matches[1]&paged=$matches[2]";s:35:"([^/]+)/comment-page-([0-9]{1,})/?$";s:44:"index.php?name=$matches[1]&cpage=$matches[2]";s:25:"([^/]+)/wc-api(/(.*))?/?$";s:45:"index.php?name=$matches[1]&wc-api=$matches[3]";s:31:"[^/]+/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:42:"[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$";s:51:"index.php?attachment=$matches[1]&wc-api=$matches[3]";s:20:"([^/]+)(/[0-9]+)?/?$";s:43:"index.php?name=$matches[1]&page=$matches[2]";s:16:"[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:26:"[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:46:"[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:41:"[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:41:"[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";}', 'yes');
 
 -- --------------------------------------------------------
 
@@ -1046,14 +1003,11 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 --
 
 CREATE TABLE IF NOT EXISTS `wp_postmeta` (
-  `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`meta_id` bigint(20) unsigned NOT NULL,
   `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_ci,
-  PRIMARY KEY (`meta_id`),
-  KEY `post_id` (`post_id`),
-  KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=888 ;
+  `meta_value` longtext COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB AUTO_INCREMENT=888 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -1650,7 +1604,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (720, 135, '_wp_attached_file', '2015/09/Shaywitz-Shaywitz-2003-The-science-of-reading-and-dyslexia.pdf'),
 (721, 136, '_wp_attached_file', '2015/09/main.pdf.png'),
 (722, 136, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:550;s:6:"height";i:798;s:4:"file";s:20:"2015/09/main.pdf.png";s:5:"sizes";a:15:{s:9:"thumbnail";a:4:{s:4:"file";s:20:"main.pdf-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";}s:6:"medium";a:4:{s:4:"file";s:20:"main.pdf-207x300.png";s:5:"width";i:207;s:6:"height";i:300;s:9:"mime-type";s:9:"image/png";}s:14:"shop_thumbnail";a:4:{s:4:"file";s:20:"main.pdf-180x180.png";s:5:"width";i:180;s:6:"height";i:180;s:9:"mime-type";s:9:"image/png";}s:12:"shop_catalog";a:4:{s:4:"file";s:20:"main.pdf-300x300.png";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:9:"image/png";}s:11:"shop_single";a:4:{s:4:"file";s:20:"main.pdf-550x600.png";s:5:"width";i:550;s:6:"height";i:600;s:9:"mime-type";s:9:"image/png";}s:15:"charity_mission";a:4:{s:4:"file";s:18:"main.pdf-64x65.png";s:5:"width";i:64;s:6:"height";i:65;s:9:"mime-type";s:9:"image/png";}s:9:"chy_index";a:4:{s:4:"file";s:20:"main.pdf-360x240.png";s:5:"width";i:360;s:6:"height";i:240;s:9:"mime-type";s:9:"image/png";}s:8:"chy_thmb";a:4:{s:4:"file";s:20:"main.pdf-360x240.png";s:5:"width";i:360;s:6:"height";i:240;s:9:"mime-type";s:9:"image/png";}s:11:"chy_details";a:4:{s:4:"file";s:20:"main.pdf-550x626.png";s:5:"width";i:550;s:6:"height";i:626;s:9:"mime-type";s:9:"image/png";}s:20:"charity_causes_thumb";a:4:{s:4:"file";s:20:"main.pdf-550x400.png";s:5:"width";i:550;s:6:"height";i:400;s:9:"mime-type";s:9:"image/png";}s:21:"charity_causes_medium";a:4:{s:4:"file";s:20:"main.pdf-550x421.png";s:5:"width";i:550;s:6:"height";i:421;s:9:"mime-type";s:9:"image/png";}s:19:"charity_causes_full";a:4:{s:4:"file";s:20:"main.pdf-550x421.png";s:5:"width";i:550;s:6:"height";i:421;s:9:"mime-type";s:9:"image/png";}s:24:"charity-recentpost-thumb";a:4:{s:4:"file";s:18:"main.pdf-98x98.png";s:5:"width";i:98;s:6:"height";i:98;s:9:"mime-type";s:9:"image/png";}s:21:"charity-urgent-causes";a:4:{s:4:"file";s:20:"main.pdf-550x188.png";s:5:"width";i:550;s:6:"height";i:188;s:9:"mime-type";s:9:"image/png";}s:16:"charity_our_work";a:4:{s:4:"file";s:20:"main.pdf-263x175.png";s:5:"width";i:263;s:6:"height";i:175;s:9:"mime-type";s:9:"image/png";}}s:10:"image_meta";a:11:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";s:11:"orientation";i:0;}}'),
-(723, 137, '_edit_lock', '1443518674:1'),
+(723, 137, '_edit_lock', '1444901159:1'),
 (724, 137, '_edit_last', '1'),
 (725, 138, '_wp_attached_file', '2015/09/Vellutino-et-al.-2004-Specific-reading-disability-dyslexia-what-have-we-learned-in-the-past-four-decades.pdf'),
 (726, 139, '_wp_attached_file', '2015/09/dsyl.jpg'),
@@ -1815,7 +1769,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 --
 
 CREATE TABLE IF NOT EXISTS `wp_posts` (
-  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`ID` bigint(20) unsigned NOT NULL,
   `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
   `post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -1837,13 +1791,8 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   `menu_order` int(11) NOT NULL DEFAULT '0',
   `post_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'post',
   `post_mime_type` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `comment_count` bigint(20) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ID`),
-  KEY `post_name` (`post_name`(191)),
-  KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
-  KEY `post_parent` (`post_parent`),
-  KEY `post_author` (`post_author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=183 ;
+  `comment_count` bigint(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=183 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_posts`
@@ -2009,13 +1958,12 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 --
 
 CREATE TABLE IF NOT EXISTS `wp_revslider_css` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+`id` int(9) NOT NULL,
   `handle` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `settings` text COLLATE utf8mb4_unicode_ci,
   `hover` text COLLATE utf8mb4_unicode_ci,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=54 ;
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_revslider_css`
@@ -2083,11 +2031,10 @@ INSERT INTO `wp_revslider_css` (`id`, `handle`, `settings`, `hover`, `params`) V
 --
 
 CREATE TABLE IF NOT EXISTS `wp_revslider_layer_animations` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+`id` int(9) NOT NULL,
   `handle` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2096,11 +2043,10 @@ CREATE TABLE IF NOT EXISTS `wp_revslider_layer_animations` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_revslider_settings` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+`id` int(9) NOT NULL,
   `general` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=2 ;
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_revslider_settings`
@@ -2116,12 +2062,11 @@ INSERT INTO `wp_revslider_settings` (`id`, `general`, `params`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `wp_revslider_sliders` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+`id` int(9) NOT NULL,
   `title` tinytext COLLATE utf8mb4_unicode_ci NOT NULL,
   `alias` tinytext COLLATE utf8mb4_unicode_ci,
-  `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=2 ;
+  `params` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_revslider_sliders`
@@ -2137,13 +2082,12 @@ INSERT INTO `wp_revslider_sliders` (`id`, `title`, `alias`, `params`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `wp_revslider_slides` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+`id` int(9) NOT NULL,
   `slider_id` int(9) NOT NULL,
   `slide_order` int(11) NOT NULL,
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `layers` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=8 ;
+  `layers` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_revslider_slides`
@@ -2161,12 +2105,11 @@ INSERT INTO `wp_revslider_slides` (`id`, `slider_id`, `slide_order`, `params`, `
 --
 
 CREATE TABLE IF NOT EXISTS `wp_revslider_static_slides` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+`id` int(9) NOT NULL,
   `slider_id` int(9) NOT NULL,
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `layers` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `layers` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2175,14 +2118,11 @@ CREATE TABLE IF NOT EXISTS `wp_revslider_static_slides` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_terms` (
-  `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`term_id` bigint(20) unsigned NOT NULL,
   `name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `slug` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `term_group` bigint(10) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`term_id`),
-  KEY `slug` (`slug`(191)),
-  KEY `name` (`name`(191))
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=9 ;
+  `term_group` bigint(10) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_terms`
@@ -2207,9 +2147,7 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
   `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `term_order` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`object_id`,`term_taxonomy_id`),
-  KEY `term_taxonomy_id` (`term_taxonomy_id`)
+  `term_order` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -2246,16 +2184,13 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 --
 
 CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
-  `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`term_taxonomy_id` bigint(20) unsigned NOT NULL,
   `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `taxonomy` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `parent` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `count` bigint(20) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`term_taxonomy_id`),
-  UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),
-  KEY `taxonomy` (`taxonomy`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=9 ;
+  `count` bigint(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_term_taxonomy`
@@ -2278,14 +2213,11 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 --
 
 CREATE TABLE IF NOT EXISTS `wp_usermeta` (
-  `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`umeta_id` bigint(20) unsigned NOT NULL,
   `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_ci,
-  PRIMARY KEY (`umeta_id`),
-  KEY `user_id` (`user_id`),
-  KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=108 ;
+  `meta_value` longtext COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_usermeta`
@@ -2345,7 +2277,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (52, 1, 'shipping_state', ''),
 (53, 1, 'dbem_phone', ''),
 (54, 1, 'nav_menu_recently_edited', '6'),
-(55, 1, 'session_tokens', 'a:4:{s:64:"cd87f3c54112e52f0d6494f993d01a011fc0f750966e568b8c34549f37cc9653";a:4:{s:10:"expiration";i:1445318470;s:2:"ip";s:3:"::1";s:2:"ua";s:110:"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";s:5:"login";i:1444108870;}s:64:"7473e39285548c6d036b020c7794cee6d536c25617d960210ac4943371e33b22";a:4:{s:10:"expiration";i:1444992603;s:2:"ip";s:3:"::1";s:2:"ua";s:109:"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";s:5:"login";i:1444819803;}s:64:"be261e5b444ad01e3408a7b6ef0315b212d916564a99bd794f3051d9ea0caaa4";a:4:{s:10:"expiration";i:1445001263;s:2:"ip";s:3:"::1";s:2:"ua";s:109:"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";s:5:"login";i:1444828463;}s:64:"7dc80f089a46d124531b76b5780418049996bb8dd0e8626434a1c18ef58cae9b";a:4:{s:10:"expiration";i:1445062151;s:2:"ip";s:3:"::1";s:2:"ua";s:110:"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";s:5:"login";i:1444889351;}}'),
+(55, 1, 'session_tokens', 'a:5:{s:64:"cd87f3c54112e52f0d6494f993d01a011fc0f750966e568b8c34549f37cc9653";a:4:{s:10:"expiration";i:1445318470;s:2:"ip";s:3:"::1";s:2:"ua";s:110:"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";s:5:"login";i:1444108870;}s:64:"7473e39285548c6d036b020c7794cee6d536c25617d960210ac4943371e33b22";a:4:{s:10:"expiration";i:1444992603;s:2:"ip";s:3:"::1";s:2:"ua";s:109:"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";s:5:"login";i:1444819803;}s:64:"be261e5b444ad01e3408a7b6ef0315b212d916564a99bd794f3051d9ea0caaa4";a:4:{s:10:"expiration";i:1445001263;s:2:"ip";s:3:"::1";s:2:"ua";s:109:"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";s:5:"login";i:1444828463;}s:64:"7dc80f089a46d124531b76b5780418049996bb8dd0e8626434a1c18ef58cae9b";a:4:{s:10:"expiration";i:1445062151;s:2:"ip";s:3:"::1";s:2:"ua";s:110:"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";s:5:"login";i:1444889351;}s:64:"d946d536b14bff6c248701f4f1b4b7f526c39011b99ea877fd763961a1963bfa";a:4:{s:10:"expiration";i:1445073342;s:2:"ip";s:3:"::1";s:2:"ua";s:109:"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";s:5:"login";i:1444900542;}}'),
 (56, 2, 'nickname', 'contributor1'),
 (57, 2, 'first_name', 'Risqi'),
 (58, 2, 'last_name', 'Utama'),
@@ -2404,7 +2336,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 --
 
 CREATE TABLE IF NOT EXISTS `wp_users` (
-  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+`ID` bigint(20) unsigned NOT NULL,
   `user_login` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `user_pass` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `user_nicename` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -2413,11 +2345,8 @@ CREATE TABLE IF NOT EXISTS `wp_users` (
   `user_registered` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `user_activation_key` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `user_status` int(11) NOT NULL DEFAULT '0',
-  `display_name` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`ID`),
-  KEY `user_login_key` (`user_login`),
-  KEY `user_nicename` (`user_nicename`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=3 ;
+  `display_name` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wp_users`
@@ -2434,7 +2363,7 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 --
 
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_api_keys` (
-  `key_id` bigint(20) NOT NULL AUTO_INCREMENT,
+`key_id` bigint(20) NOT NULL,
   `user_id` bigint(20) NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci,
   `permissions` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -2442,11 +2371,8 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_api_keys` (
   `consumer_secret` char(43) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nonces` longtext COLLATE utf8mb4_unicode_ci,
   `truncated_key` char(7) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_access` datetime DEFAULT NULL,
-  PRIMARY KEY (`key_id`),
-  KEY `consumer_key` (`consumer_key`),
-  KEY `consumer_secret` (`consumer_secret`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `last_access` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2455,15 +2381,13 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_api_keys` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_attribute_taxonomies` (
-  `attribute_id` bigint(20) NOT NULL AUTO_INCREMENT,
+`attribute_id` bigint(20) NOT NULL,
   `attribute_name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `attribute_label` longtext COLLATE utf8mb4_unicode_ci,
   `attribute_type` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `attribute_orderby` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `attribute_public` int(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`attribute_id`),
-  KEY `attribute_name` (`attribute_name`(191))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `attribute_public` int(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2472,7 +2396,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_attribute_taxonomies` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_downloadable_product_permissions` (
-  `permission_id` bigint(20) NOT NULL AUTO_INCREMENT,
+`permission_id` bigint(20) NOT NULL,
   `download_id` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `product_id` bigint(20) NOT NULL,
   `order_id` bigint(20) NOT NULL DEFAULT '0',
@@ -2482,11 +2406,8 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_downloadable_product_permissions` (
   `downloads_remaining` varchar(9) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `access_granted` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `access_expires` datetime DEFAULT NULL,
-  `download_count` bigint(20) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`permission_id`),
-  KEY `download_order_key_product` (`product_id`,`order_id`,`order_key`(191),`download_id`),
-  KEY `download_order_product` (`download_id`,`order_id`,`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `download_count` bigint(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2495,14 +2416,11 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_downloadable_product_permissions` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_order_itemmeta` (
-  `meta_id` bigint(20) NOT NULL AUTO_INCREMENT,
+`meta_id` bigint(20) NOT NULL,
   `order_item_id` bigint(20) NOT NULL,
   `meta_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_ci,
-  PRIMARY KEY (`meta_id`),
-  KEY `order_item_id` (`order_item_id`),
-  KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `meta_value` longtext COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2511,13 +2429,11 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_order_itemmeta` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_order_items` (
-  `order_item_id` bigint(20) NOT NULL AUTO_INCREMENT,
+`order_item_id` bigint(20) NOT NULL,
   `order_item_name` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `order_item_type` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `order_id` bigint(20) NOT NULL,
-  PRIMARY KEY (`order_item_id`),
-  KEY `order_id` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `order_id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2526,7 +2442,7 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_order_items` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_tax_rates` (
-  `tax_rate_id` bigint(20) NOT NULL AUTO_INCREMENT,
+`tax_rate_id` bigint(20) NOT NULL,
   `tax_rate_country` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `tax_rate_state` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `tax_rate` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -2535,13 +2451,8 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_tax_rates` (
   `tax_rate_compound` int(1) NOT NULL DEFAULT '0',
   `tax_rate_shipping` int(1) NOT NULL DEFAULT '1',
   `tax_rate_order` bigint(20) NOT NULL,
-  `tax_rate_class` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`tax_rate_id`),
-  KEY `tax_rate_country` (`tax_rate_country`(191)),
-  KEY `tax_rate_state` (`tax_rate_state`(191)),
-  KEY `tax_rate_class` (`tax_rate_class`(191)),
-  KEY `tax_rate_priority` (`tax_rate_priority`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `tax_rate_class` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2550,15 +2461,11 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_tax_rates` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_tax_rate_locations` (
-  `location_id` bigint(20) NOT NULL AUTO_INCREMENT,
+`location_id` bigint(20) NOT NULL,
   `location_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tax_rate_id` bigint(20) NOT NULL,
-  `location_type` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`location_id`),
-  KEY `tax_rate_id` (`tax_rate_id`),
-  KEY `location_type` (`location_type`),
-  KEY `location_type_code` (`location_type`,`location_code`(90))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `location_type` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2567,15 +2474,390 @@ CREATE TABLE IF NOT EXISTS `wp_woocommerce_tax_rate_locations` (
 --
 
 CREATE TABLE IF NOT EXISTS `wp_woocommerce_termmeta` (
-  `meta_id` bigint(20) NOT NULL AUTO_INCREMENT,
+`meta_id` bigint(20) NOT NULL,
   `woocommerce_term_id` bigint(20) NOT NULL,
   `meta_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8mb4_unicode_ci,
-  PRIMARY KEY (`meta_id`),
-  KEY `woocommerce_term_id` (`woocommerce_term_id`),
-  KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
+  `meta_value` longtext COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `wp_cf7dbplugin_st`
+--
+ALTER TABLE `wp_cf7dbplugin_st`
+ ADD PRIMARY KEY (`submit_time`);
+
+--
+-- Indexes for table `wp_cf7dbplugin_submits`
+--
+ALTER TABLE `wp_cf7dbplugin_submits`
+ ADD KEY `submit_time_idx` (`submit_time`), ADD KEY `form_name_idx` (`form_name`), ADD KEY `field_name_idx` (`field_name`);
+
+--
+-- Indexes for table `wp_commentmeta`
+--
+ALTER TABLE `wp_commentmeta`
+ ADD PRIMARY KEY (`meta_id`), ADD KEY `comment_id` (`comment_id`), ADD KEY `meta_key` (`meta_key`(191));
+
+--
+-- Indexes for table `wp_comments`
+--
+ALTER TABLE `wp_comments`
+ ADD PRIMARY KEY (`comment_ID`), ADD KEY `comment_post_ID` (`comment_post_ID`), ADD KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`), ADD KEY `comment_date_gmt` (`comment_date_gmt`), ADD KEY `comment_parent` (`comment_parent`), ADD KEY `comment_author_email` (`comment_author_email`(10));
+
+--
+-- Indexes for table `wp_easypay_payment_log`
+--
+ALTER TABLE `wp_easypay_payment_log`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `wp_easypay_recurring`
+--
+ALTER TABLE `wp_easypay_recurring`
+ ADD PRIMARY KEY (`ch_id`);
+
+--
+-- Indexes for table `wp_em_bookings`
+--
+ALTER TABLE `wp_em_bookings`
+ ADD PRIMARY KEY (`booking_id`), ADD KEY `event_id` (`event_id`), ADD KEY `person_id` (`person_id`), ADD KEY `booking_status` (`booking_status`);
+
+--
+-- Indexes for table `wp_em_events`
+--
+ALTER TABLE `wp_em_events`
+ ADD PRIMARY KEY (`event_id`), ADD KEY `event_status` (`event_status`), ADD KEY `post_id` (`post_id`), ADD KEY `blog_id` (`blog_id`), ADD KEY `group_id` (`group_id`), ADD KEY `location_id` (`location_id`);
+
+--
+-- Indexes for table `wp_em_locations`
+--
+ALTER TABLE `wp_em_locations`
+ ADD PRIMARY KEY (`location_id`), ADD KEY `location_state` (`location_state`), ADD KEY `location_region` (`location_region`), ADD KEY `location_country` (`location_country`), ADD KEY `post_id` (`post_id`), ADD KEY `blog_id` (`blog_id`);
+
+--
+-- Indexes for table `wp_em_meta`
+--
+ALTER TABLE `wp_em_meta`
+ ADD PRIMARY KEY (`meta_id`), ADD KEY `object_id` (`object_id`), ADD KEY `meta_key` (`meta_key`);
+
+--
+-- Indexes for table `wp_em_tickets`
+--
+ALTER TABLE `wp_em_tickets`
+ ADD PRIMARY KEY (`ticket_id`), ADD KEY `event_id` (`event_id`);
+
+--
+-- Indexes for table `wp_em_tickets_bookings`
+--
+ALTER TABLE `wp_em_tickets_bookings`
+ ADD PRIMARY KEY (`ticket_booking_id`), ADD KEY `booking_id` (`booking_id`), ADD KEY `ticket_id` (`ticket_id`);
+
+--
+-- Indexes for table `wp_links`
+--
+ALTER TABLE `wp_links`
+ ADD PRIMARY KEY (`link_id`), ADD KEY `link_visible` (`link_visible`);
+
+--
+-- Indexes for table `wp_options`
+--
+ALTER TABLE `wp_options`
+ ADD PRIMARY KEY (`option_id`), ADD UNIQUE KEY `option_name` (`option_name`);
+
+--
+-- Indexes for table `wp_postmeta`
+--
+ALTER TABLE `wp_postmeta`
+ ADD PRIMARY KEY (`meta_id`), ADD KEY `post_id` (`post_id`), ADD KEY `meta_key` (`meta_key`(191));
+
+--
+-- Indexes for table `wp_posts`
+--
+ALTER TABLE `wp_posts`
+ ADD PRIMARY KEY (`ID`), ADD KEY `post_name` (`post_name`(191)), ADD KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`), ADD KEY `post_parent` (`post_parent`), ADD KEY `post_author` (`post_author`);
+
+--
+-- Indexes for table `wp_revslider_css`
+--
+ALTER TABLE `wp_revslider_css`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `wp_revslider_layer_animations`
+--
+ALTER TABLE `wp_revslider_layer_animations`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `wp_revslider_settings`
+--
+ALTER TABLE `wp_revslider_settings`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `wp_revslider_sliders`
+--
+ALTER TABLE `wp_revslider_sliders`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `wp_revslider_slides`
+--
+ALTER TABLE `wp_revslider_slides`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `wp_revslider_static_slides`
+--
+ALTER TABLE `wp_revslider_static_slides`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `wp_terms`
+--
+ALTER TABLE `wp_terms`
+ ADD PRIMARY KEY (`term_id`), ADD KEY `slug` (`slug`(191)), ADD KEY `name` (`name`(191));
+
+--
+-- Indexes for table `wp_term_relationships`
+--
+ALTER TABLE `wp_term_relationships`
+ ADD PRIMARY KEY (`object_id`,`term_taxonomy_id`), ADD KEY `term_taxonomy_id` (`term_taxonomy_id`);
+
+--
+-- Indexes for table `wp_term_taxonomy`
+--
+ALTER TABLE `wp_term_taxonomy`
+ ADD PRIMARY KEY (`term_taxonomy_id`), ADD UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`), ADD KEY `taxonomy` (`taxonomy`);
+
+--
+-- Indexes for table `wp_usermeta`
+--
+ALTER TABLE `wp_usermeta`
+ ADD PRIMARY KEY (`umeta_id`), ADD KEY `user_id` (`user_id`), ADD KEY `meta_key` (`meta_key`(191));
+
+--
+-- Indexes for table `wp_users`
+--
+ALTER TABLE `wp_users`
+ ADD PRIMARY KEY (`ID`), ADD KEY `user_login_key` (`user_login`), ADD KEY `user_nicename` (`user_nicename`);
+
+--
+-- Indexes for table `wp_woocommerce_api_keys`
+--
+ALTER TABLE `wp_woocommerce_api_keys`
+ ADD PRIMARY KEY (`key_id`), ADD KEY `consumer_key` (`consumer_key`), ADD KEY `consumer_secret` (`consumer_secret`);
+
+--
+-- Indexes for table `wp_woocommerce_attribute_taxonomies`
+--
+ALTER TABLE `wp_woocommerce_attribute_taxonomies`
+ ADD PRIMARY KEY (`attribute_id`), ADD KEY `attribute_name` (`attribute_name`(191));
+
+--
+-- Indexes for table `wp_woocommerce_downloadable_product_permissions`
+--
+ALTER TABLE `wp_woocommerce_downloadable_product_permissions`
+ ADD PRIMARY KEY (`permission_id`), ADD KEY `download_order_key_product` (`product_id`,`order_id`,`order_key`(191),`download_id`), ADD KEY `download_order_product` (`download_id`,`order_id`,`product_id`);
+
+--
+-- Indexes for table `wp_woocommerce_order_itemmeta`
+--
+ALTER TABLE `wp_woocommerce_order_itemmeta`
+ ADD PRIMARY KEY (`meta_id`), ADD KEY `order_item_id` (`order_item_id`), ADD KEY `meta_key` (`meta_key`(191));
+
+--
+-- Indexes for table `wp_woocommerce_order_items`
+--
+ALTER TABLE `wp_woocommerce_order_items`
+ ADD PRIMARY KEY (`order_item_id`), ADD KEY `order_id` (`order_id`);
+
+--
+-- Indexes for table `wp_woocommerce_tax_rates`
+--
+ALTER TABLE `wp_woocommerce_tax_rates`
+ ADD PRIMARY KEY (`tax_rate_id`), ADD KEY `tax_rate_country` (`tax_rate_country`(191)), ADD KEY `tax_rate_state` (`tax_rate_state`(191)), ADD KEY `tax_rate_class` (`tax_rate_class`(191)), ADD KEY `tax_rate_priority` (`tax_rate_priority`);
+
+--
+-- Indexes for table `wp_woocommerce_tax_rate_locations`
+--
+ALTER TABLE `wp_woocommerce_tax_rate_locations`
+ ADD PRIMARY KEY (`location_id`), ADD KEY `tax_rate_id` (`tax_rate_id`), ADD KEY `location_type` (`location_type`), ADD KEY `location_type_code` (`location_type`,`location_code`(90));
+
+--
+-- Indexes for table `wp_woocommerce_termmeta`
+--
+ALTER TABLE `wp_woocommerce_termmeta`
+ ADD PRIMARY KEY (`meta_id`), ADD KEY `woocommerce_term_id` (`woocommerce_term_id`), ADD KEY `meta_key` (`meta_key`(191));
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `wp_commentmeta`
+--
+ALTER TABLE `wp_commentmeta`
+MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_comments`
+--
+ALTER TABLE `wp_comments`
+MODIFY `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `wp_easypay_payment_log`
+--
+ALTER TABLE `wp_easypay_payment_log`
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_easypay_recurring`
+--
+ALTER TABLE `wp_easypay_recurring`
+MODIFY `ch_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `wp_em_bookings`
+--
+ALTER TABLE `wp_em_bookings`
+MODIFY `booking_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_em_events`
+--
+ALTER TABLE `wp_em_events`
+MODIFY `event_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `wp_em_locations`
+--
+ALTER TABLE `wp_em_locations`
+MODIFY `location_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `wp_em_meta`
+--
+ALTER TABLE `wp_em_meta`
+MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_em_tickets`
+--
+ALTER TABLE `wp_em_tickets`
+MODIFY `ticket_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_em_tickets_bookings`
+--
+ALTER TABLE `wp_em_tickets_bookings`
+MODIFY `ticket_booking_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_links`
+--
+ALTER TABLE `wp_links`
+MODIFY `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_options`
+--
+ALTER TABLE `wp_options`
+MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6275;
+--
+-- AUTO_INCREMENT for table `wp_postmeta`
+--
+ALTER TABLE `wp_postmeta`
+MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=888;
+--
+-- AUTO_INCREMENT for table `wp_posts`
+--
+ALTER TABLE `wp_posts`
+MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=183;
+--
+-- AUTO_INCREMENT for table `wp_revslider_css`
+--
+ALTER TABLE `wp_revslider_css`
+MODIFY `id` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
+--
+-- AUTO_INCREMENT for table `wp_revslider_layer_animations`
+--
+ALTER TABLE `wp_revslider_layer_animations`
+MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_revslider_settings`
+--
+ALTER TABLE `wp_revslider_settings`
+MODIFY `id` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `wp_revslider_sliders`
+--
+ALTER TABLE `wp_revslider_sliders`
+MODIFY `id` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `wp_revslider_slides`
+--
+ALTER TABLE `wp_revslider_slides`
+MODIFY `id` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `wp_revslider_static_slides`
+--
+ALTER TABLE `wp_revslider_static_slides`
+MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_terms`
+--
+ALTER TABLE `wp_terms`
+MODIFY `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `wp_term_taxonomy`
+--
+ALTER TABLE `wp_term_taxonomy`
+MODIFY `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `wp_usermeta`
+--
+ALTER TABLE `wp_usermeta`
+MODIFY `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=108;
+--
+-- AUTO_INCREMENT for table `wp_users`
+--
+ALTER TABLE `wp_users`
+MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `wp_woocommerce_api_keys`
+--
+ALTER TABLE `wp_woocommerce_api_keys`
+MODIFY `key_id` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_woocommerce_attribute_taxonomies`
+--
+ALTER TABLE `wp_woocommerce_attribute_taxonomies`
+MODIFY `attribute_id` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_woocommerce_downloadable_product_permissions`
+--
+ALTER TABLE `wp_woocommerce_downloadable_product_permissions`
+MODIFY `permission_id` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_woocommerce_order_itemmeta`
+--
+ALTER TABLE `wp_woocommerce_order_itemmeta`
+MODIFY `meta_id` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_woocommerce_order_items`
+--
+ALTER TABLE `wp_woocommerce_order_items`
+MODIFY `order_item_id` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_woocommerce_tax_rates`
+--
+ALTER TABLE `wp_woocommerce_tax_rates`
+MODIFY `tax_rate_id` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_woocommerce_tax_rate_locations`
+--
+ALTER TABLE `wp_woocommerce_tax_rate_locations`
+MODIFY `location_id` bigint(20) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `wp_woocommerce_termmeta`
+--
+ALTER TABLE `wp_woocommerce_termmeta`
+MODIFY `meta_id` bigint(20) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
