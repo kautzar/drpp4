@@ -6,7 +6,7 @@
  */
 ?><header id="header" class="header-second header-third">
     <div class="container hidden-xs">
-        <div class="row primary-header">
+        <!--div class="row primary-header">
             <div class="social-links col-xs-12 col-sm-12 col-md-8 col-md-offset-4">
             	<?php 
             	$volunteer_btn_text=vp_option('vpt_option.become_volunteer_btn_text');
@@ -16,7 +16,7 @@
                 <?php if(!empty($volunteer_btn_text)):?><a href="<?php echo esc_url($volunteer_btn_link); ?>" class="btn btn-default btn-volunteer"><?php echo esc_attr($volunteer_btn_text); ?></a><?php endif;?>
                 <a href="mailto:<?php print($contact_mail_id); ?>" class="touch-by-mail"><?php print($contact_mail_id); ?></a>
             </div>
-        </div>
+        </div-->
     </div>
     <div class="navbar navbar-default navbar-alternate" role="navigation">
         <div class="nav-content">
