@@ -68,7 +68,8 @@ h5, .h5 {
 }
 h6, .h6 {
     font-size: 18px;
-    margin-bottom: 39px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 p {
     font-size: 14px;
@@ -546,6 +547,7 @@ input:focus, textarea:focus, .btn:focus, .zoom img {
 li {
 
     color: #7c7c7c;
+    list-style: none;
 }
 .list-style li {
     font-size: 16px;
