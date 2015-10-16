@@ -21,7 +21,7 @@ $flagLinkPages=false;
             while (have_posts()) : the_post();
                 get_template_part('content/page');
                 ?>
-                <div class="row">
+               <!-- <div class="row">
                     <div class="col-xs-12">
                         <div class="comment-block">
                             <div class="row">
@@ -37,12 +37,12 @@ $flagLinkPages=false;
                                         ?>
                                     </section>
 
-                                </div>
+                                </div> 
 
                             </div>
-                        </div>
+                        </div> 
                     </div>
-                </div>
+                </div> -->
             <?php
             
             if($flagLinkPages){

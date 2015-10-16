@@ -8,7 +8,7 @@
 if (hasCharityDefault_Widgets()):
     ?>
 <!-- hide this start  <div class="container charity-default-widgets col-sm-4 col-md-3 left-block"> -->
-  <div class="container charity-default-widgets left-block"> 
+  <div class="charity-default-widgets left-block"> 
         <div class="row">
             <?php dynamic_sidebar("default-charity-section"); ?>
         </div> 
