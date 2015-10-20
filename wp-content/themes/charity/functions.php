@@ -41,3 +41,16 @@ require_once CHY_THEME_DIR . "/inc/woocommerce/woocommerce.php";
 
 require_once CHY_THEME_DIR . '/vendor/vafpress/vafpress.php';
 require_once CHY_THEME_DIR . '/vendor/import/charity-import.php';
+
+// CHANGE EXCERPT LENGTH FOR DIFFERENT POST TYPES
+
+	function isacustom_excerpt_length($length) {
+	global $post;
+	if ($post->post_type == 'journals')
+	return 10;
+	else if ($post->post_type == 'causes')
+	return 5;
+	else
+	return 30;
+	}
+	add_filter('excerpt_length', 'isacustom_excerpt_length');

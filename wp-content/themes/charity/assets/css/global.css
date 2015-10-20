@@ -84,7 +84,7 @@ p {
     -moz-transition: all 0.4s ease-in-out 0s;
 }
 .more-link.btn.btn-default {
-    display: block;
+/*    display: block; */
     margin-top: 30px;
     max-width: 136px;
     width: auto;
@@ -1653,4 +1653,34 @@ form .charity-required{
     margin-bottom: 23px;
     margin-top: 23px;
     padding-bottom: 23px;
+}
+
+/*
+ 3.12)Portfolio Type Section
+ ----------------------------------------*/
+.journaltag a:link {
+    background: #ecc731;
+    color: #fff;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.journaltag a:hover {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.journaltag a:visited {
+    background: #d7af0d;
+    color: #fff;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

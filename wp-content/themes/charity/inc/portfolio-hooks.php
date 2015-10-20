@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Charity portfolio hooks
  *
@@ -22,7 +23,17 @@ class CharityPortfolioHooks {
     	//current term
     	$currentTermId =(is_tax('portfolio-type')) ? get_queried_object()->term_id: "";
     
-    	?><ol class="breadcrumb">
+    	?>
+
+       <div class="journaltag"> 
+                  <?php foreach ($portfolioTypes as $types): 
+                  	$activeClass=($currentTermId == $types->term_id) ? " active " :"";
+                  ?>
+                      <a href="<?php echo esc_url(get_term_link($types)); ?>"><?php echo esc_html($types->name); ?></a> 
+                 <?php endforeach;  ?>
+                 </div>
+
+<!-- <ol class="breadcrumb"> 
                   <?php foreach ($portfolioTypes as $types): 
                   	$activeClass=($currentTermId == $types->term_id) ? " active " :"";
                   ?>
@@ -30,9 +41,9 @@ class CharityPortfolioHooks {
                      <a href="<?php echo esc_url(get_term_link($types)); ?>"><?php echo esc_html($types->name); ?></a>
                      </li>
                  <?php endforeach;  ?>
-                </ol><?php 
-        	endif;
-        }
+                 </ol> --> <?php 
+        	endif; 
+        } 
         
     function image() {
         global $post;

@@ -44,7 +44,11 @@ do_action("charity_breadcrumb", array("title" => get_the_title()));
                                         endif;
                                         ?>                                           
                                         <h3 class="h3"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                        <?php the_excerpt(); ?>
+                                        <?php the_excerpt(); ?><p>
+
+                                            <p class="ecae-button ecae-buttonskin-black" style="text-align:left;">  <a class="ecae-link" href="<?php the_permalink(); ?>"><span>Read more</span></a></p>
+
+                                    </p>
                                     </div>
                                 </div>
                                 <?php
@@ -61,8 +65,9 @@ do_action("charity_breadcrumb", array("title" => get_the_title()));
                 <!-- sidebar start -->
                 <div class="col-xs-3">
                     <!--Sub Breadcrumb Section Start Here-->
-                    <h2>Pilih Topik Jurnal</h2>
-                    <?php do_action("charity_portfolio_types_breadcrumb"); ?>
+                    <h3>Pilih Topik Jurnal</h3><p>
+                    Kumpulan jurnal-jurnal yang terkait dengan masalah learning disabilities seperti dyslexia, autism, neuro-development, pediatrics, dan behavior.</p><p>Klik topik-topik di bawah ini untuk menyaring jurnal</p>
+                    <p>&nbsp;</p><?php do_action("charity_portfolio_types_breadcrumb"); ?>
                     <!--Sub Breadcrumb Section Start Here-->
                 </div>
                 <!-- sidebar end -->

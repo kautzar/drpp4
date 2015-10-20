@@ -46,13 +46,14 @@ do_action("charity_breadcrumb", array("title" => get_the_title()));
                                             <figure>
                                         <?php the_post_thumbnail("charity_causes_thumb"); ?>
                                             </figure>
-                                        </a>
+                                        </a><p align="center">
                                         <?php
                                     endif;
-                                    do_action("charity_cauese_donation_details");
-                                    the_content("");
+                                    do_action("charity_causes_donation_details");
+                                    the_content("1");
+                                    print "<p>&nbsp;</p>";
                                     do_action("charity_causes_donation_button");
-                                    ?>
+                                    ?></p>
 
                                 </div>
                             </div>
