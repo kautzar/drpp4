@@ -16,7 +16,7 @@ do_action("charity_breadcrumb", array(
         <!-- our causes detail-->
         <div class="anim-section">
             <div class="row">
-                <div class="col-xs-12 col-sm-9 left-block">
+                <div class="col-xs-12 col-sm-8 left-block">
                     <?php
                     global $charity_single_event;
                     $svgURL = get_template_directory_uri() . '/assets/svg/';
@@ -26,6 +26,9 @@ do_action("charity_breadcrumb", array(
 
                     endwhile;
                     ?>
+
+
+
                     <?php
                     the_post_navigation(array(
                         'next_text' => '<span class="next btn btn-default" aria-hidden="true">' . __('Next', 'charity') . '</span> ',
@@ -33,7 +36,7 @@ do_action("charity_breadcrumb", array(
                     ));
                     ?>
                 </div>								
-                <div class="col-xs-12 col-sm-3 left-block">
+                <div class="col-xs-12 col-sm-4 left-block">
                     <aside class="media">
 <?php dynamic_sidebar("event-widget-section"); ?>
                     </aside>

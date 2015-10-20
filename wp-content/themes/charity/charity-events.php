@@ -15,7 +15,7 @@ do_action("charity_breadcrumb", array("title" => get_the_title()));
         <!-- our causes detail-->
         <div class="anim-section">
             <div class="row">
-                <div class="col-xs-12 col-sm-9 left-block event_page">
+                <div class="col-xs-12 col-sm-8 left-block event_page">
                     <?php
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     $args = array(
@@ -40,7 +40,7 @@ do_action("charity_breadcrumb", array("title" => get_the_title()));
                       } */
                     ?>                                            
                 </div>
-                <div class="col-xs-12 col-sm-3 left-block">
+                <div class="col-xs-12 col-sm-4 left-block">
                     <aside class="media">
                         <?php dynamic_sidebar("event-widget-section"); ?>
                     </aside>
