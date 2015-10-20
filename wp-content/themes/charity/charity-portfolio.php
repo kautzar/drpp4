@@ -17,10 +17,7 @@ do_action("charity_breadcrumb", array("title" => get_the_title()));
     <section class="we-help gallery-wrap">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <!--Sub Breadcrumb Section Start Here-->
-                    <?php do_action("charity_portfolio_types_breadcrumb"); ?>
-                    <!--Sub Breadcrumb Section Start Here-->
+                <div class="col-xs-9">
                     <!--Gallery Section Start Here-->
                     <div class="row gallery">
                         <?php
@@ -61,6 +58,14 @@ do_action("charity_breadcrumb", array("title" => get_the_title()));
                     </div>
                     <!--Gallery Section End Here-->
                 </div>
+                <!-- sidebar start -->
+                <div class="col-xs-3">
+                    <!--Sub Breadcrumb Section Start Here-->
+                    <h2>Pilih Topik Jurnal</h2>
+                    <?php do_action("charity_portfolio_types_breadcrumb"); ?>
+                    <!--Sub Breadcrumb Section Start Here-->
+                </div>
+                <!-- sidebar end -->
             </div>
         </div>
     </section>
