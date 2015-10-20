@@ -8,7 +8,7 @@
 
 get_header();
 //breadcrumb
-do_action("charity_breadcrumb", array("title" => esc_html__("Portfolio", "charity"), "template_file" => "charity-portfolio.php"));
+do_action("charity_breadcrumb", array("title" => esc_html__("Jurnal", "charity"), "template_file" => "charity-portfolio.php"));
 ?>
 <div class="content-wrapper" id="page-info">
 
@@ -16,10 +16,7 @@ do_action("charity_breadcrumb", array("title" => esc_html__("Portfolio", "charit
     <section class="we-help gallery-wrap">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <!--Sub Breadcrumb Section Start Here-->
-                    <?php do_action("charity_portfolio_types_breadcrumb"); ?>
-                    <!--Sub Breadcrumb Section Start Here-->
+                <div class="col-xs-9">
                     <!--Gallery Section Start Here-->
                     <div class="row gallery">
                         <?php
@@ -51,6 +48,19 @@ do_action("charity_breadcrumb", array("title" => esc_html__("Portfolio", "charit
                     </div>
                     <!--Gallery Section End Here-->
                 </div>
+
+
+                 <!-- sidebar start -->
+                <div class="col-xs-3">
+                    <!--Sub Breadcrumb Section Start Here-->
+                    <h3>Pilih Topik Jurnal</h3><p>
+                    Kumpulan jurnal-jurnal yang terkait dengan masalah learning disabilities seperti dyslexia, autism, neuro-development, pediatrics, dan behavior.</p><p>Klik topik-topik di bawah ini untuk menyaring jurnal</p>
+                    <p>&nbsp;</p><?php do_action("charity_portfolio_types_breadcrumb"); ?>
+                    <!--Sub Breadcrumb Section Start Here-->
+                </div>
+                <!-- sidebar end -->
+
+
             </div>
         </div>
     </section>

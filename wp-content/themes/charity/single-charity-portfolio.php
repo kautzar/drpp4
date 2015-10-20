@@ -14,16 +14,16 @@ do_action("charity_breadcrumb", array("title" => get_the_title()));
     <!-- portfolio detail sections -->
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-9">
                 <?php
                 if (have_posts()) :
                     while (have_posts()) : the_post();
                         $metaType = vp_metabox('cahrity-meta-type-settings.choose-meta-type');
                         ?>
 
-                        <header class="page-header section-header text-left">
+                       <!-- <header class="page-header section-header text-left">
                             <h2><?php the_title(); ?></h2>
-                        </header>
+                        </header> -->
                         <div class="portfolio-detail-description">
                             <?php
                             if ($metaType == "video"):
@@ -55,6 +55,18 @@ do_action("charity_breadcrumb", array("title" => get_the_title()));
                 </div>
             </div>
             <!--  sections end -->
+
+             <!-- sidebar start -->
+                <div class="col-xs-3">
+                    <!--Sub Breadcrumb Section Start Here-->
+                    <h3>Pilih Topik Jurnal</h3><p>
+                    Kumpulan jurnal-jurnal yang terkait dengan masalah learning disabilities seperti dyslexia, autism, neuro-development, pediatrics, dan behavior.</p><p>Klik topik-topik di bawah ini untuk menyaring jurnal</p>
+                    <p>&nbsp;</p><?php do_action("charity_portfolio_types_breadcrumb"); ?>
+                    <!--Sub Breadcrumb Section Start Here-->
+                </div>
+                <!-- sidebar end -->
+
+
         </div>
     </div>
 </div>

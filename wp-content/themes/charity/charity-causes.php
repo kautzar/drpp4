@@ -51,7 +51,6 @@ do_action("charity_breadcrumb", array("title" => get_the_title()));
                                     endif;
                                     do_action("charity_causes_donation_details");
                                     the_content("1");
-                                    print "<p>&nbsp;</p>";
                                     do_action("charity_causes_donation_button");
                                     ?></p>
 
