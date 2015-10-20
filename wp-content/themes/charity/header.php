@@ -34,14 +34,14 @@ h6,
     Style for Switcher
 */
 div.style-switcher h4 {
-  background: #076e3c;
+  background: #ecc731;
 }
 div.style-switcher h4 a {
-  background: #076e3c;
+  background: #ecc731;
 }
 .tp-caption .anim-icon:hover,
 .tp-caption .anim-icon:focus {
-  color: #076e3c;
+  color: #ecc731;
 }
 .anim-icon.fill:hover,
 .jump:hover,
@@ -53,26 +53,26 @@ div.style-switcher h4 a {
 .pagination-wrap [class^="page-"]:focus,
 .accordion-sec .panel-title > a:focus,
 .panel-list .list-group-item > a:focus {
-  color: #076e3c;
+  color: #ecc731;
 }
 /*
   Style For Golbar Buttons
 ---------------------------------*/
 .navbar-nav > li > a:after {
-  color: #076e3c;
+  color: #ecc731;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
-  color: #076e3c;
+  color: #ecc731;
 }
 .navbar-nav > li > .dropdown-menu {
-  border-bottom-color: #076e3c;
+  border-bottom-color: #ecc731;
 }
 .navbar-nav > li > .dropdown-menu:after {
-  border-bottom-color: #076e3c;
+  border-bottom-color: #ecc731;
 }
 .navbar-inverse .navbar-nav .dropdown-menu > li > a:hover:after {
-  color: #076e3c;
+  color: #ecc731;
 }
 /*theme color*/
 #theme_panel .page-group .active-page,
@@ -101,7 +101,7 @@ div.style-switcher h4 a {
 .banner-section .btn-link:hover,
 .banner-section .btn-link,
 .slider-third .tp-caption .btn.btn-default {
-  color: #076e3c;
+  color: #ecc731;
 }
 #theme_panel .theme-setting,
 #theme_panel .note,
@@ -142,10 +142,10 @@ textarea:focus,
 .helping-child .btn-theme:hover,
 .fancybox-close,
 .fancybox-nav {
-  background: #076e3c;
+  background: #ecc731;
 }
 .svg-shape path {
-  fill: #076e3c;
+  fill: #ecc731;
 }
 .navbar-nav > li > .dropdown-menu,
 .navbar-nav .open .dropdown-menu {
@@ -187,14 +187,14 @@ blockquote,
 .pagination > li > a:focus,
 .pagination > li > span:focus,
 .page-numbers.active {
-  border-color: #076e3c;
+  border-color: #ecc731;
 }
 .navbar-nav > li > .dropdown-menu > ul > li > a,
 .navbar-nav > li > .dropdown-menu > ul > li > ul.menu-depth-2 > li > a {
-  border-bottom: 1px solid #076e3c;
+  border-bottom: 1px solid #ecc731;
 }
 .progress-value:before {
-  border-top: 4px solid #076e3c;
+  border-top: 4px solid #ecc731;
 }
 h1 strong,
 .h1 strong,
@@ -206,49 +206,49 @@ h2 strong,
 .h2 strong,
 h4 strong,
 .h4 strong {
-  border-bottom-color: #076e3c;
+  border-bottom-color: #ecc731;
 }
 .checkout ul.nav-tabs li.active:after {
-  border-top: 8px solid #076e3c;
+  border-top: 8px solid #ecc731;
 }
 .progress-value:after {
-  border-top: 4px solid #076e3c;
+  border-top: 4px solid #ecc731;
 }
 .tp-bullets.simplebullets.round .bullet,
 .testimonial-slider .flex-control-paging a {
-  border: 2px solid #076e3c;
+  border: 2px solid #ecc731;
 }
 .blockquote-reverse {
-  border-right: 5px solid #076e3c;
+  border-right: 5px solid #ecc731;
 }
 .comment-wrapper h4 a:hover,
 .post-date-section:hover,
 .comment-content .edit-link a,
 .logged-in-as a,
 #cancel-comment-reply-link {
-  color: #076e3c;
+  color: #ecc731;
 }
 #submit-comment:hover {
-  background: #076e3c;
-  border-color: #076e3c;
+  background: #ecc731;
+  border-color: #ecc731;
 }
 .charity-default-widgets a:hover,
 .charity-default-widgets aside.media li p a:hover {
-  color: #076e3c;
+  color: #ecc731;
 }
 .blog h2 a:hover,
 .blog ul li a:hover,
 .spacer-bottom h3 a:hover,
 .palce-name a:hover {
-  color: #076e3c;
+  color: #ecc731;
 }
 .newsletter-social-icon form input[type="submit"] {
-  color: #076e3c;
-  border: 2px solid #076e3c;
+  color: #ecc731;
+  border: 2px solid #ecc731;
 }
 .newsletter-social-icon form input[type="submit"]:hover {
   color: #fff;
-  background: #076e3c;
+  background: #ecc731;
 }
 .shoping .button.add_to_cart_button:hover,
 .buttons .button.wc-forward:hover,
@@ -264,41 +264,41 @@ h4 strong,
 .order-actions .button.view:hover,
 .woocommerce #summary-table .shipping-calculator-form button:hover,
 .cart-collaterals .cross-sells .thumbnail .caption a.product_type_simple:hover {
-  background: #076e3c !important;
-  border-color: #076e3c !important;
+  background: #ecc731 !important;
+  border-color: #ecc731 !important;
   color: #fff !important;
 }
 .woocommerce-review-link,
 .woocommerce-review-link:hover,
 .product_meta a:hover {
-  color: #076e3c;
+  color: #ecc731;
 }
 .woocommerce input[type="text"]:focus,
 .woocommerce input[type="password"]:focus {
-  background: #076e3c;
+  background: #ecc731;
 }
 .order_details .product-name a,
 .woocommerce .charity-my-account a {
-  color: #076e3c;
+  color: #ecc731;
 }
 .join-now-section {
-  background: #076e3c;
+  background: #ecc731;
 }
 .event_date {
-  background: #076e3c;
+  background: #ecc731;
 }
 .event_descript p {
-  border-left: 4px solid #076e3c;
+  border-left: 4px solid #ecc731;
 }
 .forward_content a {
-  border: 2px solid #076e3c;
+  border: 2px solid #ecc731;
 }
 .tag_element li {
-  border: 1px solid #076e3c;
+  border: 1px solid #ecc731;
 }
 .event_descriptions .btn.btn-default:hover {
   color: #fff;
-  border-color: #076e3c;
+  border-color: #ecc731;
 }
 </style>
     </head>
