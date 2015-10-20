@@ -8,7 +8,9 @@ get_header();
 ?>
 <div class="content-wrapper container" id="page-info">
     <div class="row">
-        <div class="col-sm-8 col-md-9">
+        <!--
+        <div class="col-sm-8 col-md-9"> -->
+        <div class="col-xs-9">
             <header class="page-header">
                 <h1 class="page-title"><?php printf(__('Search Results for: %s', 'charity'), '<span>' . get_search_query() . '</span>'); ?></h1>
             </header>
@@ -23,7 +25,10 @@ get_header();
             endif;
             ?>
         </div>
+
+        <div class="col-xs-3">
         <?php get_sidebar(); ?>
+    </div>
 
     </div>
 </div>
