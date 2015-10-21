@@ -31,13 +31,14 @@ $svgURL = get_template_directory_uri() . '/assets/svg/';
                     <img src="<?php echo esc_url($svgURL . "location.svg"); ?>" alt="" class="svg"/>
                 </div>
 <?php do_action("charity_event_venue", get_the_ID()); ?>
+<?php do_action("charity_event_location", get_the_ID()); ?>
             </div>
             <div class="date_block">
                 <div class="date-svg">
                     <img src="<?php echo esc_url($svgURL . "calendar.svg"); ?>" alt="" class="svg"/>
                 </div>
                 <span><?php esc_html_e("Date :", "charity"); ?></span>
-                <strong><?php echo date("d-m-Y", strtotime(get_post_meta(get_the_ID(), '_event_start_date', true))); ?></strong>
+                <strong><?php echo date("l, d F Y", strtotime(get_post_meta(get_the_ID(), '_event_start_date', true))); ?></strong>
             </div>
             <div class="time_block">
                 <div class="time-svg">
