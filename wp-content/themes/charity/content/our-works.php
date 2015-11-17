@@ -18,7 +18,7 @@ if (have_posts ()) :
 		</header>
 		<div class="row">
 		<?php while ( have_posts () ) : the_post ();?>
-		<div <?php post_class("col-xs-12 col-sm-6 col-md-6"); ?>>
+		<div <?php post_class("col-xs-12 col-sm-6 col-md-4"); ?>>
 						<div class="thumbnail zoom">
 							<h3><?php the_title();?></h3>
 							<?php if(has_post_thumbnail()): ?>
